@@ -5,6 +5,7 @@ import { useLanguage } from '../i18n/LanguageContext.jsx';
 import { getSupabase } from '../supabase.js';
 import ClanWar from '../components/ClanWar.jsx';
 import ClanMatchmaking from '../components/ClanMatchmaking.jsx';
+import { getRealtimeService } from '../services/realtime.js';
 import {
   StitchButton,
   StitchCard,
@@ -53,6 +54,15 @@ export default function Clans({ go, user, stats }) {
     loadClans();
     if (user) loadMyClan();
   }, [user]);
+
+  // Realtime subscription for clan wars
+  useEffect(() => {
+    if (!myClan?.id) return;
+    const realtime = getRealtimeService();
+    return () => {
+      realtime.unsubscribeAll();
+    };
+  }, [myClan?.id]);
 
   async function loadClans() {
     const sb = getSupabase();

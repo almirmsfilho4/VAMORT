@@ -19,6 +19,7 @@ import {
 } from '../components/StitchUI.jsx';
 import { getSupabase } from '../supabase.js';
 import TournamentBracket from '../components/TournamentBracket.jsx';
+import { getRealtimeService } from '../services/realtime.js';
 
 const TOURNAMENT_TYPES = [
   { id: 'single_elim', labelKey: 'tournaments.type.singleElim', descKey: 'tournaments.type.singleElimDesc', icon: 'account_tree', color: '#e6194b' },
@@ -40,6 +41,19 @@ export default function Tournaments({ go, user, stats }) {
   const [myRegistrations, setMyRegistrations] = useState([]);
   const [selectedTournament, setSelectedTournament] = useState(null);
   const [tournamentMatches, setTournamentMatches] = useState([]);
+
+  // Realtime subscription for tournament matches
+  useEffect(() => {
+    if (!selectedTournament?.id) return;
+    const realtime = getRealtimeService();
+    const channel = realtime.subscribeToTournamentMatches(selectedTournament.id, (payload) => {
+      // Reload matches on any change
+      loadTournamentMatches(selectedTournament.id).then(setTournamentMatches);
+    });
+    return () => {
+      realtime.unsubscribe(`tournament:${selectedTournament.id}`);
+    };
+  }, [selectedTournament?.id]);
   const [isLoading, setIsLoading] = useState(true);
   const [activeTab, setActiveTab] = useState('upcoming');
   const [showCreateModal, setShowCreateModal] = useState(false);
