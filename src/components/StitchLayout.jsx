@@ -37,23 +37,30 @@ const MOBILE_SCREENS = [SCREENS.MainMenu, SCREENS.Arena, SCREENS.Lobby, SCREENS.
 
 function NavItem({ item, selected, onClick, t }) {
   return (
-    <StitchButton
-      variant={selected ? 'tonal' : 'ghost'}
-      fullWidth
-      justify="start"
-      leftIcon={item.icon}
-      leftIconColor={selected ? 'var(--md-sys-color-primary)' : 'var(--md-sys-color-on-surface-variant)'}
+    <button
       onClick={onClick}
       aria-current={selected ? 'page' : undefined}
-      className="min-h-11 text-[0.85rem] transition-colors"
-      style={{
-        backgroundColor: selected ? 'var(--md-sys-color-primary-container)' : 'transparent',
-        color: selected ? 'var(--md-sys-color-on-primary-container)' : 'var(--md-sys-color-on-surface-variant)',
-        fontWeight: selected ? 700 : 500,
-      }}
+      className={`flex items-center gap-3 w-full px-3 py-2.5 rounded-lg text-left transition-all duration-150 group ${
+        selected 
+          ? 'bg-[var(--md-sys-color-primary-container)] text-[var(--md-sys-color-on-primary-container)]' 
+          : 'text-[var(--md-sys-color-on-surface-variant)] hover:bg-[var(--md-sys-color-surface-container)] hover:text-[var(--md-sys-color-on-surface)]'
+      }`}
     >
-      {t(item.labelKey)}
-    </StitchButton>
+      <span 
+        className={`material-symbols-outlined text-[20px] transition-colors ${
+          selected ? 'text-[var(--md-sys-color-primary)]' : 'text-[var(--md-sys-color-on-surface-variant)] group-hover:text-[var(--md-sys-color-on-surface)]'
+        }`}
+        aria-hidden="true"
+      >
+        {item.icon}
+      </span>
+      <span className={`text-[0.85rem] truncate ${selected ? 'font-bold' : 'font-medium'}`}>
+        {t(item.labelKey)}
+      </span>
+      {selected && (
+        <span className="ml-auto w-1 h-4 rounded-full bg-[var(--md-sys-color-primary)]" />
+      )}
+    </button>
   );
 }
 
