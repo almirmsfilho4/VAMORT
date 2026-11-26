@@ -3,6 +3,7 @@ import StitchLayout from '../components/StitchLayout.jsx';
 import { SCREENS } from '../data/constants.js';
 import { useLanguage } from '../i18n/LanguageContext.jsx';
 import { getSupabase } from '../supabase.js';
+import { applyShopDiscount } from '../services/vipBenefits.js';
 import {
   StitchButton,
   StitchCard,
@@ -114,14 +115,17 @@ export default function CosmeticShopScreen({ go, user, stats, deckIds, setDeckId
     return COSMETICS.filter(c => c.type === filter);
   }, [filter]);
 
-  const canAfford = (item) => gold >= item.price;
+  const vipTier = stats?.vipTier || 'free';
+  const getDiscountedPrice = (item) => applyShopDiscount(vipTier, item.price);
+  const canAfford = (item) => gold >= getDiscountedPrice(item);
 
   async function handleBuy(item) {
-    if (gold < item.price || owned.includes(item.id)) return;
+    const price = getDiscountedPrice(item);
+    if (gold < price || owned.includes(item.id)) return;
     if (item.class && item.class !== stats?.playerClass) return;
 
     // Optimistic update
-    const newGold = gold - item.price;
+    const newGold = gold - price;
     const newOwned = [...owned, item.id];
     setGold(newGold);
     setOwned(newOwned);
