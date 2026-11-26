@@ -18,6 +18,7 @@ import {
   StitchModal,
   StitchTooltip,
   StitchCardRelic,
+  StitchSelect,
 } from '../components/StitchUI.jsx';
 
 // Custos de crafting/desencantar por raridade
@@ -403,7 +404,9 @@ export default function CraftingScreen({ go, stats, setStats, user }) {
           title={t('crafting.craftCard').replace('{name}', showCraftModal?.card?.name || '')}
           size="md"
         >
-          {showCraftModal && (
+          {showCraftModal && (() => {
+            const craftCost = CRAFT_COSTS[showCraftModal.card?.rarity]?.craft || 0;
+            return (
             <div className="space-y-4">
               <div className="flex items-center gap-4 p-4 bg-[var(--md-sys-color-surface-container)] rounded-lg">
                 <StitchCardRelic card={showCraftModal.card} size="md" showCost={true} />
@@ -466,8 +469,8 @@ export default function CraftingScreen({ go, stats, setStats, user }) {
                 </StitchButton>
               </div>
             </div>
-          )}
-        </StitchModal>
+            );
+          })()}
 
         {/* Toasts */}
         <div className="fixed bottom-4 left-4 right-4 z-50 space-y-2 pointer-events-none sm:bottom-4 sm:right-4 sm:left-auto sm:max-w-md">
