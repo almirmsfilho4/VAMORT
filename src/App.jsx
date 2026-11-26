@@ -11,6 +11,7 @@ import Settings from './screens/Settings.jsx';
 import Journey from './screens/Journey.jsx';
 import AuthScreen from './screens/AuthScreen.jsx';
 import { signInAnonymous, getCurrentUser, saveProgress, upsertLeaderboard } from './supabase.js';
+import { applyXPBoost, applyGoldBoost } from './services/vipBenefits.js';
 import Arena from './screens/Arena.jsx';
 import Campaign from './screens/Campaign.jsx';
 import Lobby from './screens/Lobby.jsx';
@@ -148,13 +149,16 @@ export default function App() {
   }, [playerClass, user]);
 
   const onBattleEnd = (winner, battleStats = {}) => {
+    const vipTier = stats?.vipTier || 'free';
+    const baseGold = winner === 'player' ? 50 : 20;
+    const baseXP = winner === 'player' ? 100 : 40;
     setStats(s => ({
       ...s,
       games: (s.games || 0) + 1,
       wins: (s.wins || 0) + (winner === 'player' ? 1 : 0),
       losses: (s.losses || 0) + (winner === 'enemy' ? 1 : 0),
-      gold: (s.gold || 0) + (winner === 'player' ? 50 : 20),
-      xp: (s.xp || 0) + (winner === 'player' ? 100 : 40),
+      gold: (s.gold || 0) + applyGoldBoost(vipTier, baseGold),
+      xp: (s.xp || 0) + applyXPBoost(vipTier, baseXP),
       totalDamage: (s.totalDamage || 0) + (battleStats.damageDealt || 0),
       minionsPlayed: (s.minionsPlayed || 0) + (battleStats.minionsPlayed || 0),
       maxStreak: Math.max(s.maxStreak || 0, (s.streak || 0) + (winner === 'player' ? 1 : 0)),
@@ -166,6 +170,7 @@ export default function App() {
     gold: stats?.gold || 0,
     dust: stats?.dust || 0,
     xp: stats?.xp || 0,
+    vipTier: stats?.vipTier || 'free',
     ownedCards: stats?.ownedCards || [],
     ownedCosmetics: stats?.ownedCosmetics || [],
     rankPoints: stats?.rankPoints || (stats?.wins * 25 - stats?.losses * 10) || 0,
