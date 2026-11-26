@@ -18,6 +18,7 @@ import {
   StitchModal,
 } from '../components/StitchUI.jsx';
 import { getSupabase } from '../supabase.js';
+import TournamentBracket from '../components/TournamentBracket.jsx';
 
 const TOURNAMENT_TYPES = [
   { id: 'single_elim', labelKey: 'tournaments.type.singleElim', descKey: 'tournaments.type.singleElimDesc', icon: 'account_tree', color: '#e6194b' },
@@ -221,14 +222,15 @@ export default function Tournaments({ go, user, stats }) {
                 </div>
               )}
 
-              {/* Bracket placeholder */}
+              {/* Tournament Bracket */}
               {selectedTournament.status === 'active' && (
                 <div className="mb-6">
                   <h3 className="font-semibold text-[var(--md-sys-color-on-surface)] mb-3">{t('tournaments.bracket')}</h3>
-                  <StitchCard variant="filled" className="p-8 text-center">
-                    <span className="material-symbols-outlined text-4xl text-[var(--md-sys-color-on-surface-variant)] mb-2 block">account_tree</span>
-                    <p className="text-[var(--md-sys-color-on-surface-variant)]">{t('tournaments.bracketComingSoon')}</p>
-                  </StitchCard>
+                  <TournamentBracket 
+                    tournament={selectedTournament} 
+                    matches={selectedTournament.matches || []}
+                    onMatchClick={(match) => console.log('Match clicked:', match)}
+                  />
                 </div>
               )}
 

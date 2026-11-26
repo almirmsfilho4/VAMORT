@@ -314,7 +314,7 @@ export default function CosmeticShopScreen({ go, user, stats, deckIds, setDeckId
 
                     {(isFreeUnlocked && !isOwned) && (
                       <StitchButton variant="filled" fullWidth className="mt-3" onClick={() => handleBuy(item)}>
-                        <span class="material-symbols-outlined text-sm mr-1">lock_open</span>
+                        <span className="material-symbols-outlined text-sm mr-1">lock_open</span>
                         {t('cosmetic.claim')}
                       </StitchButton>
                     )}

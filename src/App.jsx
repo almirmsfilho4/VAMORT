@@ -139,7 +139,7 @@ export default function App() {
     } else {
       setDeckIds(defaultDeck());
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+     
   }, [playerClass]);
 
   useEffect(() => {

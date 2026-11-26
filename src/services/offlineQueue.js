@@ -150,8 +150,9 @@ class OfflineQueueManager {
     if (this.swRegistration?.active) {
       return new Promise((resolve) => {
         const channel = new MessageChannel();
-        channel.port1.onmessage = (event) => {
-          resolve({ sw: event.data.actions?.length || 0, local: (await this.getLocalQueue()).length });
+        channel.port1.onmessage = async (event) => {
+          const localQueue = await this.getLocalQueue();
+          resolve({ sw: event.data.actions?.length || 0, local: localQueue.length });
         };
         this.swRegistration.active.postMessage({ type: 'GET_OFFLINE_QUEUE' }, [channel.port2]);
       });
@@ -249,7 +250,7 @@ export function useOfflineQueue() {
       unsubscribe();
       clearInterval(interval);
     };
-  }, []);
+  }, [queue]);
   
   return { queue, status };
 }

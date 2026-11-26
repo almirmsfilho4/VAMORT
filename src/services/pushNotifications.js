@@ -249,7 +249,7 @@ export function usePushNotifications() {
 
   React.useEffect(() => {
     push.init().then(() => setStatus(push.getStatus()));
-  }, []);
+  }, [push]);
 
   const subscribe = async () => {
     await push.subscribe();

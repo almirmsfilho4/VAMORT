@@ -3,6 +3,7 @@ import StitchLayout from '../components/StitchLayout.jsx';
 import { SCREENS } from '../data/constants.js';
 import { useLanguage } from '../i18n/LanguageContext.jsx';
 import { getSupabase } from '../supabase.js';
+import ClanWar from '../components/ClanWar.jsx';
 import {
   StitchButton,
   StitchCard,
@@ -377,14 +378,13 @@ export default function Clans({ go, user, stats }) {
             )}
 
             {activeTab === 'war' && (
-              <StitchCard variant="filled" className="p-8 text-center">
-                <span className="material-symbols-outlined text-5xl text-[var(--md-sys-color-on-surface-variant)] mb-4 block">gps_fixed</span>
-                <h3 className="text-xl font-bold text-[var(--md-sys-color-on-surface)] mb-2">{t('clans.war.title')}</h3>
-                <p className="text-[var(--md-sys-color-on-surface-variant)] mb-6">{t('clans.war.desc')}</p>
-                <StitchButton variant="primary" icon="sports_esports" disabled>
-                  {t('clans.war.startWar')}
-                </StitchButton>
-              </StitchCard>
+              <ClanWar 
+                clan={myClan} 
+                opponentClan={null}
+                warStatus="none"
+                onStartWar={() => console.log('Starting war...')}
+                onJoinBattle={(war) => console.log('Joining battle:', war)}
+              />
             )}
 
             {activeTab === 'settings' && canManage && (
