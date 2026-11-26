@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Sparkles, Palette, Crown, Gem, Check, Lock } from 'lucide-react';
+import { applyShopDiscount } from '../services/vipBenefits.js';
 
 const COSMETICS = [
   { id: 'back_vampire', name: 'Verso Vampírico', type: 'cardback', price: 300, color: '#e6194b', preview: '🦇' },
@@ -16,13 +17,14 @@ const COSMETICS = [
 
 const TYPE_LABEL = { cardback: 'Verso de Carta', board: 'Tabuleiro', hero: 'Skin de Herói', emote: 'Emote' };
 
-export default function CosmeticShop({ gold = 0, onSpend, owned = [], onBuy }) {
+export default function CosmeticShop({ gold = 0, onSpend, owned = [], onBuy, vipTier = 'free' }) {
   const [filter, setFilter] = useState('all');
   const filtered = filter === 'all' ? COSMETICS : COSMETICS.filter(c => c.type === filter);
 
   const handleBuy = (item) => {
-    if (gold < item.price || owned.includes(item.id)) return;
-    if (onSpend) onSpend(item.price);
+    const discountedPrice = applyShopDiscount(vipTier, item.price);
+    if (gold < discountedPrice || owned.includes(item.id)) return;
+    if (onSpend) onSpend(discountedPrice);
     if (onBuy) onBuy(item.id);
   };
 
@@ -65,7 +67,8 @@ export default function CosmeticShop({ gold = 0, onSpend, owned = [], onBuy }) {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: 12 }}>
           {filtered.map(item => {
             const isOwned = owned.includes(item.id);
-            const canAfford = gold >= item.price;
+            const discountedPrice = applyShopDiscount(vipTier, item.price);
+            const canAfford = gold >= discountedPrice;
             return (
               <div
                 key={item.id}
@@ -100,7 +103,7 @@ export default function CosmeticShop({ gold = 0, onSpend, owned = [], onBuy }) {
                     fontSize: '0.82rem',
                   }}
                 >
-                  {isOwned ? <><Check size={14} /> Possuído</> : <><Gem size={14} /> {item.price}</>}
+                  {isOwned ? <><Check size={14} /> Possuído</> : <><Gem size={14} /> {applyShopDiscount(vipTier, item.price)}{applyShopDiscount(vipTier, item.price) < item.price ? <span className="line-through text-xs ml-1 opacity-50">{item.price}</span> : null}</>}
                 </button>
               </div>
             );
