@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 220" width="290" height="220">
+  <defs>
+    <linearGradient id="humanArtBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fff8dc"/>
+      <stop offset="50%" style="stop-color:#f5e6c8"/>
+      <stop offset="100%" style="stop-color:#e8d5b7"/>
+    </linearGradient>
+    <linearGradient id="holyGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd700"/>
+      <stop offset="100%" style="stop-color:#daa520"/>
+    </linearGradient>
+    <linearGradient id="steelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e8e8e8"/>
+      <stop offset="50%" style="stop-color:#c0c0c0"/>
+      <stop offset="100%" style="stop-color:#a0a0a0"/>
+    </linearGradient>
+    <radialGradient id="divineLight" cx="50%" cy="20%" r="70%">
+      <stop offset="0%" style="stop-color:#fffacd;stop-opacity:0.4"/>
+      <stop offset="100%" style="stop-color:#f5e6c8;stop-opacity:0"/>
+    </radialGradient>
+    <filter id="holyGlow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feFlood flood-color="#ffd700" flood-opacity="0.4"/>
+      <feComposite in2="blur" operator="in"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <pattern id="crossPattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 20,0 L 20,40 M 0,20 L 40,20" stroke="#daa520" stroke-width="0.3" opacity="0.2"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="290" height="220" fill="url(#humanArtBg)"/>
+  <rect width="290" height="220" fill="url(#divineLight)"/>
+  <rect width="290" height="220" fill="url(#crossPattern)"/>
+  
+  <!-- Cathedral interior -->
+  <path d="M 0,220 L 0,80 Q 0,40 30,40 L 80,40 Q 80,10 100,10 L 190,10 Q 190,40 220,40 L 260,40 Q 290,40 290,80 L 290,220 Z" 
+        fill="#d4c4a8" stroke="#c4b4a8" stroke-width="1"/>
+  <!-- Stained glass windows -->
+  <g fill="none" stroke="#8b7b4a" stroke-width="1.5">
+    <path d="M 30,50 L 30,150 Q 30,170 50,170 L 70,170 Q 70,150 70,50 Z"/>
+    <path d="M 50,50 L 50,130"/>
+    <path d="M 30,100 L 70,100"/>
+    <path d="M 220,50 L 220,150 Q 220,170 240,170 L 260,170 Q 260,150 260,50 Z"/>
+    <path d="M 240,50 L 240,130"/>
+    <path d="M 220,100 L 260,100"/>
+  </g>
+  <!-- Stained glass colors -->
+  <g opacity="0.6">
+    <rect x="32" y="52" width="36" height="76" fill="#dc143c"/>
+    <rect x="32" y="130" width="36" height="38" fill="#4169e1"/>
+    <rect x="222" y="52" width="36" height="76" fill="#2e8b57"/>
+    <rect x="222" y="130" width="36" height="38" fill="#ffd700"/>
+  </g>
+  
+  <!-- Paladin silhouette -->
+  <g transform="translate(145, 150)" filter="url(#holyGlow)">
+    <!-- Cape/Tabard -->
+    <path d="M -50,0 Q -65,-10 -55,-45 Q -30,-60 0,-50 Q 30,-60 55,-45 Q 65,-10 50,0 Z" 
+          fill="#f5f5dc" stroke="url(#holyGold)" stroke-width="1.5"/>
+    <rect x="-40" y="-10" width="80" height="25" fill="url(#holyGold)" opacity="0.8"/>
+    <!-- Cross on tabard -->
+    <rect x="-5" y="-5" width="10" height="30" fill="url(#holyGold)"/>
+    <rect x="-15" y="5" width="30" height="10" fill="url(#holyGold)"/>
+    <!-- Armor body -->
+    <ellipse cx="0" cy="15" rx="30" ry="35" fill="url(#steelGrad)" stroke="#fff" stroke-width="1" opacity="0.9"/>
+    <!-- Pauldrons -->
+    <ellipse cx="-35" cy="0" rx="18" ry="15" fill="url(#steelGrad)" stroke="#fff" stroke-width="1"/>
+    <ellipse cx="35" cy="0" rx="18" ry="15" fill="url(#steelGrad)" stroke="#fff" stroke-width="1"/>
+    <!-- Helmet -->
+    <path d="M -22,-35 Q -22,-55 0,-60 Q 22,-55 22,-35 Q 22,-30 18,-30 L 18,-40 Q 18,-45 12,-45 Q 6,-45 6,-40 L 6,-30 Q 2,-30 0,-35 Q -2,-30 -6,-30 L -6,-40 Q -6,-45 -12,-45 Q -18,-45 -18,-40 L -18,-30 Z" 
+          fill="url(#steelGrad)" stroke="#fff" stroke-width="1.5"/>
+    <!-- Helmet face guard -->
+    <rect x="-12" y="-40" width="24" height="8" fill="#1a1a1a" opacity="0.8"/>
+    <rect x="-8" y="-30" width="16" height="2" fill="url(#holyGold)" opacity="0.6"/>
+    <!-- Plume -->
+    <path d="M 0,-60 Q 5,-70 0,-80 Q -5,-70 0,-60" fill="url(#holyGold)" opacity="0.9"/>
+    <!-- Sword raised -->
+    <g transform="translate(45, -20) rotate(-30)">
+      <rect x="-3" y="-80" width="6" height="90" fill="url(#steelGrad)" stroke="#fff" stroke-width="1"/>
+      <rect x="-8" y="-90" width="16" height="12" fill="url(#holyGold)"/>
+      <rect x="-1" y="-85" width="2" height="70" fill="#fff" opacity="0.5"/>
+    </g>
+    <!-- Shield on back -->
+    <g transform="translate(-50, 10)">
+      <path d="M 0,-25 L 18,-15 L 18,20 Q 18,30 0,35 Q -18,30 -18,20 L -18,-15 Z" 
+            fill="url(#steelGrad)" stroke="url(#holyGold)" stroke-width="2"/>
+      <path d="M 0,-20 L 0,15 M -12,-3 L 12,-3" stroke="url(#holyGold)" stroke-width="3"/>
+    </g>
+  </g>
+  
+  <!-- Divine particles -->
+  <g fill="url(#holyGold)" opacity="0.7">
+    <circle cx="80" cy="60" r="2">
+      <animate attributeName="cy" values="60;40;60" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="200" cy="80" r="1.5">
+      <animate attributeName="cy" values="80;50;80" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0.7;0.3" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="60" cy="100" r="2">
+      <animate attributeName="cy" values="100;70;100" dur="2.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="230" cy="120" r="1.5">
+      <animate attributeName="cy" values="120;90;120" dur="1.8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0.7;0.3" dur="1.8s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Sun rays from top -->
+  <g stroke="url(#holyGold)" stroke-width="1" opacity="0.3">
+    <line x1="145" y1="0" x2="100" y2="60"/>
+    <line x1="145" y1="0" x2="120" y2="60"/>
+    <line x1="145" y1="0" x2="145" y2="70"/>
+    <line x1="145" y1="0" x2="170" y2="60"/>
+    <line x1="145" y1="0" x2="190" y2="60"/>
+  </g>
+  
+  <!-- Border frame -->
+  <rect x="2" y="2" width="286" height="216" fill="none" stroke="url(#holyGold)" stroke-width="2" opacity="0.6" rx="4"/>
+</svg>

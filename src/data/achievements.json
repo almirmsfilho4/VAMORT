@@ -1,0 +1,65 @@
+[
+  {
+    "id": "ach001",
+    "name": "Primeira Vitória",
+    "description": "Vença sua primeira partida contra qualquer oponente.",
+    "icon": "🏆",
+    "category": "Combate"
+  },
+  {
+    "id": "ach002",
+    "name": "Construtor de Decks",
+    "description": "Crie seu primeiro deck personalizado.",
+    "icon": "🛠️",
+    "category": "Coleção"
+  },
+  {
+    "id": "ach003",
+    "name": "Poder Vampírico",
+    "description": "Jogue 10 cartas da facção Vampiro.",
+    "icon": "🦇",
+    "category": "Combate"
+  },
+  {
+    "id": "ach004",
+    "name": "Defensor da Humanidade",
+    "description": "Jogue 10 cartas da facção Humano.",
+    "icon": "🛡️",
+    "category": "Combate"
+  },
+  {
+    "id": "ach005",
+    "name": "Colecionador Iniciante",
+    "description": "Possua 15 cartas únicas em sua coleção.",
+    "icon": "📚",
+    "category": "Coleção"
+  },
+  {
+    "id": "ach006",
+    "name": "Lenda Despertada",
+    "description": "Invoque um lacaio Lendário em uma partida.",
+    "icon": "🌟",
+    "category": "Combate"
+  },
+  {
+    "id": "ach008",
+    "name": "Pacto de Sangue",
+    "description": "Utilize 50 pontos de Sangue durante suas partidas.",
+    "icon": "🩸",
+    "category": "Exploração"
+  },
+  {
+    "id": "ach009",
+    "name": "Arsenal Completo",
+    "description": "Abra 5 Pacotes de Cartas na Loja.",
+    "icon": "🎁",
+    "category": "Coleção"
+  },
+  {
+    "id": "ach010",
+    "name": "Sobrevivente Nato",
+    "description": "Vença uma partida com apenas 1 de Vida restante.",
+    "icon": "❤️‍🩹",
+    "category": "Combate"
+  }
+]

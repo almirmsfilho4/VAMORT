@@ -1,0 +1,859 @@
+/**
+ * VAMORT TCG — Stitch Design System
+ * Material Design 3 (Dark) — Gothic Fantasy Theme
+ * Based on Google Stitch project templates
+ */
+
+/* ─── Material Design 3 Color Tokens ─── */
+:root {
+  /* Surface layers */
+  --md-sys-color-surface: #16121c;
+  --md-sys-color-surface-dim: #16121c;
+  --md-sys-color-surface-bright: #2d2833;
+  --md-sys-color-surface-container-lowest: #100c16;
+  --md-sys-color-surface-container-low: #1e1a24;
+  --md-sys-color-surface-container: #221e28;
+  --md-sys-color-surface-container-high: #2d2833;
+  --md-sys-color-surface-container-highest: #38333e;
+  --md-sys-color-on-surface: #e8dfee;
+  --md-sys-color-on-surface-variant: #c9b8c7;
+  --md-sys-color-outline: #5c3f41;
+  --md-sys-color-outline-variant: #3d2a2e;
+
+  /* Primary — Blood Crimson */
+  --md-sys-color-primary: #e6194b;
+  --md-sys-color-on-primary: #ffffff;
+  --md-sys-color-primary-container: #920128;
+  --md-sys-color-on-primary-container: #ffdada;
+  --md-sys-color-primary-fixed: #ffb2b7;
+  --md-sys-color-primary-fixed-dim: #ff6b8a;
+
+  /* Secondary — Royal Gold */
+  --md-sys-color-secondary: #fabc4d;
+  --md-sys-color-on-secondary: #3a2600;
+  --md-sys-color-secondary-container: #5c4200;
+  --md-sys-color-on-secondary-container: #ffe0a0;
+  --md-sys-color-secondary-fixed: #ffdf9e;
+  --md-sys-color-secondary-fixed-dim: #fabc4d;
+
+  /* Tertiary — Spectral Pink */
+  --md-sys-color-tertiary: #ffb2b6;
+  --md-sys-color-on-tertiary: #68001a;
+  --md-sys-color-tertiary-container: #920128;
+  --md-sys-color-on-tertiary-container: #fffeff;
+  --md-sys-color-tertiary-fixed: #ffdada;
+  --md-sys-color-tertiary-fixed-dim: #ffb2b6;
+
+  /* Error */
+  --md-sys-color-error: #ba1a1a;
+  --md-sys-color-on-error: #ffffff;
+  --md-sys-color-error-container: #93000a;
+  --md-sys-color-on-error-container: #ffdad6;
+
+  /* Inverse */
+  --md-sys-color-inverse-surface: #e8dfee;
+  --md-sys-color-inverse-on-surface: #332e3a;
+  --md-sys-color-inverse-primary: #be0039;
+
+  /* Additional semantic */
+  --md-sys-color-success: #4caf50;
+  --md-sys-color-warning: #ff9800;
+  --md-sys-color-info: #2196f3;
+  --md-sys-color-scrim: #000000;
+  --md-sys-color-shadow: #000000;
+
+  /* Blood specific */
+  --blood-primary: #e6194b;
+  --blood-dark: #92002a;
+  --blood-light: #ffb2b7;
+  --blood-glow: rgba(230, 25, 75, 0.45);
+
+  /* Gold specific */
+  --gold-primary: #fabc4d;
+  --gold-light: #ffe0a0;
+  --gold-dark: #b8860b;
+  --gold-glow: rgba(250, 188, 77, 0.4);
+
+  /* Ethereal / Magic */
+  --ethereal: #a855f7;
+  --ethereal-light: #d8b4fe;
+  --ethereal-dark: #6b21a8;
+
+  /* Faction colors */
+  --faction-vampire: #e6194b;
+  --faction-human: #6E9ECC;
+  --faction-neutral: #a78bfa;
+
+  /* Rarity colors */
+  --rarity-comum: #ac8889;
+  --rarity-rara: #6E9ECC;
+  --rarity-epica: #a855f7;
+  --rarity-lendaria: #fabc4d;
+}
+
+/* ─── Typography ─── */
+:root {
+  --font-sans: "Geist", "Inter", "SF Pro Display", "Segoe UI", sans-serif;
+  --font-serif: "Newsreader", "Georgia", "Times New Roman", serif;
+
+  /* Type scale */
+  --text-display-large: 3.5rem;      /* 56px */
+  --text-display-medium: 2.75rem;    /* 44px */
+  --text-display-small: 2.25rem;     /* 36px */
+  --text-headline-large: 2rem;       /* 32px */
+  --text-headline-medium: 1.75rem;   /* 28px */
+  --text-headline-small: 1.5rem;     /* 24px */
+  --text-title-large: 1.25rem;       /* 20px */
+  --text-title-medium: 1.125rem;     /* 18px */
+  --text-title-small: 1rem;          /* 16px */
+  --text-body-large: 1rem;           /* 16px */
+  --text-body-medium: 0.875rem;      /* 14px */
+  --text-body-small: 0.75rem;        /* 12px */
+  --text-label-large: 0.875rem;      /* 14px */
+  --text-label-medium: 0.75rem;      /* 12px */
+  --text-label-small: 0.625rem;      /* 10px */
+}
+
+/* ─── Spacing ─── */
+:root {
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.5rem;    /* 24px */
+  --space-6: 2rem;      /* 32px */
+  --space-7: 3rem;      /* 48px */
+  --space-8: 4rem;      /* 64px */
+}
+
+/* ─── Border Radius ─── */
+:root {
+  --radius-xs: 0.25rem;    /* 4px */
+  --radius-sm: 0.5rem;     /* 8px */
+  --radius-md: 0.75rem;    /* 12px */
+  --radius-lg: 1rem;       /* 16px */
+  --radius-xl: 1.5rem;     /* 24px */
+  --radius-2xl: 2rem;      /* 32px */
+  --radius-full: 9999px;
+}
+
+/* ─── Elevation / Shadows ─── */
+:root {
+  --elevation-1: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  --elevation-2: 0 3px 6px rgba(0,0,0,0.15), 0 2px 4px rgba(0,0,0,0.12);
+  --elevation-3: 0 10px 20px rgba(0,0,0,0.15), 0 3px 6px rgba(0,0,0,0.10);
+  --elevation-4: 0 15px 25px rgba(0,0,0,0.15), 0 3px 10px rgba(0,0,0,0.10);
+  --elevation-5: 0 20px 40px rgba(0,0,0,0.2), 0 5px 15px rgba(0,0,0,0.1);
+
+  /* Glow shadows */
+  --glow-blood: 0 0 20px rgba(230, 25, 75, 0.3), 0 0 40px rgba(230, 25, 75, 0.15);
+  --glow-gold: 0 0 20px rgba(250, 188, 77, 0.3), 0 0 40px rgba(250, 188, 77, 0.15);
+  --glow-ethereal: 0 0 20px rgba(168, 85, 247, 0.3), 0 0 40px rgba(168, 85, 247, 0.15);
+}
+
+/* ─── Transitions ─── */
+:root {
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ─── Z-Index ─── */
+:root {
+  --z-base: 0;
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+  --z-toast: 1080;
+}
+
+/* ─── Component Base Styles ─── */
+
+/* Stitch Card */
+.stitch-card {
+  background: var(--md-sys-color-surface-container);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal), border-color var(--transition-normal);
+}
+
+.stitch-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--elevation-3);
+  border-color: var(--md-sys-color-outline);
+}
+
+.stitch-card-elevated {
+  background: var(--md-sys-color-surface-container-high);
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  box-shadow: var(--elevation-2);
+}
+
+.stitch-card-filled {
+  background: var(--md-sys-color-surface-container-highest);
+  border: none;
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+}
+
+/* Stitch Button */
+.stitch-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-full);
+  font-family: var(--font-sans);
+  font-size: var(--text-label-large);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  border: none;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.stitch-btn-filled {
+  background: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+  box-shadow: var(--elevation-1);
+}
+
+.stitch-btn-filled:hover {
+  background: #ff2a5f;
+  box-shadow: var(--elevation-2), var(--glow-blood);
+  transform: translateY(-1px);
+}
+
+.stitch-btn-tonal {
+  background: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+}
+
+.stitch-btn-tonal:hover {
+  background: #a50132;
+}
+
+.stitch-btn-outlined {
+  background: transparent;
+  color: var(--md-sys-color-primary);
+  border: 1px solid var(--md-sys-color-primary);
+}
+
+.stitch-btn-outlined:hover {
+  background: rgba(230, 25, 75, 0.08);
+}
+
+.stitch-btn-text {
+  background: transparent;
+  color: var(--md-sys-color-primary);
+  padding: var(--space-2) var(--space-3);
+}
+
+.stitch-btn-text:hover {
+  background: rgba(230, 25, 75, 0.08);
+}
+
+.stitch-btn-gold {
+  background: var(--md-sys-color-secondary);
+  color: var(--md-sys-color-on-secondary);
+  box-shadow: var(--elevation-1);
+}
+
+.stitch-btn-gold:hover {
+  background: #ffd066;
+  box-shadow: var(--elevation-2), var(--glow-gold);
+  transform: translateY(-1px);
+}
+
+.stitch-btn-ghost {
+  background: transparent;
+  color: var(--md-sys-color-on-surface-variant);
+  border: 1px solid var(--md-sys-color-outline-variant);
+}
+
+.stitch-btn-ghost:hover {
+  background: var(--md-sys-color-surface-container-high);
+  color: var(--md-sys-color-on-surface);
+}
+
+/* Stitch Icon Button */
+.stitch-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background: transparent;
+  color: var(--md-sys-color-on-surface-variant);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  border: none;
+}
+
+.stitch-icon-btn:hover {
+  background: var(--md-sys-color-surface-container-high);
+  color: var(--md-sys-color-on-surface);
+}
+
+/* Stitch Input / TextField */
+.stitch-input {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  background: var(--md-sys-color-surface-container-low);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--radius-sm);
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--font-sans);
+  font-size: var(--text-body-large);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  outline: none;
+}
+
+.stitch-input:focus {
+  border-color: var(--md-sys-color-primary);
+  box-shadow: 0 0 0 2px rgba(230, 25, 75, 0.2);
+}
+
+.stitch-input::placeholder {
+  color: var(--md-sys-color-on-surface-variant);
+  opacity: 0.6;
+}
+
+/* Stitch Select */
+.stitch-select {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  background: var(--md-sys-color-surface-container-low);
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--radius-sm);
+  color: var(--md-sys-color-on-surface);
+  font-family: var(--font-sans);
+  font-size: var(--text-body-large);
+  cursor: pointer;
+  transition: border-color var(--transition-fast);
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23e8dfee' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--space-4) center;
+  padding-right: var(--space-7);
+}
+
+.stitch-select:focus {
+  border-color: var(--md-sys-color-primary);
+  box-shadow: 0 0 0 2px rgba(230, 25, 75, 0.2);
+}
+
+/* Stitch Badge / Chip */
+.stitch-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  font-size: var(--text-label-small);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.stitch-badge-primary {
+  background: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+}
+
+.stitch-badge-secondary {
+  background: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+}
+
+.stitch-badge-tertiary {
+  background: var(--md-sys-color-tertiary-container);
+  color: var(--md-sys-color-on-tertiary-container);
+}
+
+.stitch-badge-error {
+  background: var(--md-sys-color-error-container);
+  color: var(--md-sys-color-on-error-container);
+}
+
+.stitch-badge-surface {
+  background: var(--md-sys-color-surface-container-highest);
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+/* Stitch Progress Bar */
+.stitch-progress {
+  width: 100%;
+  height: 8px;
+  background: var(--md-sys-color-surface-container-highest);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.stitch-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--md-sys-color-primary), var(--blood-light));
+  border-radius: var(--radius-full);
+  transition: width var(--transition-slow);
+  position: relative;
+}
+
+.stitch-progress-bar::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  animation: shimmer 2s infinite;
+}
+
+.stitch-progress-gold .stitch-progress-bar {
+  background: linear-gradient(90deg, var(--md-sys-color-secondary), var(--gold-light));
+}
+
+/* Stitch Avatar */
+.stitch-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background: var(--md-sys-color-surface-container-highest);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--md-sys-color-on-surface);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.stitch-avatar-lg {
+  width: 64px;
+  height: 64px;
+}
+
+.stitch-avatar-xl {
+  width: 96px;
+  height: 96px;
+}
+
+/* Stitch Hero Panel */
+.stitch-hero-panel {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background: var(--md-sys-color-surface-container-lowest);
+  border: 1px solid var(--md-sys-color-outline-variant);
+}
+
+.stitch-hero-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(22, 18, 28, 0.95) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Stitch Minion View */
+.stitch-minion {
+  position: relative;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--md-sys-color-outline-variant);
+  background: var(--md-sys-color-surface-container);
+  transition: all var(--transition-normal);
+  cursor: pointer;
+}
+
+.stitch-minion:hover {
+  border-color: var(--md-sys-color-primary);
+  box-shadow: var(--glow-blood);
+  transform: translateY(-4px);
+}
+
+.stitch-minion.can-attack {
+  border-color: var(--md-sys-color-secondary);
+  animation: ready-pulse 2s ease-in-out infinite;
+}
+
+.stitch-minion.can-attack::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border: 2px solid var(--md-sys-color-secondary);
+  border-radius: calc(var(--radius-md) + 4px);
+  opacity: 0.3;
+  animation: ready-ring 2s ease-out infinite;
+}
+
+/* Stitch Tabs */
+.stitch-tabs {
+  display: flex;
+  border-bottom: 2px solid var(--md-sys-color-outline-variant);
+  gap: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.stitch-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.stitch-tab {
+  padding: var(--space-3) var(--space-5);
+  font-family: var(--font-sans);
+  font-size: var(--text-label-large);
+  font-weight: 500;
+  color: var(--md-sys-color-on-surface-variant);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: color var(--transition-fast);
+  white-space: nowrap;
+}
+
+.stitch-tab:hover {
+  color: var(--md-sys-color-on-surface);
+}
+
+.stitch-tab.active {
+  color: var(--md-sys-color-primary);
+  font-weight: 600;
+}
+
+.stitch-tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--md-sys-color-primary);
+  border-radius: var(--radius-full) var(--radius-full) 0 0;
+}
+
+/* Stitch Modal */
+.stitch-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  z-index: var(--z-modal-backdrop);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  animation: fadeIn 0.2s ease-out;
+}
+
+.stitch-modal {
+  background: var(--md-sys-color-surface-container);
+  border: 1px solid var(--md-sys-color-outline);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  max-width: 480px;
+  width: 100%;
+  box-shadow: var(--elevation-5);
+  animation: slideUp 0.3s ease-out;
+  z-index: var(--z-modal);
+}
+
+/* Stitch Divider */
+.stitch-divider {
+  height: 1px;
+  background: var(--md-sys-color-outline-variant);
+  margin: var(--space-4) 0;
+}
+
+.stitch-divider-gold {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--md-sys-color-secondary), transparent);
+  margin: var(--space-4) 0;
+}
+
+/* Stitch Section Header */
+.stitch-section-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.stitch-section-title {
+  font-family: var(--font-serif);
+  font-size: var(--text-title-large);
+  font-weight: 600;
+  color: var(--md-sys-color-on-surface);
+}
+
+.stitch-section-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  background: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Stitch Stat */
+.stitch-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.stitch-stat-value {
+  font-family: var(--font-sans);
+  font-size: var(--text-headline-small);
+  font-weight: 700;
+  color: var(--md-sys-color-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+.stitch-stat-label {
+  font-size: var(--text-label-small);
+  color: var(--md-sys-color-on-surface-variant);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Stitch List Item */
+.stitch-list-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  transition: background var(--transition-fast);
+}
+
+.stitch-list-item:hover {
+  background: var(--md-sys-color-surface-container-high);
+}
+
+/* Stitch Toggle / Switch */
+.stitch-toggle {
+  position: relative;
+  width: 48px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  background: var(--md-sys-color-surface-container-highest);
+  border: 2px solid var(--md-sys-color-outline);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  flex-shrink: 0;
+}
+
+.stitch-toggle.active {
+  background: var(--md-sys-color-primary);
+  border-color: var(--md-sys-color-primary);
+}
+
+.stitch-toggle::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-full);
+  background: var(--md-sys-color-on-surface);
+  transition: transform var(--transition-normal);
+  box-shadow: var(--elevation-1);
+}
+
+.stitch-toggle.active::after {
+  transform: translateX(20px);
+  background: var(--md-sys-color-on-primary);
+}
+
+/* Stitch Floating Number */
+.stitch-floating-number {
+  position: absolute;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: var(--text-headline-small);
+  pointer-events: none;
+  z-index: 10;
+  animation: floatUp 1s ease-out forwards;
+}
+
+.stitch-floating-number.damage {
+  color: var(--md-sys-color-error);
+  text-shadow: 0 0 10px rgba(186, 26, 26, 0.5);
+}
+
+.stitch-floating-number.heal {
+  color: var(--md-sys-color-success, #4caf50);
+  text-shadow: 0 0 10px rgba(76, 175, 80, 0.5);
+}
+
+.stitch-floating-number.buff {
+  color: var(--md-sys-color-secondary);
+  text-shadow: 0 0 10px rgba(250, 188, 77, 0.5);
+}
+
+/* Stitch Animations */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  100% { transform: translateY(-60px) scale(1.2); opacity: 0; }
+}
+
+@keyframes ready-pulse {
+  0%, 100% { box-shadow: 0 0 5px rgba(250, 188, 77, 0.3); }
+  50% { box-shadow: 0 0 15px rgba(250, 188, 77, 0.6), 0 0 25px rgba(250, 188, 77, 0.3); }
+}
+
+@keyframes ready-ring {
+  0% { transform: scale(1); opacity: 0.3; }
+  100% { transform: scale(1.1); opacity: 0; }
+}
+
+/* Stitch Utility Classes */
+.stitch-surface-lowest { background: var(--md-sys-color-surface-container-lowest); }
+.stitch-surface-low { background: var(--md-sys-color-surface-container-low); }
+.stitch-surface-container { background: var(--md-sys-color-surface-container); }
+.stitch-surface-high { background: var(--md-sys-color-surface-container-high); }
+.stitch-surface-highest { background: var(--md-sys-color-surface-container-highest); }
+
+.stitch-text-primary { color: var(--md-sys-color-on-surface); }
+.stitch-text-secondary { color: var(--md-sys-color-on-surface-variant); }
+.stitch-text-blood { color: var(--md-sys-color-primary); }
+.stitch-text-gold { color: var(--md-sys-color-secondary); }
+.stitch-text-tertiary { color: var(--md-sys-color-tertiary); }
+
+.stitch-border { border-color: var(--md-sys-color-outline); }
+.stitch-border-subtle { border-color: var(--md-sys-color-outline-variant); }
+.stitch-border-blood { border-color: var(--md-sys-color-primary); }
+.stitch-border-gold { border-color: var(--md-sys-color-secondary); }
+
+.stitch-glow-blood { box-shadow: var(--glow-blood); }
+.stitch-glow-gold { box-shadow: var(--glow-gold); }
+.stitch-glow-ethereal { box-shadow: var(--glow-ethereal); }
+
+/* Stitch Responsive Grid — Base Classes */
+.stitch-grid-1 { display: grid; grid-template-columns: 1fr; gap: var(--space-4); }
+.stitch-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-4); }
+.stitch-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-4); }
+.stitch-grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-4); }
+.stitch-grid-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--space-4); }
+.stitch-grid-6 { display: grid; grid-template-columns: repeat(6, 1fr); gap: var(--space-4); }
+
+/* Responsive Grid — Tailwind-compatible utility classes */
+.grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+.grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.grid-cols-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+.grid-cols-6 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+
+.gap-0 { gap: 0; }
+.gap-1 { gap: var(--space-1); }
+.gap-2 { gap: var(--space-2); }
+.gap-3 { gap: var(--space-3); }
+.gap-4 { gap: var(--space-4); }
+.gap-5 { gap: var(--space-5); }
+.gap-6 { gap: var(--space-6); }
+.gap-8 { gap: var(--space-8); }
+
+@media (min-width: 640px) {
+  .sm\:grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+  .sm\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sm\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .sm\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .sm\:grid-cols-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .sm\:grid-cols-6 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+}
+
+@media (min-width: 768px) {
+  .md\:grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+  .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .md\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .md\:grid-cols-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .md\:grid-cols-6 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+}
+
+@media (min-width: 1024px) {
+  .lg\:grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+  .lg\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .lg\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .lg\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .lg\:grid-cols-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .lg\:grid-cols-6 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+}
+
+@media (min-width: 1280px) {
+  .xl\:grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+  .xl\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .xl\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .xl\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .xl\:grid-cols-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  .xl\:grid-cols-6 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+}
+
+/* Legacy stitch-grid-* responsive behavior */
+@media (max-width: 767px) {
+  .stitch-grid-2 { grid-template-columns: 1fr; }
+  .stitch-grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .stitch-grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .stitch-grid-5 { grid-template-columns: repeat(2, 1fr); }
+  .stitch-grid-6 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+  .stitch-grid-3 { grid-template-columns: 1fr; }
+  .stitch-grid-4 { grid-template-columns: 1fr; }
+  .stitch-grid-5 { grid-template-columns: 1fr; }
+  .stitch-grid-6 { grid-template-columns: 1fr; }
+}
+
+/* Stitch Scrollbar */
+.stitch-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.stitch-scroll::-webkit-scrollbar-track {
+  background: var(--md-sys-color-surface-container-lowest);
+  border-radius: var(--radius-full);
+}
+
+.stitch-scroll::-webkit-scrollbar-thumb {
+  background: var(--md-sys-color-outline);
+  border-radius: var(--radius-full);
+}
+
+.stitch-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--md-sys-color-primary);
+}

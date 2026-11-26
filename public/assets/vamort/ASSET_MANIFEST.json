@@ -1,0 +1,58 @@
+{
+  "version": "1.0.0",
+  "description": "Mapeamento de cada carta balanceada para seu asset visual correspondente - TODAS AS 33 CARTAS COBERTAS",
+  "cardFrames": {
+    "vampire": "cards/vampire-frame.svg",
+    "human": "cards/human-frame.svg",
+    "neutral": "cards/neutral-frame.svg"
+  },
+  "keywordIcons": "icons/keywords.svg",
+  "cardArt": {
+    "vamp_001": { "name": "Bloodthirsty Ghoul", "art": "cards/art/vampire-spawn.svg", "frame": "vampire", "status": "done" },
+    "vamp_002": { "name": "Night Stalker", "art": "cards/art/shadow-step.svg", "frame": "vampire", "status": "done" },
+    "vamp_003": { "name": "Vampiric Bite", "art": "cards/art/blood-fountain.svg", "frame": "vampire", "status": "done" },
+    "vamp_004": { "name": "Blood Frenzy", "art": "cards/art/blood-fountain.svg", "frame": "vampire", "status": "done" },
+    "vamp_005": { "name": "Crimson Acolyte", "art": "cards/art/crimson-acolyte.svg", "frame": "vampire", "status": "done" },
+    "vamp_006": { "name": "Shadow Bat", "art": "cards/art/shadow-step.svg", "frame": "vampire", "status": "done" },
+    "vamp_007": { "name": "Bloodletter", "art": "cards/art/bloodletter.svg", "frame": "vampire", "status": "done" },
+    "vamp_008": { "name": "Ghoul Horde", "art": "cards/art/vampire-spawn.svg", "frame": "vampire", "status": "done" },
+    "vamp_009": { "name": "Blood Knight", "art": "cards/art/vampire-knight.svg", "frame": "vampire", "status": "done" },
+    "vamp_010": { "name": "Vampire Lord", "art": "cards/art/vampire-lord.svg", "frame": "vampire", "status": "done" },
+    "vamp_011": { "name": "Ritual of Binding", "art": "cards/art/blood-ritual.svg", "frame": "vampire", "status": "done" },
+    "vamp_012": { "name": "Blood Oath", "art": "cards/art/blood-oath.svg", "frame": "vampire", "status": "done" },
+    "vamp_013": { "name": "Soul Harvester", "art": "cards/art/soul-harvester.svg", "frame": "vampire", "status": "done" },
+    "hum_001": { "name": "Novice Paladin", "art": "cards/art/novice-paladin.svg", "frame": "human", "status": "done" },
+    "hum_002": { "name": "Holy Light", "art": "cards/art/holy-light.svg", "frame": "human", "status": "done" },
+    "hum_003": { "name": "Sanctuary", "art": "cards/art/holy-light.svg", "frame": "human", "status": "done" },
+    "hum_004": { "name": "Dawnbreaker", "art": "cards/art/paladin.svg", "frame": "human", "status": "done" },
+    "hum_005": { "name": "Priestess of Dawn", "art": "cards/art/priestess-of-dawn.svg", "frame": "human", "status": "done" },
+    "hum_006": { "name": "Crossbowman", "art": "cards/art/militia-spearman.svg", "frame": "human", "status": "done" },
+    "hum_007": { "name": "Shield Bearer", "art": "cards/art/militia-spearman.svg", "frame": "human", "status": "done" },
+    "hum_008": { "name": "Exorcist", "art": "cards/art/exorcist.svg", "frame": "human", "status": "done" },
+    "hum_009": { "name": "Inquisitor", "art": "cards/art/inquisitor.svg", "frame": "human", "status": "done" },
+    "hum_010": { "name": "High Priestess", "art": "cards/art/paladin.svg", "frame": "human", "status": "done" },
+    "hum_011": { "name": "Divine Shield", "art": "cards/art/divine-blessing.svg", "frame": "human", "status": "done" },
+    "hum_012": { "name": "Crusader", "art": "cards/art/crusader.svg", "frame": "human", "status": "done" },
+    "epic_001": { "name": "Twilight Drake", "art": "cards/art/twilight-drake.svg", "frame": "neutral", "status": "done" },
+    "epic_002": { "name": "Duskbat", "art": "cards/art/duskbat.svg", "frame": "neutral", "status": "done" },
+    "epic_003": { "name": "Soul Harvest", "art": "cards/art/soul-harvest.svg", "frame": "vampire", "status": "done" },
+    "epic_004": { "name": "Pact Sealer", "art": "cards/art/pact-sealer.svg", "frame": "vampire", "status": "done" },
+    "epic_005": { "name": "Archangel's Light", "art": "cards/art/divine-blessing.svg", "frame": "human", "status": "done" },
+    "leg_001": { "name": "Vlad the Blood King", "art": "cards/art/ancient-one.svg", "frame": "vampire", "status": "done" },
+    "leg_002": { "name": "Saint Aurelia", "art": "cards/art/saint-aurelia.svg", "frame": "human", "status": "done" },
+    "leg_003": { "name": "The Twilight Monarch", "art": "cards/art/ancient-one.svg", "frame": "neutral", "status": "done" }
+  },
+  "uiAssets": {
+    "buttonsBars": "ui/buttons-bars.svg",
+    "gameBoard": "bg/game-board.svg"
+  },
+  "summary": {
+    "totalCards": 33,
+    "uniqueArtAssets": 25,
+    "vampireArts": 13,
+    "humanArts": 10,
+    "neutralArts": 2,
+    "allComplete": true,
+    "completedAt": "2026-11-21T16:30:00.000Z"
+  }
+}

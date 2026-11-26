@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VAMORT - Preview dos Assets</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 20px;
+      background: #1a0d0d;
+      font-family: 'Georgia', serif;
+      color: #f5e6c8;
+    }
+    h1 {
+      text-align: center;
+      color: #ffd700;
+      text-shadow: 0 0 20px #ffd700, 0 0 40px #dc143c;
+      margin-bottom: 10px;
+    }
+    .subtitle {
+      text-align: center;
+      color: #dc143c;
+      margin-bottom: 30px;
+      font-style: italic;
+    }
+    .section {
+      margin-bottom: 50px;
+    }
+    .section-title {
+      color: #ffd700;
+      border-bottom: 2px solid #dc143c;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .card-preview {
+      background: linear-gradient(135deg, #2d1a1a, #1a0d0d);
+      border: 2px solid #3d2a2a;
+      border-radius: 8px;
+      padding: 10px;
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    }
+    .card-preview:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 10px 30px rgba(220, 20, 60, 0.4);
+      border-color: #ffd700;
+    }
+    .card-preview.vampire:hover { box-shadow: 0 10px 30px rgba(220, 20, 60, 0.6); }
+    .card-preview.human:hover { box-shadow: 0 10px 30px rgba(255, 215, 0, 0.6); }
+    .card-preview.neutral:hover { box-shadow: 0 10px 30px rgba(255, 140, 0, 0.6); }
+    .card-preview svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .card-name {
+      text-align: center;
+      margin-top: 8px;
+      font-size: 13px;
+      font-weight: bold;
+      color: #ffd700;
+      text-shadow: 0 0 5px #dc143c;
+    }
+    .card-preview.vampire .card-name { color: #ff4444; text-shadow: 0 0 5px #dc143c; }
+    .card-preview.human .card-name { color: #ffd700; text-shadow: 0 0 5px #fff; }
+    .card-preview.neutral .card-name { color: #ff8c00; text-shadow: 0 0 5px #ff4444; }
+    .frame-preview {
+      max-width: 300px;
+      margin: 0 auto 20px;
+    }
+    .ui-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .ui-item {
+      background: linear-gradient(135deg, #2d1a1a, #1a0d0d);
+      border: 2px solid #3d2a2a;
+      border-radius: 8px;
+      padding: 20px;
+      max-width: 400px;
+    }
+    .ui-item svg { width: 100%; height: auto; }
+    .keywords-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      gap: 10px;
+    }
+    .keyword-item {
+      background: #1a0d0d;
+      border: 1px solid #3d2a2a;
+      border-radius: 4px;
+      padding: 10px;
+      text-align: center;
+    }
+    .keyword-item svg { width: 60px; height: 60px; }
+    .legend {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+    }
+    .legend-color {
+      width: 20px;
+      height: 20px;
+      border-radius: 4px;
+      border: 2px solid;
+    }
+    .legend-color.vampire { background: linear-gradient(135deg, #dc143c, #8b0000); border-color: #ffd700; }
+    .legend-color.human { background: linear-gradient(135deg, #ffd700, #daa520); border-color: #fff; }
+    .legend-color.neutral { background: linear-gradient(135deg, #ff8c00, #dc143c); border-color: #4a1a5a; }
+    .stats {
+      text-align: center;
+      margin-bottom: 30px;
+      padding: 20px;
+      background: linear-gradient(135deg, #2d1a1a, #1a0d0d);
+      border: 2px solid #3d2a2a;
+      border-radius: 8px;
+    }
+    .stat-number { font-size: 36px; font-weight: bold; color: #ffd700; }
+    .stat-label { color: #aaa; font-size: 14px; }
+    @media (max-width: 600px) {
+      .grid { grid-template-columns: 1fr 1fr; }
+      .ui-item { max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <h1>VAMORT</h1>
+  <p class="subtitle">Preview de Todos os Assets Visuais Originais</p>
+
+  <div class="legend">
+    <div class="legend-item"><div class="legend-color vampire"></div> Vampiro (13 artes)</div>
+    <div class="legend-item"><div class="legend-color human"></div> Humano (10 artes)</div>
+    <div class="legend-item"><div class="legend-color neutral"></div> Neutro (2 artes)</div>
+  </div>
+
+  <div class="stats">
+    <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+      <div><div class="stat-number">33</div><div class="stat-label">Cartas Balanceadas</div></div>
+      <div><div class="stat-number">25</div><div class="stat-label">Assets de Arte Únicos</div></div>
+      <div><div class="stat-number">13</div><div class="stat-label">Ícones de Palavras-chave</div></div>
+      <div><div class="stat-number">3</div><div class="stat-label">Frames de Carta</div></div>
+      <div><div class="stat-number">1</div><div class="stat-label">Tabuleiro Completo</div></div>
+      <div><div class="stat-number">1</div><div class="stat-label">UI (Botões/Barras)</div></div>
+    </div>
+  </div>
+
+  <!-- CARD FRAMES -->
+  <div class="section">
+    <h2 class="section-title">Frames de Carta</h2>
+    <div class="grid">
+      <div class="card-preview vampire">
+        <img src="cards/vampire-frame.svg" alt="Vampire Frame" class="frame-preview">
+        <div class="card-name">Vampire Frame</div>
+      </div>
+      <div class="card-preview human">
+        <img src="cards/human-frame.svg" alt="Human Frame" class="frame-preview">
+        <div class="card-name">Human Frame</div>
+      </div>
+      <div class="card-preview neutral">
+        <img src="cards/neutral-frame.svg" alt="Neutral Frame" class="frame-preview">
+        <div class="card-name">Neutral Frame</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VAMPIRE CARD ART -->
+  <div class="section">
+    <h2 class="section-title">Arte das Cartas Vampiro (13)</h2>
+    <div class="grid">
+      <div class="card-preview vampire">
+        <img src="cards/art/vampire-lord.svg" alt="Vampire Lord">
+        <div class="card-name">Vampire Lord</div>
+      </div>
+      <div class="card-preview vampire">
+        <img src="cards/art/ancient-one.svg" alt="Ancient One / Vlad">
+        <div class="card-name">Ancient One / Vlad</div>
+      </div>
+      <div class="card-preview vampire">
+        <img src="cards/art/vampire-knight.svg" alt="Vampire Knight">
+        <div class="card-name">Vampire Knight</div>
+      </div>
+      <div class="card-preview vampire">
+        <img src="cards/art/crimson-acolyte.svg" alt="Crimson Acolyte">
+        <div class="card-name">Crimson Acolyte</div>
+      </div>
+      <div class="card-preview vampire">
+        <img src="cards/art/bloodletter.svg" alt="Bloodletter">
+        <div class="card-name">Bloodletter</div>
+      </div>
+      <div class="card-preview vampire">
+        <img src="cards/art/soul-harvester.svg" alt="Soul Harvester">
+        <div class="card-name">Soul Harvester</div>
+      </div>
+      <div class="card-preview vampire">
+        <img src="cards/art/vampire-spawn.svg" alt="Vampire Spawn / Ghoul">
+        <div class="card-name">Vampire Spawn</div>
+      </div>
+      <div class="card-preview vampire">
+        <img src="cards/art/shadow-step.svg" alt="Shadow Step / Night Stalker">
+        <div class="card-name">Shadow Step</div>
+      </div>
+      <div class="card-preview vampire">
+        <img src="cards/art/blood-ritual.svg" alt="Blood Ritual">
+        <div class="card-name">Blood Ritual</div>
+      </div>
+      <div class="card-preview vampire">
+        <img src="cards/art/blood-fountain.svg" alt="Blood Fountain / Frenzy">
+        <div class="card-name">Blood Fountain</div>
+      </div>
+      <div class="card-preview vampire">
+        <img src="cards/art/blood-oath.svg" alt="Blood Oath">
+        <div class="card-name">Blood Oath</div>
+      </div>
+      <div class="card-preview vampire">
+        <img src="cards/art/pact-sealer.svg" alt="Pact Sealer">
+        <div class="card-name">Pact Sealer</div>
+      </div>
+      <div class="card-preview vampire">
+        <img src="cards/art/soul-harvest.svg" alt="Soul Harvest">
+        <div class="card-name">Soul Harvest</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HUMAN CARD ART -->
+  <div class="section">
+    <h2 class="section-title">Arte das Cartas Humano (10)</h2>
+    <div class="grid">
+      <div class="card-preview human">
+        <img src="cards/art/paladin.svg" alt="Paladin / Dawnbreaker">
+        <div class="card-name">Paladin</div>
+      </div>
+      <div class="card-preview human">
+        <img src="cards/art/saint-aurelia.svg" alt="Saint Aurelia">
+        <div class="card-name">Saint Aurelia</div>
+      </div>
+      <div class="card-preview human">
+        <img src="cards/art/crusader.svg" alt="Crusader">
+        <div class="card-name">Crusader</div>
+      </div>
+      <div class="card-preview human">
+        <img src="cards/art/inquisitor.svg" alt="Inquisitor">
+        <div class="card-name">Inquisitor</div>
+      </div>
+      <div class="card-preview human">
+        <img src="cards/art/priestess-of-dawn.svg" alt="Priestess of Dawn">
+        <div class="card-name">Priestess of Dawn</div>
+      </div>
+      <div class="card-preview human">
+        <img src="cards/art/novice-paladin.svg" alt="Novice Paladin">
+        <div class="card-name">Novice Paladin</div>
+      </div>
+      <div class="card-preview human">
+        <img src="cards/art/exorcist.svg" alt="Exorcist">
+        <div class="card-name">Exorcist</div>
+      </div>
+      <div class="card-preview human">
+        <img src="cards/art/militia-spearman.svg" alt="Militia Spearman / Crossbowman">
+        <div class="card-name">Militia Spearman</div>
+      </div>
+      <div class="card-preview human">
+        <img src="cards/art/holy-light.svg" alt="Holy Light / Sanctuary">
+        <div class="card-name">Holy Light</div>
+      </div>
+      <div class="card-preview human">
+        <img src="cards/art/divine-blessing.svg" alt="Divine Blessing / Archangel">
+        <div class="card-name">Divine Blessing</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NEUTRAL CARD ART -->
+  <div class="section">
+    <h2 class="section-title">Arte das Cartas Neutro (2)</h2>
+    <div class="grid">
+      <div class="card-preview neutral">
+        <img src="cards/art/twilight-drake.svg" alt="Twilight Drake">
+        <div class="card-name">Twilight Drake</div>
+      </div>
+      <div class="card-preview neutral">
+        <img src="cards/art/duskbat.svg" alt="Duskbat">
+        <div class="card-name">Duskbat</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KEYWORD ICONS -->
+  <div class="section">
+    <h2 class="section-title">Ícones de Palavras-chave (13)</h2>
+    <div class="keywords-grid">
+      <div class="keyword-item"><img src="icons/keywords.svg#lifesteal" alt="Lifesteal"><div>Lifesteal</div></div>
+      <div class="keyword-item"><img src="icons/keywords.svg#ward" alt="Ward"><div>Ward</div></div>
+      <div class="keyword-item"><img src="icons/keywords.svg#rush" alt="Rush"><div>Rush</div></div>
+      <div class="keyword-item"><img src="icons/keywords.svg#bloodsurge" alt="Bloodsurge"><div>Bloodsurge</div></div>
+      <div class="keyword-item"><img src="icons/keywords.svg#sanctify" alt="Sanctify"><div>Sanctify</div></div>
+      <div class="keyword-item"><img src="icons/keywords.svg#fanatic" alt="Fanatic"><div>Fanatic</div></div>
+      <div class="keyword-item"><img src="icons/keywords.svg#ambush" alt="Ambush"><div>Ambush</div></div>
+      <div class="keyword-item"><img src="icons/keywords.svg#drain" alt="Drain"><div>Drain</div></div>
+      <div class="keyword-item"><img src="icons/keywords.svg#banish" alt="Banish"><div>Banish</div></div>
+      <div class="keyword-item"><img src="icons/keywords.svg#sunfire" alt="Sunfire"><div>Sunfire</div></div>
+      <div class="keyword-item"><img src="icons/keywords.svg#ritual" alt="Ritual"><div>Ritual</div></div>
+      <div class="keyword-item"><img src="icons/keywords.svg#summon" alt="Summon"><div>Summon</div></div>
+      <div class="keyword-item"><img src="icons/keywords.svg#legendary" alt="Legendary"><div>Legendary</div></div>
+    </div>
+  </div>
+
+  <!-- UI ASSETS -->
+  <div class="section">
+    <h2 class="section-title">Assets de UI</h2>
+    <div class="ui-grid">
+      <div class="ui-item">
+        <h3 style="color:#ffd700; margin-top:0;">Botões & Barras</h3>
+        <img src="ui/buttons-bars.svg" alt="Buttons & Bars">
+      </div>
+      <div class="ui-item">
+        <h3 style="color:#ffd700; margin-top:0;">Tabuleiro do Jogo (1920x1080)</h3>
+        <img src="bg/game-board.svg" alt="Game Board">
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 50px; padding: 20px; color: #666; border-top: 1px solid #3d2a2a;">
+    <p>VAMORT - Vampire vs Human Card Battle Game</p>
+    <p>Todos os assets são originais, SVG vetorial, CC0-compatível</p>
+    <p>Tema: Gótico, Vampiro, Sangue vs Humano, Sagrado, Medieval Fantasy</p>
+  </div>
+
+  <script>
+    // Tenta carregar os SVGs inline para melhor visualização dos keywords
+    document.querySelectorAll('.keyword-item img').forEach(img => {
+      fetch(img.src.split('#')[0])
+        .then(r => r.text())
+        .then(svgText => {
+          const parser = new DOMParser();
+          const svgDoc = parser.parseFromString(svgText, 'image/svg+xml');
+          const targetId = img.src.split('#')[1];
+          const symbol = svgDoc.getElementById(targetId);
+          if (symbol) {
+            const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+            svg.setAttribute('viewBox', '0 0 64 64');
+            svg.innerHTML = `<use href="#${targetId}"/>`;
+            svg.style.width = '64px';
+            svg.style.height = '64px';
+            img.parentNode.replaceChild(svg, img);
+          }
+        })
+        .catch(() => {
+          img.style.display = 'none';
+        });
+    });
+  </script>
+</body>
+</html>

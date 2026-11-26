@@ -1,0 +1,174 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 220" width="290" height="220">
+  <defs>
+    <linearGradient id="pactBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2d0000"/>
+      <stop offset="50%" style="stop-color:#1a0000"/>
+      <stop offset="100%" style="stop-color:#0d0000"/>
+    </linearGradient>
+    <linearGradient id="pactArmor" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#5a0000"/>
+      <stop offset="50%" style="stop-color:#3a0000"/>
+      <stop offset="100%" style="stop-color:#1a0000"/>
+    </linearGradient>
+    <linearGradient id="bloodGold2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd700"/>
+      <stop offset="50%" style="stop-color:#dc143c"/>
+      <stop offset="100%" style="stop-color:#8b0000"/>
+    </linearGradient>
+    <linearGradient id="pactSeal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#dc143c"/>
+      <stop offset="50%" style="stop-color:#ff4444"/>
+      <stop offset="100%" style="stop-color:#8b0000"/>
+    </linearGradient>
+    <radialGradient id="pactCore" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#ffd700;stop-opacity:1"/>
+      <stop offset="50%" style="stop-color:#dc143c;stop-opacity:0.6"/>
+      <stop offset="100%" style="stop-color:#0d0000;stop-opacity:0"/>
+    </radialGradient>
+    <filter id="pactGlow2">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feFlood flood-color="#dc143c" flood-opacity="0.7"/>
+      <feComposite in2="blur" operator="in"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="290" height="220" fill="url(#pactBg)"/>
+
+  <!-- Ritual circle on floor -->
+  <g transform="translate(145, 170)" opacity="0.3" stroke="#dc143c" stroke-width="2" fill="none">
+    <circle cx="0" cy="0" r="85">
+      <animate attributeName="stroke-dashoffset" values="0;500;0" dur="8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="0" cy="0" r="65"/>
+    <circle cx="0" cy="0" r="45"/>
+    <circle cx="0" cy="0" r="25"/>
+    <!-- Pentagram lines -->
+    <path d="M 0,-85 L 0,-25 M 0,25 L 0,85 M -85,0 L -25,0 M 25,0 L 85,0 M -60,-60 L -18,-18 M 18,18 L 60,60 M -60,60 L -18,18 M 18,-18 L 60,-60"/>
+  </g>
+
+  <!-- Pact Sealer figure -->
+  <g transform="translate(145, 155)">
+    <!-- Heavy ceremonial armor -->
+    <path d="M -45,0 Q -55,-30 -45,-90 Q -25,-125 0,-135 Q 25,-125 45,-90 Q 55,-30 45,0 Q 35,20 0,25 Q -35,20 -45,0" fill="url(#pactArmor)" stroke="url(#bloodGold2)" stroke-width="2"/>
+
+    <!-- Pauldrons with sealing wax motifs -->
+    <ellipse cx="-48" cy="-15" rx="22" ry="18" fill="url(#pactArmor)" stroke="url(#bloodGold2)" stroke-width="2.5"/>
+    <ellipse cx="48" cy="-15" rx="22" ry="18" fill="url(#pactArmor)" stroke="url(#bloodGold2)" stroke-width="2.5"/>
+    <!-- Wax seal symbols on pauldrons -->
+    <g transform="translate(-48, -15)" filter="url(#pactGlow2)">
+      <circle cx="0" cy="0" r="12" fill="url(#pactSeal)"/>
+      <path d="M -6,-2 L 6,2 M -6,2 L 6,-2" stroke="#ffd700" stroke-width="2.5"/>
+    </g>
+    <g transform="translate(48, -15)" filter="url(#pactGlow2)">
+      <circle cx="0" cy="0" r="12" fill="url(#pactSeal)"/>
+      <path d="M -6,-2 L 6,2 M -6,2 L 6,-2" stroke="#ffd700" stroke-width="2.5"/>
+    </g>
+
+    <!-- Breastplate with central pact seal -->
+    <path d="M -30,-15 Q -35,-50 -15,-75 Q 0,-80 15,-75 Q 35,-50 30,-15 Q 25,15 -5,25 Q -25,15 -30,-15" fill="url(#pactArmor)" stroke="url(#bloodGold2)" stroke-width="2"/>
+    <!-- Large central seal -->
+    <g transform="translate(0, -40)" filter="url(#pactGlow2)">
+      <circle cx="0" cy="0" r="25" fill="url(#pactSeal)">
+        <animate attributeName="r" values="25;23;25" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="0" cy="0" r="18" fill="#1a0000" opacity="0.8"/>
+      <path d="M -10,-5 L 10,5 M -10,5 L 10,-5" stroke="#ffd700" stroke-width="3.5" fill="none"/>
+      <circle cx="0" cy="0" r="12" fill="none" stroke="#ffd700" stroke-width="2" opacity="0.8"/>
+      <!-- Orbiting seals -->
+      <g fill="url(#pactSeal)">
+        <circle cx="-25" cy="-15" r="4">
+          <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="6s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="25" cy="-15" r="4">
+          <animateTransform attributeName="transform" type="rotate" from="180 0 0" to="540 0 0" dur="6s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="0" cy="25" r="3">
+          <animateTransform attributeName="transform" type="rotate" from="90 0 0" to="450 0 0" dur="5s" repeatCount="indefinite"/>
+        </circle>
+      </g>
+    </g>
+
+    <!-- Arms -->
+    <!-- Left arm holding sealed contract -->
+    <g transform="translate(-50, 5)">
+      <rect x="-10" y="-15" width="20" height="50" rx="3" fill="url(#pactArmor)" stroke="url(#bloodGold2)" stroke-width="1.5"/>
+      <rect x="-12" y="35" width="24" height="15" rx="3" fill="url(#pactArmor)" stroke="url(#bloodGold2)" stroke-width="1.5"/>
+      <!-- Sealed contract -->
+      <g transform="translate(0, -30)">
+        <rect x="-15" y="-20" width="30" height="40" fill="#f5e6c8" stroke="#8b7355" stroke-width="1.5"/>
+        <path d="M -10,-20 L 10,-20" stroke="#8b7355" stroke-width="1"/>
+        <path d="M -8,-15 L 8,-15" stroke="#8b7355" stroke-width="0.5"/>
+        <path d="M -6,-10 L 6,-10" stroke="#8b7355" stroke-width="0.5"/>
+        <path d="M -4,-5 L 4,-5" stroke="#8b7355" stroke-width="0.5"/>
+        <!-- Wax seal on contract -->
+        <circle cx="0" cy="8" r="6" fill="url(#pactSeal)" filter="url(#pactGlow2)"/>
+        <path d="M -4,8 L 4,8 M 0,4 L 0,12" stroke="#ffd700" stroke-width="2"/>
+      </g>
+    </g>
+
+    <!-- Right hand raised in sealing gesture -->
+    <g transform="translate(50, 5)">
+      <rect x="-10" y="-15" width="20" height="50" rx="3" fill="url(#pactArmor)" stroke="url(#bloodGold2)" stroke-width="1.5"/>
+      <rect x="-12" y="35" width="24" height="15" rx="3" fill="url(#pactArmor)" stroke="url(#bloodGold2)" stroke-width="1.5"/>
+      <!-- Sealing gesture - blood magic -->
+      <g transform="translate(0, -30)" filter="url(#pactGlow2)">
+        <path d="M 0,0 Q 5,10 0,20 Q -5,10 0,0" fill="url(#pactArmor)" stroke="#3d0000" stroke-width="1"/>
+        <path d="M -3,20 L -8,28 M 0,20 L -5,28 M 3,20 L -2,28" stroke="url(#pactArmor)" stroke-width="3" stroke-linecap="round"/>
+        <!-- Blood magic swirl -->
+        <g fill="url(#pactSeal)">
+          <circle cx="0" cy="25" r="8" opacity="0.7">
+            <animate attributeName="r" values="8;5;8" dur="1.5s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="0" cy="25" r="4" opacity="0.9">
+            <animate attributeName="r" values="4;2;4" dur="1s" repeatCount="indefinite"/>
+          </circle>
+        </g>
+      </g>
+    </g>
+
+    <!-- Helm -->
+    <path d="M -30,-55 Q -30,-85 0,-93 Q 30,-85 30,-55 Q 30,-50 24,-50 Q 15,-65 0,-65 Q -15,-65 -24,-50 Q -30,-50 -30,-55" fill="url(#pactArmor)" stroke="url(#bloodGold2)" stroke-width="2.5"/>
+    <!-- Visor with seal -->
+    <rect x="-18" y="-72" width="36" height="8" fill="#050000" stroke="url(#bloodGold2)" stroke-width="1"/>
+    <circle cx="0" cy="-68" r="3" fill="url(#pactSeal)" filter="url(#pactGlow2)"/>
+
+    <!-- Tassets -->
+    <path d="M -40,35 Q -45,55 -20,75 Q 0,80 20,75 Q 45,55 40,35 Q 35,50 -5,55 Q -35,50 -40,35" fill="url(#pactArmor)" stroke="url(#bloodGold2)" stroke-width="1.5"/>
+
+    <!-- Floating sealed scrolls around -->
+    <g filter="url(#pactGlow2)">
+      <g transform="translate(-80, -30) rotate(-15)">
+        <rect x="-12" y="-18" width="24" height="36" fill="#f5e6c8" stroke="#8b7355" stroke-width="1"/>
+        <circle cx="0" cy="6" r="5" fill="url(#pactSeal)"/>
+        <animateTransform attributeName="transform" type="rotate" from="-15 0 0" to="345 0 0" dur="15s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.7;0.4;0.7" dur="3s" repeatCount="indefinite"/>
+      </g>
+      <g transform="translate(80, -40) rotate(10)">
+        <rect x="-12" y="-18" width="24" height="36" fill="#f5e6c8" stroke="#8b7355" stroke-width="1"/>
+        <circle cx="0" cy="6" r="5" fill="url(#pactSeal)"/>
+        <animateTransform attributeName="transform" type="rotate" from="10 0 0" to="370 0 0" dur="12s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.6;0.3;0.6" dur="3.5s" repeatCount="indefinite"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- Blood candles at base -->
+  <g transform="translate(40, 185)">
+    <rect x="-4" y="-50" width="8" height="50" fill="url(#pactArmor)" stroke="#3d0000" stroke-width="1"/>
+    <ellipse cx="0" cy="-55" rx="6" ry="3" fill="url(#pactSeal)" filter="url(#pactGlow2)">
+      <animate attributeName="ry" values="3;2;3" dur="1.2s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+  <g transform="translate(250, 185)">
+    <rect x="-4" y="-50" width="8" height="50" fill="url(#pactArmor)" stroke="#3d0000" stroke-width="1"/>
+    <ellipse cx="0" cy="-55" rx="6" ry="3" fill="url(#pactSeal)" filter="url(#pactGlow2)">
+      <animate attributeName="ry" values="3;2;3" dur="1.2s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+
+  <rect x="2" y="2" width="286" height="216" fill="none" stroke="#ffd700" stroke-width="2" opacity="0.5" rx="4"/>
+</svg>

@@ -1,0 +1,23 @@
+[
+  {
+    "id": "rare_pack",
+    "name": "Pacote Raro",
+    "cardsInPack": 5,
+    "description": "Contém 5 cartas, com garantia de pelo menos uma Rara ou superior.",
+    "factionFocus": null
+  },
+  {
+    "id": "vampire_pack",
+    "name": "Pacote Vampírico",
+    "cardsInPack": 5,
+    "description": "5 cartas da facção dos Vampiros, com chance de Lendárias.",
+    "factionFocus": null
+  },
+  {
+    "id": "human_pack",
+    "name": "Arsenal Humano",
+    "cardsInPack": 5,
+    "description": "5 cartas da facção Humana, incluindo armas e aliados.",
+    "factionFocus": null
+  }
+]

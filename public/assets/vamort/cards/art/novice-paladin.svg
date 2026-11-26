@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 220" width="290" height="220">
+  <defs>
+    <linearGradient id="noviceBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f5e6c8"/>
+      <stop offset="50%" style="stop-color:#e8d5b7"/>
+      <stop offset="100%" style="stop-color:#d4c4a8"/>
+    </linearGradient>
+    <linearGradient id="silverArmor" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f0f0f0"/>
+      <stop offset="50%" style="stop-color:#c0c0c0"/>
+      <stop offset="100%" style="stop-color:#a0a0a0"/>
+    </linearGradient>
+    <linearGradient id="goldTrim" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd700"/>
+      <stop offset="100%" style="stop-color:#daa520"/>
+    </linearGradient>
+    <linearGradient id="holyLightGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fff"/>
+      <stop offset="50%" style="stop-color:#ffd700"/>
+      <stop offset="100%" style="stop-color:#f5e6c8"/>
+    </linearGradient>
+    <radialGradient id="shieldGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#fff;stop-opacity:0.9"/>
+      <stop offset="50%" style="stop-color:#ffd700;stop-opacity:0.4"/>
+      <stop offset="100%" style="stop-color:#f5e6c8;stop-opacity:0"/>
+    </radialGradient>
+    <filter id="holyGlow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feFlood flood-color="#ffd700" flood-opacity="0.5"/>
+      <feComposite in2="blur" operator="in"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="290" height="220" fill="url(#noviceBg)"/>
+
+  <!-- Dawn light rays from top -->
+  <g stroke="url(#holyLightGrad)" stroke-width="2" opacity="0.2">
+    <line x1="40" y1="0" x2="60" y2="220"/>
+    <line x1="90" y1="0" x2="100" y2="220"/>
+    <line x1="145" y1="0" x2="145" y2="220">
+      <animate attributeName="opacity" values="0.2;0.4;0.2" dur="2s" repeatCount="indefinite"/>
+    </line>
+    <line x1="190" y1="0" x2="180" y2="220"/>
+    <line x1="240" y1="0" x2="220" y2="220"/>
+  </g>
+
+  <!-- Novice Paladin -->
+  <g transform="translate(145, 160)">
+    <!-- Tabard -->
+    <path d="M -35,10 Q -40,-20 -20,-50 Q 0,-55 20,-50 Q 40,-20 35,10 Q 30,30 -5,35 Q -30,30 -35,10" fill="url(#silverArmor)" stroke="url(#goldTrim)" stroke-width="2"/>
+    <!-- Cross on tabard -->
+    <path d="M 0,-30 L 0,-10 M -10,-20 L 10,-20" stroke="url(#goldTrim)" stroke-width="3" filter="url(#holyGlow)"/>
+
+    <!-- Armor pauldrons -->
+    <ellipse cx="-38" cy="-15" rx="18" ry="14" fill="url(#silverArmor)" stroke="url(#goldTrim)" stroke-width="2"/>
+    <ellipse cx="38" cy="-15" rx="18" ry="14" fill="url(#silverArmor)" stroke="url(#goldTrim)" stroke-width="2"/>
+
+    <!-- Chainmail under tabard -->
+    <path d="M -30,10 Q -35,30 -15,50 Q 0,55 15,50 Q 35,30 30,10" fill="#c0c0c0" stroke="#a0a0a0" stroke-width="0.5" opacity="0.5">
+      <filter>
+        <feTurbulence baseFrequency="0.05" numOctaves="2" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" scale="2"/>
+      </filter>
+    </path>
+
+    <!-- Arms -->
+    <!-- Left arm holding shield -->
+    <g transform="translate(-50, 0)">
+      <rect x="-8" y="-10" width="16" height="50" rx="3" fill="url(#silverArmor)" stroke="url(#goldTrim)" stroke-width="1.5"/>
+      <path d="M -8,10 Q -12,15 -8,20 M 8,10 Q 12,15 8,20" stroke="url(#goldTrim)" stroke-width="1.5"/>
+      <!-- Gauntlet -->
+      <rect x="-10" y="40" width="20" height="15" rx="3" fill="url(#silverArmor)" stroke="url(#goldTrim)" stroke-width="1.5"/>
+    </g>
+
+    <!-- Right arm holding mace -->
+    <g transform="translate(50, 0)">
+      <rect x="-8" y="-10" width="16" height="50" rx="3" fill="url(#silverArmor)" stroke="url(#goldTrim)" stroke-width="1.5"/>
+      <path d="M -8,10 Q -12,15 -8,20 M 8,10 Q 12,15 8,20" stroke="url(#goldTrim)" stroke-width="1.5"/>
+      <rect x="-10" y="40" width="20" height="15" rx="3" fill="url(#silverArmor)" stroke="url(#goldTrim)" stroke-width="1.5"/>
+      <!-- Mace -->
+      <rect x="-3" y="55" width="6" height="50" fill="#8b7355" stroke="#5a4a3a" stroke-width="1"/>
+      <circle cx="0" cy="105" r="14" fill="url(#silverArmor)" stroke="url(#goldTrim)" stroke-width="2" filter="url(#holyGlow)"/>
+      <circle cx="0" cy="105" r="8" fill="url(#holyLightGrad)" filter="url(#holyGlow)">
+        <animate attributeName="r" values="8;6;8" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+    <!-- Helm -->
+    <path d="M -25,-55 Q -25,-75 0,-82 Q 25,-75 25,-55 Q 25,-50 20,-50 Q 15,-60 0,-60 Q -15,-60 -20,-50 Q -25,-50 -25,-55" fill="url(#silverArmor)" stroke="url(#goldTrim)" stroke-width="2"/>
+    <!-- Visor -->
+    <rect x="-15" y="-65" width="30" height="8" fill="#1a1a1a" stroke="url(#goldTrim)" stroke-width="1"/>
+    <line x1="0" y1="-65" x2="0" y2="-57" stroke="url(#goldTrim)" stroke-width="1.5" opacity="0.7"/>
+
+    <!-- Face visible behind visor -->
+    <ellipse cx="0" cy="-68" rx="12" ry="10" fill="#f5e6c8" opacity="0.3"/>
+    <ellipse cx="-4" cy="-70" rx="2" ry="3" fill="#3d2a1a"/>
+    <ellipse cx="4" cy="-70" rx="2" ry="3" fill="#3d2a1a"/>
+
+    <!-- Shield on left arm -->
+    <g transform="translate(-65, 20)">
+      <path d="M -25,0 Q -35,-20 -20,-55 Q 0,-65 20,-55 Q 35,-20 25,0 Q 20,15 0,20 Q -20,15 -25,0" fill="url(#shieldGlow)" stroke="url(#goldTrim)" stroke-width="3" filter="url(#holyGlow)"/>
+      <path d="M 0,-50 L 0,-10 M -15,-30 L 15,-30" stroke="url(#goldTrim)" stroke-width="2.5" filter="url(#holyGlow)"/>
+      <circle cx="0" cy="-30" r="18" fill="none" stroke="url(#goldTrim)" stroke-width="1.5" opacity="0.5"/>
+    </g>
+
+    <!-- Holy aura around feet -->
+    <ellipse cx="0" cy="50" rx="50" ry="10" fill="url(#holyLightGrad)" opacity="0.2">
+      <animate attributeName="opacity" values="0.2;0.4;0.2" dur="2s" repeatCount="indefinite"/>
+    </ellipse>
+  </g>
+
+  <!-- Floating motes of light -->
+  <g fill="url(#holyLightGrad)">
+    <circle cx="30" cy="40" r="2">
+      <animate attributeName="cy" values="40;15;40" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="260" cy="50" r="1.5">
+      <animate attributeName="cy" values="50;20;50" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0.9;0.4" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="50" cy="190" r="2">
+      <animate attributeName="cy" values="190;170;190" dur="3.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="240" cy="180" r="1.5">
+      <animate attributeName="cy" values="180;160;180" dur="2.8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2.8s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <rect x="2" y="2" width="286" height="216" fill="none" stroke="url(#goldTrim)" stroke-width="2" opacity="0.6" rx="4"/>
+</svg>

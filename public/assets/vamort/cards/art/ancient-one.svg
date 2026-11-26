@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 220" width="290" height="220">
+  <defs>
+    <linearGradient id="neutralArtBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e1030"/>
+      <stop offset="50%" style="stop-color:#1a0f2a"/>
+      <stop offset="100%" style="stop-color:#0f081a"/>
+    </linearGradient>
+    <linearGradient id="cosmicEnergy" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#da70d6"/>
+      <stop offset="50%" style="stop-color:#9370db"/>
+      <stop offset="100%" style="stop-color:#4b0082"/>
+    </linearGradient>
+    <linearGradient id="voidEssence" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8a2be2"/>
+      <stop offset="100%" style="stop-color:#1a0a2e"/>
+    </linearGradient>
+    <radialGradient id="starCore" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#fff;stop-opacity:0.9"/>
+      <stop offset="30%" style="stop-color:#da70d6;stop-opacity:0.6"/>
+      <stop offset="100%" style="stop-color:#4b0082;stop-opacity:0"/>
+    </radialGradient>
+    <filter id="cosmicGlow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feFlood flood-color="#da70d6" flood-opacity="0.6"/>
+      <feComposite in2="blur" operator="in"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="290" height="220" fill="url(#neutralArtBg)"/>
+  
+  <!-- Starfield background -->
+  <g fill="#fff" opacity="0.6">
+    <circle cx="30" cy="30" r="1"/>
+    <circle cx="80" cy="20" r="0.5"/>
+    <circle cx="120" cy="50" r="1"/>
+    <circle cx="180" cy="15" r="0.5"/>
+    <circle cx="240" cy="40" r="1"/>
+    <circle cx="260" cy="10" r="0.5"/>
+    <circle cx="50" cy="100" r="0.5"/>
+    <circle cx="150" cy="80" r="1"/>
+    <circle cx="200" cy="110" r="0.5"/>
+    <circle cx="60" cy="180" r="1"/>
+    <circle cx="140" cy="190" r="0.5"/>
+    <circle cx="220" cy="170" r="1"/>
+    <circle cx="270" cy="150" r="0.5"/>
+  </g>
+  
+  <!-- Nebula clouds -->
+  <g opacity="0.3">
+    <ellipse cx="145" cy="110" rx="120" ry="80" fill="url(#cosmicEnergy)"/>
+    <ellipse cx="145" cy="110" rx="80" ry="50" fill="url(#voidEssence)"/>
+  </g>
+  
+  <!-- Ancient Vampire Entity -->
+  <g transform="translate(145, 110)" filter="url(#cosmicGlow)">
+    <!-- Outer energy ring -->
+    <circle cx="0" cy="0" r="90" fill="none" stroke="url(#cosmicEnergy)" stroke-width="2" opacity="0.5" stroke-dasharray="15,10">
+      <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="30s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Middle ring -->
+    <circle cx="0" cy="0" r="65" fill="none" stroke="url(#voidEssence)" stroke-width="1.5" opacity="0.6" stroke-dasharray="8,6">
+      <animateTransform attributeName="transform" type="rotate" from="360 0 0" to="0 0 0" dur="25s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Inner core -->
+    <circle cx="0" cy="0" r="40" fill="url(#starCore)" opacity="0.8"/>
+    <circle cx="0" cy="0" r="30" fill="url(#voidEssence)" opacity="0.6"/>
+    <circle cx="0" cy="0" r="18" fill="#fff" opacity="0.9">
+      <animate attributeName="r" values="16;20;16" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Orbiting fragments -->
+    <g fill="url(#cosmicEnergy)">
+      <circle cx="55" cy="0" r="4" opacity="0.8">
+        <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="8s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="70" cy="0" r="3" opacity="0.6">
+        <animateTransform attributeName="transform" type="rotate" from="60 0 0" to="420 0 0" dur="10s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="45" cy="0" r="2.5" opacity="0.7">
+        <animateTransform attributeName="transform" type="rotate" from="120 0 0" to="480 0 0" dur="7s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="60" cy="0" r="3.5" opacity="0.5">
+        <animateTransform attributeName="transform" type="rotate" from="180 0 0" to="540 0 0" dur="9s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="50" cy="0" r="2" opacity="0.6">
+        <animateTransform attributeName="transform" type="rotate" from="240 0 0" to="600 0 0" dur="6s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="65" cy="0" r="3" opacity="0.5">
+        <animateTransform attributeName="transform" type="rotate" from="300 0 0" to="660 0 0" dur="11s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    
+    <!-- Cosmic wings -->
+    <g stroke="url(#cosmicEnergy)" stroke-width="2" fill="none" opacity="0.7">
+      <path d="M -40,-20 Q -70,-50 -60,-80 Q -40,-60 -20,-40 Q -10,-30 0,-20">
+        <animate attributeName="d" values="M -40,-20 Q -70,-50 -60,-80 Q -40,-60 -20,-40 Q -10,-30 0,-20; M -40,-20 Q -75,-45 -65,-75 Q -45,-55 -25,-35 Q -15,-25 0,-20; M -40,-20 Q -70,-50 -60,-80 Q -40,-60 -20,-40 Q -10,-30 0,-20" dur="4s" repeatCount="indefinite"/>
+      </path>
+      <path d="M 40,-20 Q 70,-50 60,-80 Q 40,-60 20,-40 Q 10,-30 0,-20">
+        <animate attributeName="d" values="M 40,-20 Q 70,-50 60,-80 Q 40,-60 20,-40 Q 10,-30 0,-20; M 40,-20 Q 75,-45 65,-75 Q 45,-55 25,-35 Q 15,-25 0,-20; M 40,-20 Q 70,-50 60,-80 Q 40,-60 20,-40 Q 10,-30 0,-20" dur="4s" repeatCount="indefinite"/>
+      </path>
+    </g>
+    
+    <!-- Tendrils -->
+    <g stroke="url(#voidEssence)" stroke-width="1.5" fill="none" opacity="0.6">
+      <path d="M 0,20 Q 20,40 10,60 Q 0,70 -10,90">
+        <animate attributeName="d" values="M 0,20 Q 20,40 10,60 Q 0,70 -10,90; M 0,20 Q -15,40 -5,60 Q 5,70 -5,90; M 0,20 Q 20,40 10,60 Q 0,70 -10,90" dur="3s" repeatCount="indefinite"/>
+      </path>
+      <path d="M 0,20 Q -20,40 -10,60 Q 0,70 10,90">
+        <animate attributeName="d" values="M 0,20 Q -20,40 -10,60 Q 0,70 10,90; M 0,20 Q 15,40 5,60 Q -5,70 5,90; M 0,20 Q -20,40 -10,60 Q 0,70 10,90" dur="3s" repeatCount="indefinite"/>
+      </path>
+      <path d="M -20,10 Q -35,30 -25,50 Q -15,65 -20,85">
+        <animate attributeName="d" values="M -20,10 Q -35,30 -25,50 Q -15,65 -20,85; M -20,10 Q -40,25 -30,45 Q -20,60 -25,80; M -20,10 Q -35,30 -25,50 Q -15,65 -20,85" dur="3.5s" repeatCount="indefinite"/>
+      </path>
+      <path d="M 20,10 Q 35,30 25,50 Q 15,65 20,85">
+        <animate attributeName="d" values="M 20,10 Q 35,30 25,50 Q 15,65 20,85; M 20,10 Q 40,25 30,45 Q 20,60 25,80; M 20,10 Q 35,30 25,50 Q 15,65 20,85" dur="3.5s" repeatCount="indefinite"/>
+      </path>
+    </g>
+  </g>
+  
+  <!-- Ancient runes at bottom -->
+  <g transform="translate(145, 195)" fill="url(#cosmicEnergy)" font-family="Georgia, serif" font-size="16" text-anchor="middle" opacity="0.5">
+    <text x="-60" y="0">ᚠ</text>
+    <text x="-30" y="0">ᚢ</text>
+    <text x="0" y="0">ᚦ</text>
+    <text x="30" y="0">ᚨ</text>
+    <text x="60" y="0">ᚱ</text>
+  </g>
+  
+  <rect x="2" y="2" width="286" height="216" fill="none" stroke="url(#cosmicEnergy)" stroke-width="2" opacity="0.5" rx="4"/>
+</svg>

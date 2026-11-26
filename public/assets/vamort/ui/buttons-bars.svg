@@ -1,0 +1,202 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 256" width="512" height="256">
+  <defs>
+    <linearGradient id="btnVampireGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b0000"/>
+      <stop offset="50%" style="stop-color:#5a0000"/>
+      <stop offset="100%" style="stop-color:#3d0000"/>
+    </linearGradient>
+    <linearGradient id="btnVampireHover" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#a50000"/>
+      <stop offset="50%" style="stop-color:#7a0000"/>
+      <stop offset="100%" style="stop-color:#5a0000"/>
+    </linearGradient>
+    <linearGradient id="btnHumanGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f5e6c8"/>
+      <stop offset="50%" style="stop-color:#e8d5b7"/>
+      <stop offset="100%" style="stop-color:#d4c4a8"/>
+    </linearGradient>
+    <linearGradient id="btnHumanHover" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#fff8dc"/>
+      <stop offset="50%" style="stop-color:#f5e6c8"/>
+      <stop offset="100%" style="stop-color:#e8d5b7"/>
+    </linearGradient>
+    <linearGradient id="btnGoldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd700"/>
+      <stop offset="100%" style="stop-color:#b8860b"/>
+    </linearGradient>
+    <linearGradient id="bloodBarGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#dc143c"/>
+      <stop offset="50%" style="stop-color:#8b0000"/>
+      <stop offset="100%" style="stop-color:#4a0000"/>
+    </linearGradient>
+    <linearGradient id="healthBarGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2e8b57"/>
+      <stop offset="50%" style="stop-color:#228b22"/>
+      <stop offset="100%" style="stop-color:#1a5c1a"/>
+    </linearGradient>
+    <linearGradient id="manaBarGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4169e1"/>
+      <stop offset="50%" style="stop-color:#1e3a8a"/>
+      <stop offset="100%" style="stop-color:#0f1a4a"/>
+    </linearGradient>
+    <filter id="btnGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="innerShadow">
+      <feOffset dx="0" dy="2"/>
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feComposite in2="SourceAlpha" operator="in"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <pattern id="metalTexture" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
+      <path d="M 0,0 L 4,0 L 4,4 L 0,4 Z" fill="#2a2a2a"/>
+      <line x1="0" y1="0" x2="4" y2="4" stroke="#3a3a3a" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  
+  <!-- VAMPIRE BUTTONS -->
+  <!-- Primary button normal -->
+  <g id="vampire-btn-normal" transform="translate(16, 16)">
+    <rect x="0" y="0" width="120" height="44" rx="8" fill="url(#btnVampireGrad)" stroke="url(#btnGoldGrad)" stroke-width="2" filter="url(#btnGlow)"/>
+    <rect x="2" y="2" width="116" height="40" rx="6" fill="url(#metalTexture)" opacity="0.3"/>
+    <text x="60" y="29" font-family="Georgia, serif" font-size="16" font-weight="bold" fill="#ffd700" text-anchor="middle">JOGAR</text>
+  </g>
+  
+  <!-- Primary button hover -->
+  <g id="vampire-btn-hover" transform="translate(152, 16)">
+    <rect x="0" y="0" width="120" height="44" rx="8" fill="url(#btnVampireHover)" stroke="#fff" stroke-width="2" filter="url(#btnGlow)"/>
+    <rect x="2" y="2" width="116" height="40" rx="6" fill="url(#metalTexture)" opacity="0.3"/>
+    <text x="60" y="29" font-family="Georgia, serif" font-size="16" font-weight="bold" fill="#fff" text-anchor="middle">JOGAR</text>
+  </g>
+  
+  <!-- Primary button pressed -->
+  <g id="vampire-btn-pressed" transform="translate(288, 16)">
+    <rect x="0" y="0" width="120" height="44" rx="8" fill="url(#btnVampireGrad)" stroke="#8b0000" stroke-width="2" filter="url(#innerShadow)"/>
+    <rect x="2" y="2" width="116" height="40" rx="6" fill="url(#metalTexture)" opacity="0.5"/>
+    <text x="60" y="30" font-family="Georgia, serif" font-size="16" font-weight="bold" fill="#b8860b" text-anchor="middle">JOGAR</text>
+  </g>
+  
+  <!-- Secondary button -->
+  <g id="vampire-btn-secondary" transform="translate(16, 76)">
+    <rect x="0" y="0" width="120" height="44" rx="8" fill="#1a0000" stroke="#4a0000" stroke-width="2"/>
+    <rect x="2" y="2" width="116" height="40" rx="6" fill="url(#metalTexture)" opacity="0.4"/>
+    <text x="60" y="29" font-family="Georgia, serif" font-size="16" fill="#8b0000" text-anchor="middle">CANCELAR</text>
+  </g>
+  
+  <!-- Icon button -->
+  <g id="vampire-btn-icon" transform="translate(152, 76)">
+    <rect x="0" y="0" width="44" height="44" rx="8" fill="url(#btnVampireGrad)" stroke="url(#btnGoldGrad)" stroke-width="1.5" filter="url(#btnGlow)"/>
+    <circle cx="22" cy="22" r="14" fill="none" stroke="#ffd700" stroke-width="2" stroke-dasharray="8,4"/>
+    <path d="M 22,8 L 22,14 M 16,22 L 28,22" stroke="#ffd700" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  
+  <!-- HUMAN BUTTONS -->
+  <!-- Primary button normal -->
+  <g id="human-btn-normal" transform="translate(16, 136)">
+    <rect x="0" y="0" width="120" height="44" rx="8" fill="url(#btnHumanGrad)" stroke="url(#btnGoldGrad)" stroke-width="2" filter="url(#btnGlow)"/>
+    <rect x="2" y="2" width="116" height="40" rx="6" fill="url(#metalTexture)" opacity="0.2"/>
+    <text x="60" y="29" font-family="Georgia, serif" font-size="16" font-weight="bold" fill="#8b7b4a" text-anchor="middle">JOGAR</text>
+  </g>
+  
+  <!-- Primary button hover -->
+  <g id="human-btn-hover" transform="translate(152, 136)">
+    <rect x="0" y="0" width="120" height="44" rx="8" fill="url(#btnHumanHover)" stroke="#fff" stroke-width="2" filter="url(#btnGlow)"/>
+    <rect x="2" y="2" width="116" height="40" rx="6" fill="url(#metalTexture)" opacity="0.2"/>
+    <text x="60" y="29" font-family="Georgia, serif" font-size="16" font-weight="bold" fill="#b8860b" text-anchor="middle">JOGAR</text>
+  </g>
+  
+  <!-- Secondary button -->
+  <g id="human-btn-secondary" transform="translate(288, 136)">
+    <rect x="0" y="0" width="120" height="44" rx="8" fill="#f5f5dc" stroke="#d4c4a8" stroke-width="2"/>
+    <rect x="2" y="2" width="116" height="40" rx="6" fill="url(#metalTexture)" opacity="0.3"/>
+    <text x="60" y="29" font-family="Georgia, serif" font-size="16" fill="#8b7b4a" text-anchor="middle">CANCELAR</text>
+  </g>
+  
+  <!-- BLOOD BAR (Vampire resource) -->
+  <g id="blood-bar" transform="translate(16, 196)">
+    <rect x="0" y="0" width="280" height="24" rx="12" fill="#1a0000" stroke="#3d0000" stroke-width="2" filter="url(#innerShadow)"/>
+    <rect x="2" y="2" width="276" height="20" rx="10" fill="url(#bloodBarGrad)" opacity="0.9"/>
+    <rect x="2" y="2" width="276" height="20" rx="10" fill="url(#metalTexture)" opacity="0.2"/>
+    <!-- Blood orbs -->
+    <circle cx="14" cy="12" r="8" fill="url(#bloodBarGrad)" stroke="#ffd700" stroke-width="1" filter="url(#btnGlow)"/>
+    <text x="14" y="15" font-family="Georgia, serif" font-size="9" font-weight="bold" fill="#ffd700" text-anchor="middle">10</text>
+    <text x="30" y="19" font-family="Georgia, serif" font-size="12" fill="#ffd700">10 / 10</text>
+    <!-- Blood droplets decoration -->
+    <g fill="#dc143c" opacity="0.6">
+      <path d="M 260,12 Q 265,2 270,12 Q 265,18 260,12" transform="translate(0,0)"/>
+      <path d="M 270,12 Q 275,4 278,12 Q 275,16 270,12" transform="translate(0,0)"/>
+    </g>
+  </g>
+  
+  <!-- HEALTH BAR -->
+  <g id="health-bar" transform="translate(16, 230)">
+    <rect x="0" y="0" width="280" height="20" rx="10" fill="#0d1a0d" stroke="#1a3d1a" stroke-width="2" filter="url(#innerShadow)"/>
+    <rect x="2" y="2" width="276" height="16" rx="8" fill="url(#healthBarGrad)" opacity="0.9"/>
+    <rect x="2" y="2" width="276" height="16" rx="8" fill="url(#metalTexture)" opacity="0.15"/>
+    <circle cx="10" cy="10" r="6" fill="url(#healthBarGrad)" stroke="#2e8b57" stroke-width="1"/>
+    <text x="20" y="15" font-family="Georgia, serif" font-size="11" fill="#2e8b57">30 / 30</text>
+  </g>
+  
+  <!-- MANA/BLOOD BAR FOR HUMANS -->
+  <g id="mana-bar-human" transform="translate(310, 196)">
+    <rect x="0" y="0" width="180" height="24" rx="12" fill="#0f1a4a" stroke="#1e3a8a" stroke-width="2" filter="url(#innerShadow)"/>
+    <rect x="2" y="2" width="176" height="20" rx="10" fill="url(#manaBarGrad)" opacity="0.9"/>
+    <circle cx="12" cy="12" r="8" fill="url(#manaBarGrad)" stroke="#4169e1" stroke-width="1" filter="url(#btnGlow)"/>
+    <text x="12" y="15" font-family="Georgia, serif" font-size="9" font-weight="bold" fill="#fff" text-anchor="middle">10</text>
+    <text x="28" y="19" font-family="Georgia, serif" font-size="12" fill="#fff">10 / 10</text>
+  </g>
+  
+  <!-- TURN TIMER -->
+  <g id="turn-timer" transform="translate(310, 230)">
+    <circle cx="90" cy="10" r="22" fill="#0a0515" stroke="url(#twilightGrad)" stroke-width="2" filter="url(#btnGlow)"/>
+    <circle cx="90" cy="10" r="18" fill="none" stroke="url(#bloodBarGrad)" stroke-width="4" stroke-dasharray="113" stroke-dashoffset="28" stroke-linecap="round" opacity="0.8">
+      <animate attributeName="stroke-dashoffset" from="113" to="0" dur="60s" repeatCount="1"/>
+    </circle>
+    <text x="90" y="14" font-family="Georgia, serif" font-size="14" font-weight="bold" fill="#ffd700" text-anchor="middle">45</text>
+    <text x="90" y="28" font-family="Georgia, serif" font-size="8" fill="#da70d6" text-anchor="middle">TURNO</text>
+  </g>
+  
+  <!-- END TURN BUTTON -->
+  <g id="end-turn-btn" transform="translate(400, 16)">
+    <rect x="0" y="0" width="96" height="48" rx="10" fill="url(#btnVampireGrad)" stroke="#ffd700" stroke-width="3" filter="url(#btnGlow)"/>
+    <rect x="2" y="2" width="92" height="44" rx="8" fill="url(#metalTexture)" opacity="0.3"/>
+    <text x="48" y="22" font-family="Georgia, serif" font-size="11" font-weight="bold" fill="#ffd700" text-anchor="middle">FIM DO</text>
+    <text x="48" y="35" font-family="Georgia, serif" font-size="11" font-weight="bold" fill="#ffd700" text-anchor="middle">TURNO</text>
+    <path d="M 70,18 L 82,24 L 70,30" fill="none" stroke="#ffd700" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  
+  <!-- HERO PORTRAIT FRAME -->
+  <g id="hero-frame-vampire" transform="translate(400, 80)">
+    <circle cx="48" cy="48" r="44" fill="url(#btnVampireGrad)" stroke="url(#btnGoldGrad)" stroke-width="3" filter="url(#btnGlow)"/>
+    <circle cx="48" cy="48" r="40" fill="#1a0000" stroke="#3d0000" stroke-width="1"/>
+    <circle cx="48" cy="48" r="36" fill="url(#metalTexture)" opacity="0.4"/>
+    <!-- Hero art placeholder -->
+    <text x="48" y="52" font-family="Georgia, serif" font-size="11" fill="#4a0000" text-anchor="middle">[HERÓI]</text>
+    <!-- Health -->
+    <circle cx="48" cy="82" r="14" fill="#0d1a0d" stroke="#2e8b57" stroke-width="2"/>
+    <text x="48" y="86" font-family="Georgia, serif" font-size="14" font-weight="bold" fill="#2e8b57" text-anchor="middle">30</text>
+    <!-- Armor -->
+    <circle cx="78" cy="82" r="10" fill="#2a2a2a" stroke="#666" stroke-width="1.5"/>
+    <text x="78" y="85" font-family="Georgia, serif" font-size="10" font-weight="bold" fill="#aaa" text-anchor="middle">0</text>
+  </g>
+  
+  <!-- DECK/COUNTERS -->
+  <g id="deck-counter" transform="translate(400, 180)">
+    <rect x="0" y="0" width="96" height="36" rx="6" fill="#1a0000" stroke="#3d0000" stroke-width="1.5"/>
+    <text x="20" y="23" font-family="Georgia, serif" font-size="14" fill="#ffd700" text-anchor="middle">🃏</text>
+    <text x="60" y="24" font-family="Georgia, serif" font-size="16" font-weight="bold" fill="#fff" text-anchor="middle">23</text>
+  </g>
+  
+  <g id="hand-counter" transform="translate(400, 220)">
+    <rect x="0" y="0" width="96" height="36" rx="6" fill="#1a0000" stroke="#3d0000" stroke-width="1.5"/>
+    <text x="20" y="23" font-family="Georgia, serif" font-size="14" fill="#da70d6" text-anchor="middle">🤲</text>
+    <text x="60" y="24" font-family="Georgia, serif" font-size="16" font-weight="bold" fill="#fff" text-anchor="middle">7</text>
+  </g>
+</svg>

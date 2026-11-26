@@ -1,0 +1,254 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <defs>
+    <!-- Vampire side gradient -->
+    <linearGradient id="vampireSide" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a0000"/>
+      <stop offset="30%" style="stop-color:#0d0000"/>
+      <stop offset="60%" style="stop-color:#080000"/>
+      <stop offset="100%" style="stop-color:#030000"/>
+    </linearGradient>
+    
+    <!-- Human side gradient -->
+    <linearGradient id="humanSide" x1="100%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#fff8dc"/>
+      <stop offset="30%" style="stop-color:#f5e6c8"/>
+      <stop offset="60%" style="stop-color:#e8d5b7"/>
+      <stop offset="100%" style="stop-color:#d4c4a8"/>
+    </linearGradient>
+    
+    <!-- Center divide -->
+    <linearGradient id="centerDivide" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" style="stop-color:#4a0000"/>
+      <stop offset="25%" style="stop-color:#8b0000"/>
+      <stop offset="50%" style="stop-color:#ffd700"/>
+      <stop offset="75%" style="stop-color:#daa520"/>
+      <stop offset="100%" style="stop-color:#fff8dc"/>
+    </linearGradient>
+    
+    <!-- Blood mist pattern -->
+    <pattern id="bloodMist" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
+      <ellipse cx="50" cy="50" rx="30" ry="15" fill="#3d0000" opacity="0.08"/>
+      <ellipse cx="150" cy="150" rx="25" ry="12" fill="#4a0000" opacity="0.06"/>
+      <ellipse cx="180" cy="30" rx="20" ry="10" fill="#2d0000" opacity="0.07"/>
+    </pattern>
+    
+    <!-- Holy light pattern -->
+    <pattern id="holyLight" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
+      <ellipse cx="50" cy="50" rx="30" ry="15" fill="#fffacd" opacity="0.06"/>
+      <ellipse cx="150" cy="150" rx="25" ry="12" fill="#f0e68c" opacity="0.05"/>
+      <ellipse cx="20" cy="180" rx="20" ry="10" style="fill:#ffe4b5;opacity:0.04"/>
+    </pattern>
+    
+    <!-- Gothic arch pattern -->
+    <pattern id="gothicArch" x="0" y="0" width="150" height="300" patternUnits="userSpaceOnUse">
+      <path d="M 75,0 Q 75,50 50,100 Q 25,150 75,300 Q 125,150 100,100 Q 75,50 75,0" 
+            fill="none" stroke="#ffd700" stroke-width="0.5" opacity="0.08"/>
+    </pattern>
+    
+    <!-- Cross pattern -->
+    <pattern id="crossPattern" x="0" y="0" width="150" height="300" patternUnits="userSpaceOnUse">
+      <path d="M 75,0 L 75,300 M 0,150 L 150,150" 
+            fill="none" stroke="#daa520" stroke-width="0.5" opacity="0.08"/>
+    </pattern>
+    
+    <!-- Radial vignette -->
+    <radialGradient id="vignette" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" style="stop-color:#000;stop-opacity:0"/>
+      <stop offset="70%" style="stop-color:#000;stop-opacity:0.1"/>
+      <stop offset="100%" style="stop-color:#000;stop-opacity:0.4"/>
+    </radialGradient>
+    
+    <!-- Glow filters -->
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="15" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    
+    <filter id="intenseGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="30" result="blur"/>
+      <feFlood flood-color="#ffd700" flood-opacity="0.3"/>
+      <feComposite in2="blur" operator="in"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Base background -->
+  <rect width="1920" height="1080" fill="url(#vampireSide)"/>
+  <rect x="960" width="960" height="1080" fill="url(#humanSide)"/>
+  
+  <!-- Center dividing line with glow -->
+  <rect x="955" y="0" width="10" height="1080" fill="url(#centerDivide)" filter="url(#intenseGlow)"/>
+  <rect x="957" y="0" width="6" height="1080" fill="url(#centerDivide)" opacity="0.8"/>
+  
+  <!-- Vampire side atmospheric effects -->
+  <rect x="0" y="0" width="960" height="1080" fill="url(#bloodMist)"/>
+  <rect x="0" y="0" width="960" height="1080" fill="url(#gothicArch)"/>
+  
+  <!-- Human side atmospheric effects -->
+  <rect x="960" y="0" width="960" height="1080" fill="url(#holyLight)"/>
+  <rect x="960" y="0" width="960" height="1080" fill="url(#crossPattern)"/>
+  
+  <!-- Vampiric corner decorations -->
+  <g transform="translate(50, 50)" fill="none" stroke="#ffd700" stroke-width="2" opacity="0.4" filter="url(#softGlow)">
+    <!-- Top-left gothic corner -->
+    <path d="M 0,80 L 0,20 Q 0,0 20,0 L 80,0"/>
+    <path d="M 0,50 L 30,50 M 50,0 L 50,30"/>
+    <!-- Bat wing accents -->
+    <path d="M -10,20 Q -30,10 -40,25 Q -30,35 -10,30" opacity="0.6"/>
+  </g>
+  
+  <g transform="translate(910, 50) scale(-1, 1)" fill="none" stroke="#ffd700" stroke-width="2" opacity="0.4" filter="url(#softGlow)">
+    <path d="M 0,80 L 0,20 Q 0,0 20,0 L 80,0"/>
+    <path d="M 0,50 L 30,50 M 50,0 L 50,30"/>
+    <path d="M -10,20 Q -30,10 -40,25 Q -30,35 -10,30" opacity="0.6"/>
+  </g>
+  
+  <g transform="translate(50, 1030) scale(1, -1)" fill="none" stroke="#ffd700" stroke-width="2" opacity="0.4" filter="url(#softGlow)">
+    <path d="M 0,80 L 0,20 Q 0,0 20,0 L 80,0"/>
+    <path d="M 0,50 L 30,50 M 50,0 L 50,30"/>
+    <path d="M -10,20 Q -30,10 -40,25 Q -30,35 -10,30" opacity="0.6"/>
+  </g>
+  
+  <g transform="translate(910, 1030) scale(-1, -1)" fill="none" stroke="#ffd700" stroke-width="2" opacity="0.4" filter="url(#softGlow)">
+    <path d="M 0,80 L 0,20 Q 0,0 20,0 L 80,0"/>
+    <path d="M 0,50 L 30,50 M 50,0 L 50,30"/>
+    <path d="M -10,20 Q -30,10 -40,25 Q -30,35 -10,30" opacity="0.6"/>
+  </g>
+  
+  <!-- Holy corner decorations -->
+  <g transform="translate(1010, 50)" fill="none" stroke="#daa520" stroke-width="2" opacity="0.4" filter="url(#softGlow)">
+    <!-- Top-right holy corner -->
+    <path d="M 0,80 L 0,20 Q 0,0 20,0 L 80,0"/>
+    <path d="M 0,50 L 30,50 M 50,0 L 50,30"/>
+    <!-- Cross accents -->
+    <path d="M -10,25 L -10,35 M -15,30 L -5,30" opacity="0.6"/>
+  </g>
+  
+  <g transform="translate(1870, 50) scale(-1, 1)" fill="none" stroke="#daa520" stroke-width="2" opacity="0.4" filter="url(#softGlow)">
+    <path d="M 0,80 L 0,20 Q 0,0 20,0 L 80,0"/>
+    <path d="M 0,50 L 30,50 M 50,0 L 50,30"/>
+    <path d="M -10,25 L -10,35 M -15,30 L -5,30" opacity="0.6"/>
+  </g>
+  
+  <g transform="translate(1010, 1030) scale(1, -1)" fill="none" stroke="#daa520" stroke-width="2" opacity="0.4" filter="url(#softGlow)">
+    <path d="M 0,80 L 0,20 Q 0,0 20,0 L 80,0"/>
+    <path d="M 0,50 L 30,50 M 50,0 L 50,30"/>
+    <path d="M -10,25 L -10,35 M -15,30 L -5,30" opacity="0.6"/>
+  </g>
+  
+  <g transform="translate(1870, 1030) scale(-1, -1)" fill="none" stroke="#daa520" stroke-width="2" opacity="0.4" filter="url(#softGlow)">
+    <path d="M 0,80 L 0,20 Q 0,0 20,0 L 80,0"/>
+    <path d="M 0,50 L 30,50 M 50,0 L 50,30"/>
+    <path d="M -10,25 L -10,35 M -15,30 L -5,30" opacity="0.6"/>
+  </g>
+  
+  <!-- Center arena marker -->
+  <g transform="translate(960, 540)" filter="url(#intenseGlow)">
+    <circle cx="0" cy="0" r="80" fill="none" stroke="url(#centerDivide)" stroke-width="3" opacity="0.5">
+      <animate attributeName="r" values="60;80;60" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0.6;0.3" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="0" cy="0" r="40" fill="none" stroke="#ffd700" stroke-width="2" opacity="0.7">
+      <animate attributeName="r" values="30;45;30" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <!-- VS text -->
+    <text x="0" y="5" font-family="Georgia, serif" font-size="24" font-weight="bold" fill="#ffd700" text-anchor="middle" letter-spacing="8">VS</text>
+  </g>
+  
+  <!-- Player zones labels -->
+  <text x="180" y="100" font-family="Georgia, serif" font-size="18" fill="#ffd700" text-anchor="middle" opacity="0.5" letter-spacing="3">DOMÍNIO VAMPIRO</text>
+  <text x="1740" y="100" font-family="Georgia, serif" font-size="18" fill="#daa520" text-anchor="middle" opacity="0.5" letter-spacing="3">BASTIÃO HUMANO</text>
+  
+  <!-- Zone markers for card placement -->
+  <!-- Vampire hand zone -->
+  <g transform="translate(180, 980)" fill="none" stroke="#3d0000" stroke-width="1" stroke-dasharray="10,5" opacity="0.3">
+    <rect x="-200" y="-60" width="400" height="100" rx="10"/>
+    <text x="0" y="-10" font-family="Georgia, serif" font-size="12" fill="#8b0000" text-anchor="middle" opacity="0.5">MÃO</text>
+  </g>
+  
+  <!-- Vampire board zone -->
+  <g transform="translate(480, 700)" fill="none" stroke="#4a0000" stroke-width="1.5" stroke-dasharray="8,4" opacity="0.4">
+    <rect x="-150" y="-100" width="300" height="200" rx="8"/>
+    <text x="0" y="20" font-family="Georgia, serif" font-size="11" fill="#8b0000" text-anchor="middle" opacity="0.6">CAMPO DE BATALHA</text>
+    <!-- 5 minion slots -->
+    <g fill="none" stroke="#3d0000" stroke-width="1" stroke-dasharray="5,5" opacity="0.3">
+      <rect x="-135" y="-80" width="50" height="70" rx="4"/>
+      <rect x="-75" y="-80" width="50" height="70" rx="4"/>
+      <rect x="-15" y="-80" width="50" height="70" rx="4"/>
+      <rect x="45" y="-80" width="50" height="70" rx="4"/>
+      <rect x="105" y="-80" width="50" height="70" rx="4"/>
+    </g>
+  </g>
+  
+  <!-- Human board zone -->
+  <g transform="translate(1440, 700)" fill="none" stroke="#d4c4a8" stroke-width="1.5" stroke-dasharray="8,4" opacity="0.4">
+    <rect x="-150" y="-100" width="300" height="200" rx="8"/>
+    <text x="0" y="20" font-family="Georgia, serif" font-size="11" fill="#8b7b4a" text-anchor="middle" opacity="0.6">CAMPO DE BATALHA</text>
+    <g fill="none" stroke="#c4b4a8" stroke-width="1" stroke-dasharray="5,5" opacity="0.3">
+      <rect x="-135" y="-80" width="50" height="70" rx="4"/>
+      <rect x="-75" y="-80" width="50" height="70" rx="4"/>
+      <rect x="-15" y="-80" width="50" height="70" rx="4"/>
+      <rect x="45" y="-80" width="50" height="70" rx="4"/>
+      <rect x="105" y="-80" width="50" height="70" rx="4"/>
+    </g>
+  </g>
+  
+  <!-- Human hand zone -->
+  <g transform="translate(1740, 980)" fill="none" stroke="#c4b4a8" stroke-width="1" stroke-dasharray="10,5" opacity="0.3">
+    <rect x="-200" y="-60" width="400" height="100" rx="10"/>
+    <text x="0" y="-10" font-family="Georgia, serif" font-size="12" fill="#8b7b4a" text-anchor="middle" opacity="0.5">MÃO</text>
+  </g>
+  
+  <!-- Deck zones -->
+  <g transform="translate(180, 180)" fill="none" stroke="#3d0000" stroke-width="1.5" opacity="0.4">
+    <rect x="-40" y="-55" width="80" height="110" rx="6"/>
+    <text x="0" y="70" font-family="Georgia, serif" font-size="10" fill="#8b0000" text-anchor="middle" opacity="0.6">DECK</text>
+    <text x="0" y="85" font-family="Georgia, serif" font-size="14" font-weight="bold" fill="#ffd700" text-anchor="middle" opacity="0.6">23</text>
+  </g>
+  
+  <g transform="translate(1740, 180)" fill="none" stroke="#c4b4a8" stroke-width="1.5" opacity="0.4">
+    <rect x="-40" y="-55" width="80" height="110" rx="6"/>
+    <text x="0" y="70" font-family="Georgia, serif" font-size="10" fill="#8b7b4a" text-anchor="middle" opacity="0.6">DECK</text>
+    <text x="0" y="85" font-family="Georgia, serif" font-size="14" font-weight="bold" fill="#daa520" text-anchor="middle" opacity="0.6">23</text>
+  </g>
+  
+  <!-- Graveyard zones -->
+  <g transform="translate(180, 400)" fill="none" stroke="#2d0000" stroke-width="1" stroke-dasharray="4,4" opacity="0.3">
+    <rect x="-40" y="-55" width="80" height="110" rx="6"/>
+    <text x="0" y="70" font-family="Georgia, serif" font-size="10" fill="#4a0000" text-anchor="middle" opacity="0.5">CRIPTO</text>
+  </g>
+  
+  <g transform="translate(1740, 400)" fill="none" stroke="#b4a4a8" stroke-width="1" stroke-dasharray="4,4" opacity="0.3">
+    <rect x="-40" y="-55" width="80" height="110" rx="6"/>
+    <text x="0" y="70" font-family="Georgia, serif" font-size="10" fill="#7b6b4a" text-anchor="middle" opacity="0.5">CEMITÉRIO</text>
+  </g>
+  
+  <!-- Vignette overlay -->
+  <rect width="1920" height="1080" fill="url(#vignette)" pointer-events="none"/>
+  
+  <!-- Subtle center line particles -->
+  <g fill="#ffd700" opacity="0.3">
+    <circle cx="960" cy="100" r="1.5">
+      <animate attributeName="cy" values="100;1080;100" dur="8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.4;0" dur="8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="960" cy="300" r="1">
+      <animate attributeName="cy" values="300;1080;300" dur="10s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.3;0" dur="10s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="960" cy="600" r="1.5">
+      <animate attributeName="cy" values="600;1080;600" dur="7s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.4;0" dur="7s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="960" cy="900" r="1">
+      <animate attributeName="cy" values="900;1080;900" dur="9s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;0.3;0" dur="9s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>

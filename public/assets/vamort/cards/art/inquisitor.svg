@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 220" width="290" height="220">
+  <defs>
+    <linearGradient id="inquisitorBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2d1a1a"/>
+      <stop offset="50%" style="stop-color:#1a0d0d"/>
+      <stop offset="100%" style="stop-color:#0d0505"/>
+    </linearGradient>
+    <linearGradient id="darkArmor2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3d2a2a"/>
+      <stop offset="50%" style="stop-color:#2a1a1a"/>
+      <stop offset="100%" style="stop-color:#1a0d0d"/>
+    </linearGradient>
+    <linearGradient id="redGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#dc143c"/>
+      <stop offset="50%" style="stop-color:#ffd700"/>
+      <stop offset="100%" style="stop-color:#8b0000"/>
+    </linearGradient>
+    <linearGradient id="holyFire2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fff"/>
+      <stop offset="40%" style="stop-color:#ffd700"/>
+      <stop offset="80%" style="stop-color:#ff4444"/>
+      <stop offset="100%" style="stop-color:#8b0000"/>
+    </linearGradient>
+    <radialGradient id="judgmentGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#fff;stop-opacity:0.9"/>
+      <stop offset="50%" style="stop-color:#ffd700;stop-opacity:0.5"/>
+      <stop offset="100%" style="stop-color:#dc143c;stop-opacity:0"/>
+    </radialGradient>
+    <filter id="judgmentGlowFilter">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feFlood flood-color="#ffd700" flood-opacity="0.6"/>
+      <feComposite in2="blur" operator="in"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="290" height="220" fill="url(#inquisitorBg)"/>
+
+  <!-- Burning heretic symbols in background -->
+  <g opacity="0.15" fill="#dc143c">
+    <text x="50" y="100" font-family="Georgia, serif" font-size="80" transform="rotate(-30, 50, 100)" opacity="0.3">†</text>
+    <text x="200" y="150" font-family="Georgia, serif" font-size="60" transform="rotate(15, 200, 150)" opacity="0.2">†</text>
+    <text x="145" y="60" font-family="Georgia, serif" font-size="100" text-anchor="middle" opacity="0.1">✝</text>
+  </g>
+
+  <!-- Inquisitor figure -->
+  <g transform="translate(145, 155)">
+    <!-- Heavy armor -->
+    <path d="M -40,0 Q -50,-30 -40,-80 Q -20,-110 0,-120 Q 20,-110 40,-80 Q 50,-30 40,0 Q 30,20 0,25 Q -30,20 -40,0" fill="url(#darkArmor2)" stroke="#3d2a2a" stroke-width="2"/>
+
+    <!-- Pauldrons with Inquisition symbols -->
+    <ellipse cx="-42" cy="-15" rx="20" ry="16" fill="url(#darkArmor2)" stroke="url(#redGold)" stroke-width="2"/>
+    <ellipse cx="42" cy="-15" rx="20" ry="16" fill="url(#darkArmor2)" stroke="url(#redGold)" stroke-width="2"/>
+    <!-- Inquisition cross on pauldrons -->
+    <g transform="translate(-42, -15)">
+      <path d="M 0,-12 L 0,2 M -7,-5 L 7,-5" stroke="url(#redGold)" stroke-width="2.5" filter="url(#judgmentGlowFilter)"/>
+    </g>
+    <g transform="translate(42, -15)">
+      <path d="M 0,-12 L 0,2 M -7,-5 L 7,-5" stroke="url(#redGold)" stroke-width="2.5" filter="url(#judgmentGlowFilter)"/>
+    </g>
+
+    <!-- Breastplate with judged soul motif -->
+    <path d="M -25,-15 Q -30,-45 -10,-65 Q 0,-70 10,-65 Q 30,-45 25,-15 Q 20,15 -5,25 Q -20,15 -25,-15" fill="url(#darkArmor2)" stroke="url(#redGold)" stroke-width="2"/>
+    <!-- Eye of judgment on chest -->
+    <ellipse cx="0" cy="-35" rx="12" ry="8" fill="#0a0505" stroke="url(#redGold)" stroke-width="1.5"/>
+    <ellipse cx="0" cy="-35" rx="6" ry="4" fill="url(#judgmentGlow)" filter="url(#judgmentGlowFilter)">
+      <animate attributeName="rx" values="6;4;6" dur="2s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="0" cy="-35" rx="2" ry="3" fill="#fff"/>
+
+    <!-- Arms -->
+    <!-- Left hand - gauntlet -->
+    <g transform="translate(-50, 5)">
+      <rect x="-10" y="-15" width="20" height="50" rx="3" fill="url(#darkArmor2)" stroke="url(#redGold)" stroke-width="1.5"/>
+      <!-- Fingers -->
+      <g fill="url(#darkArmor2)" stroke="#3d2a2a" stroke-width="1">
+        <rect x="-12" y="35" width="6" height="15" rx="2"/>
+        <rect x="-4" y="35" width="6" height="15" rx="2"/>
+        <rect x="4" y="35" width="6" height="15" rx="2"/>
+        <rect x="12" y="35" width="6" height="15" rx="2"/>
+      </g>
+    </g>
+
+    <!-- Right hand holding flaming sword -->
+    <g transform="translate(45, -10)">
+      <rect x="-10" y="-10" width="20" height="50" rx="3" fill="url(#darkArmor2)" stroke="url(#redGold)" stroke-width="1.5"/>
+      <g fill="url(#darkArmor2)" stroke="#3d2a2a" stroke-width="1">
+        <rect x="-12" y="40" width="6" height="15" rx="2"/>
+        <rect x="-4" y="40" width="6" height="15" rx="2"/>
+        <rect x="4" y="40" width="6" height="15" rx="2"/>
+        <rect x="12" y="40" width="6" height="15" rx="2"/>
+      </g>
+      <!-- Flaming sword -->
+      <g transform="translate(0, 60) rotate(-10)">
+        <rect x="-3" y="-80" width="6" height="100" fill="url(#darkArmor2)" stroke="#3d2a2a" stroke-width="1"/>
+        <path d="M -20,-80 L 0,-100 L 20,-80 Z" fill="url(#holyFire2)" filter="url(#judgmentGlowFilter)"/>
+        <path d="M -15,-75 L 0,-95 L 15,-75 Z" fill="#fff" opacity="0.7" filter="url(#judgmentGlowFilter)">
+          <animate attributeName="d" values="M -15,-75 L 0,-95 L 15,-75 Z; M -18,-70 L 0,-98 L 18,-70 Z; M -15,-75 L 0,-95 L 15,-75 Z" dur="1s" repeatCount="indefinite"/>
+        </path>
+        <rect x="-18" y="-85" width="36" height="8" fill="url(#redGold)" stroke="#8b0000" stroke-width="1"/>
+        <rect x="-12" y="-82" width="24" height="4" fill="#dc143c"/>
+      </g>
+    </g>
+
+    <!-- Helm -->
+    <path d="M -28,-55 Q -28,-80 0,-88 Q 28,-80 28,-55 Q 28,-50 22,-50 Q 15,-62 0,-62 Q -15,-62 -22,-50 Q -28,-50 -28,-55" fill="url(#darkArmor2)" stroke="url(#redGold)" stroke-width="2"/>
+    <!-- Visor slit -->
+    <rect x="-20" y="-70" width="40" height="6" fill="#050202" stroke="url(#redGold)" stroke-width="1"/>
+    <line x1="0" y1="-70" x2="0" y2="-64" stroke="url(#redGold)" stroke-width="2" filter="url(#judgmentGlowFilter)"/>
+    <!-- Glowing eyes behind visor -->
+    <ellipse cx="-7" cy="-67" rx="3" ry="3" fill="#fff" filter="url(#judgmentGlowFilter)"/>
+    <ellipse cx="7" cy="-67" rx="3" ry="3" fill="#fff" filter="url(#judgmentGlowFilter)"/>
+
+    <!-- Tassets -->
+    <path d="M -35,35 Q -40,50 -20,65 Q 0,70 20,65 Q 40,50 35,35 Q 30,45 -5,50 Q -30,45 -35,35" fill="url(#darkArmor2)" stroke="url(#redGold)" stroke-width="1.5"/>
+
+    <!-- Scrolls of judgment at belt -->
+    <g transform="translate(0, 30)">
+      <g transform="translate(-30, 0)" fill="#f5e6c8" stroke="#8b7355" stroke-width="1">
+        <rect x="-8" y="0" width="16" height="25" rx="1"/>
+        <line x1="-5" y1="5" x2="5" y2="5" stroke="#3d2a2a" stroke-width="1"/>
+        <line x1="-5" y1="12" x2="5" y2="12" stroke="#3d2a2a" stroke-width="0.5"/>
+        <line x1="-5" y1="19" x2="5" y2="19" stroke="#3d2a2a" stroke-width="0.5"/>
+      </g>
+      <g transform="translate(30, 0)" fill="#f5e6c8" stroke="#8b7355" stroke-width="1">
+        <rect x="-8" y="0" width="16" height="25" rx="1"/>
+        <line x1="-5" y1="5" x2="5" y2="5" stroke="#3d2a2a" stroke-width="1"/>
+        <line x1="-5" y1="12" x2="5" y2="12" stroke="#3d2a2a" stroke-width="0.5"/>
+        <line x1="-5" y1="19" x2="5" y2="19" stroke="#3d2a2a" stroke-width="0.5"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- Holy fire on ground -->
+  <ellipse cx="145" cy="205" rx="60" ry="10" fill="url(#judgmentGlow)" opacity="0.3">
+    <animate attributeName="opacity" values="0.3;0.5;0.3" dur="1.5s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <!-- Floating embers -->
+  <g fill="url(#holyFire2)">
+    <circle cx="60" cy="190" r="2.5">
+      <animate attributeName="cy" values="190;100;190" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0.2;0.6" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="230" cy="180" r="2">
+      <animate attributeName="cy" values="180;90;180" dur="3.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;0.1;0.5" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="100" cy="50" r="1.5">
+      <animate attributeName="cy" values="50;20;50" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="190" cy="40" r="1.5">
+      <animate attributeName="cy" values="40;15;40" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <rect x="2" y="2" width="286" height="216" fill="none" stroke="url(#redGold)" stroke-width="2" opacity="0.5" rx="4"/>
+</svg>

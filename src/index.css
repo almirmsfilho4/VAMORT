@@ -1,0 +1,664 @@
+/* ============================================================
+   VAMORT — Professional Dark Fantasy AAA Design System
+   Inspired by: Hearthstone, Magic: The Gathering Arena, Diablo IV & Riot Games
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:wght@500;600;700;900&family=Newsreader+Decorative:wght@700;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* Surface palette (ultra-dark deep slate/obsidian) */
+  --bg-deep: #08070b;
+  --bg-surface: #0e0c13;
+  --bg-elevated: #15121c;
+  --bg-card: #1a1723;
+  --bg-overlay: rgba(8, 7, 11, 0.85);
+
+  /* Gold Arcane (Blizzard / League hextech standard) */
+  --gold: #d4af37;
+  --gold-light: #f5d77f;
+  --gold-dark: #8c6d1f;
+  --gold-glow: rgba(212, 175, 55, 0.35);
+  --border-gold: rgba(212, 175, 55, 0.3);
+  --border-gold-strong: rgba(212, 175, 55, 0.65);
+
+  /* Crimson Blood (Diablo IV dark fantasy) */
+  --crimson: #c81e3a;
+  --crimson-bright: #e62846;
+  --crimson-dark: #6e0f20;
+  --crimson-glow: rgba(200, 30, 58, 0.4);
+
+  /* Human Amber / Faith */
+  --amber: #e59d24;
+  --amber-glow: rgba(229, 157, 36, 0.35);
+
+  /* Neutral Arcane */
+  --arcane-purple: #9d65f5;
+  --arcane-glow: rgba(157, 101, 245, 0.3);
+
+  /* Typography */
+  --text-primary: #f0ecdf;
+  --text-secondary: #c8c2b5;
+  --text-muted: #d6d0c4;
+  --text-gold: #f4d58d;
+
+  /* Geometry & Polish */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-pill: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 10px 28px rgba(0, 0, 0, 0.65);
+  --shadow-lg: 0 20px 50px rgba(0, 0, 0, 0.85);
+  --shadow-gold: 0 0 25px rgba(212, 175, 55, 0.2);
+}
+
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  min-height: 100vh;
+  background-color: var(--bg-deep);
+  color: var(--text-primary);
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Background Atmosphere (Subtle Vignette + Radial Mist) */
+body {
+  background-image:
+    radial-gradient(ellipse 90% 60% at 50% -10%, rgba(110, 15, 32, 0.18), transparent 70%),
+    radial-gradient(ellipse 60% 40% at 85% 80%, rgba(212, 175, 55, 0.06), transparent 60%),
+    linear-gradient(180deg, #09080d 0%, #050407 100%);
+  background-attachment: fixed;
+}
+
+/* Typography Classes */
+.title-font {
+  font-family: 'Newsreader', serif;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+.special-title-font {
+  font-family: 'Newsreader', serif;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Newsreader', serif;
+}
+
+/* Top Navigation (Glassmorphic AAA) */
+.stitch-top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 72px;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  background: rgba(10, 8, 14, 0.82);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+}
+
+.stitch-top-nav .nav-crest {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.stitch-top-nav .crest-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--crimson), var(--crimson-dark));
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px var(--crimson-glow);
+}
+
+.stitch-top-nav .crest-text {
+  font-family: 'Newsreader', serif;
+  font-size: 1.25rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  color: var(--text-gold);
+}
+
+.stitch-top-nav .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 5px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.stitch-top-nav .nav-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  font-weight: 600;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.stitch-top-nav .nav-link:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.stitch-top-nav .nav-link.active {
+  color: #0b090f;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  font-weight: 700;
+  box-shadow: 0 2px 14px var(--gold-glow);
+}
+
+/* Hero Banner AAA */
+.hero-banner {
+  position: relative;
+  min-height: 520px;
+  max-width: 1280px;
+  margin: 10px auto 40px;
+  border-radius: 28px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-gold);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.9), inset 0 0 60px rgba(0, 0, 0, 0.8);
+}
+
+.hero-banner-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    url('/banner-art.svg') center/cover no-repeat,
+    url('/banner.png') center/cover no-repeat;
+  filter: brightness(0.85) saturate(1.2);
+  transform: scale(1.02);
+  transition: transform 10s ease;
+}
+
+.hero-banner:hover .hero-banner-bg {
+  transform: scale(1.06);
+}
+
+.hero-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(14, 12, 19, 0.5) 0%, rgba(8, 7, 11, 0.92) 100%),
+    linear-gradient(180deg, transparent 0%, rgba(8, 7, 11, 0.95) 100%);
+}
+
+.hero-banner-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 780px;
+  padding: 40px 24px;
+}
+
+.season-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 18px;
+  border-radius: var(--radius-pill);
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  color: var(--text-gold);
+  font-family: 'Newsreader', serif;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.hero-title {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 900;
+  line-height: 1.1;
+  color: #fff;
+  margin-bottom: 16px;
+  letter-spacing: 0.03em;
+}
+
+.hero-title .highlight {
+  background: linear-gradient(135deg, #ff4d6d, var(--crimson));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 25px rgba(200, 30, 58, 0.6));
+}
+
+.hero-sub {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 580px;
+  margin: 0 auto 30px;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 34px;
+}
+
+.cta-primary {
+  padding: 14px 34px;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(135deg, var(--crimson-bright), var(--crimson-dark));
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  font-family: 'Newsreader', serif;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 8px 26px var(--crimson-glow);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cta-primary:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 36px rgba(230, 40, 70, 0.6);
+}
+
+.cta-secondary {
+  padding: 14px 32px;
+  border-radius: var(--radius-pill);
+  background: rgba(22, 19, 30, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-gold-strong);
+  color: var(--text-gold);
+  font-family: 'Newsreader', serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.cta-secondary:hover {
+  background: rgba(212, 175, 55, 0.15);
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px var(--gold-glow);
+}
+
+.hero-stats-live {
+  display: inline-flex;
+  gap: 28px;
+  padding: 12px 28px;
+  border-radius: var(--radius-pill);
+  background: rgba(14, 11, 20, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.live-stat {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.live-stat b {
+  color: #fff;
+  font-weight: 700;
+}
+
+/* Panels & Cards */
+.panel-background {
+  background: var(--bg-surface);
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.themed-border {
+  border-color: rgba(212, 175, 55, 0.35);
+  position: relative;
+}
+
+/* Feature Cards (Riot / Steam clean card aesthetic) */
+.stitch-feature-card {
+  padding: 28px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(26, 23, 35, 0.95), rgba(16, 14, 22, 0.98));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.stitch-feature-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--border-gold-strong);
+  box-shadow: var(--shadow-lg), 0 0 30px rgba(212, 175, 55, 0.15);
+  background: linear-gradient(180deg, rgba(32, 28, 44, 0.98), rgba(20, 17, 28, 0.98));
+}
+
+.stitch-feature-card .feature-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.stitch-feature-card .feature-title {
+  font-family: 'Newsreader', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.stitch-feature-card .feature-desc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+/* Relic Cards (Hearthstone / MTGA Premium Card Frame) */
+.stitch-card-relic {
+  position: relative;
+  aspect-ratio: 320 / 460;
+  border-radius: 18px;
+  overflow: hidden;
+  background: linear-gradient(180deg, #1f1b2b, #110f18);
+  border: 2px solid rgba(212, 175, 55, 0.35);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.7);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+}
+
+.stitch-card-relic:hover {
+  transform: translateY(-8px) scale(1.03);
+  border-color: var(--gold-light);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.9), 0 0 32px var(--gold-glow);
+  z-index: 10;
+}
+
+.stitch-card-relic .relic-art {
+  height: 60%;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 2px solid rgba(212, 175, 55, 0.25);
+}
+
+.stitch-card-relic .relic-info {
+  height: 40%;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.stitch-card-relic .relic-name {
+  font-family: 'Newsreader', serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.stitch-card-relic .relic-type {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+
+.stitch-card-relic .relic-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.stitch-card-relic .relic-stat {
+  font-size: 0.95rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.stitch-card-relic .relic-stat.atk {
+  color: #ffd180;
+}
+
+.stitch-card-relic .relic-stat.hp {
+  color: #ff6b81;
+}
+
+.stitch-card-relic .relic-cost {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1b4f8a, #0f325a);
+  border: 2px solid rgba(180, 220, 255, 0.8);
+  color: #fff;
+  font-weight: 900;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  z-index: 3;
+}
+
+.stitch-card-relic .rarity-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  z-index: 3;
+}
+
+.rarity-common {
+  background: rgba(120, 120, 120, 0.4);
+  border: 1px solid rgba(200, 200, 200, 0.4);
+  color: #e0e0e0;
+}
+
+.rarity-rare {
+  background: rgba(30, 90, 180, 0.5);
+  border: 1px solid rgba(80, 160, 255, 0.6);
+  color: #a0d0ff;
+  box-shadow: 0 0 12px rgba(80, 160, 255, 0.3);
+}
+
+.rarity-epic {
+  background: rgba(110, 30, 180, 0.5);
+  border: 1px solid rgba(180, 90, 255, 0.6);
+  color: #dda6ff;
+  box-shadow: 0 0 14px rgba(180, 90, 255, 0.35);
+}
+
+.rarity-legendary {
+  background: rgba(180, 120, 20, 0.6);
+  border: 1px solid var(--gold-light);
+  color: #fff2b2;
+  box-shadow: 0 0 18px var(--gold-glow);
+}
+
+/* Bottom Floating Dock */
+.stitch-bottom-dock {
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: rgba(14, 11, 20, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.8);
+}
+
+.stitch-bottom-dock .dock-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 0.68rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.stitch-bottom-dock .dock-item:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.stitch-bottom-dock .dock-item.active {
+  color: var(--text-gold);
+  background: rgba(212, 175, 55, 0.15);
+}
+
+/* Buttons Standard */
+.button-theme {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: var(--radius-pill);
+  font-family: 'Newsreader', serif;
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  border: 1px solid var(--border-gold-strong);
+  color: #0b090f;
+  box-shadow: 0 4px 16px var(--gold-glow);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.button-theme:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(212, 175, 55, 0.4);
+}
+
+.button-theme.ghost {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: var(--text-secondary);
+  box-shadow: none;
+}
+
+.button-theme.ghost:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.button-theme.small {
+  padding: 7px 16px;
+  font-size: 0.78rem;
+}
+
+/* Modals */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 3, 6, 0.88);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modal {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg), 0 0 60px rgba(0, 0, 0, 0.9);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .stitch-top-nav .nav-links {
+    display: none;
+  }
+  .hero-banner {
+    min-height: 440px;
+    border-radius: 20px;
+  }
+  .hero-stats-live {
+    display: none;
+  }
+}
+
+

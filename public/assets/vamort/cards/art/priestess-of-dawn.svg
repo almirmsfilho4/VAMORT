@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 220" width="290" height="220">
+  <defs>
+    <linearGradient id="priestessBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fff8e7"/>
+      <stop offset="50%" style="stop-color:#ffeedd"/>
+      <stop offset="100%" style="stop-color:#ffe5cc"/>
+    </linearGradient>
+    <linearGradient id="whiteRobe" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fff"/>
+      <stop offset="50%" style="stop-color:#f5f5f5"/>
+      <stop offset="100%" style="stop-color:#eee"/>
+    </linearGradient>
+    <linearGradient id="goldTrim2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd700"/>
+      <stop offset="100%" style="stop-color:#daa520"/>
+    </linearGradient>
+    <linearGradient id="dawnLight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fff"/>
+      <stop offset="30%" style="stop-color:#fffacd"/>
+      <stop offset="60%" style="stop-color:#ffd700"/>
+      <stop offset="100%" style="stop-color:#ff8c00"/>
+    </linearGradient>
+    <radialGradient id="healingGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#fff;stop-opacity:1"/>
+      <stop offset="50%" style="stop-color:#ffd700;stop-opacity:0.5"/>
+      <stop offset="100%" style="stop-color:#ffe5cc;stop-opacity:0"/>
+    </radialGradient>
+    <filter id="divineGlow">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feFlood flood-color="#ffd700" flood-opacity="0.6"/>
+      <feComposite in2="blur" operator="in"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="290" height="220" fill="url(#priestessBg)"/>
+
+  <!-- Radiant dawn background -->
+  <g transform="translate(145, 80)">
+    <circle cx="0" cy="0" r="100" fill="url(#healingGlow)" opacity="0.3">
+      <animate attributeName="r" values="100;120;100" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0.5;0.3" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Sun rays -->
+    <g stroke="url(#dawnLight)" stroke-width="1.5" opacity="0.4">
+      <line x1="0" y1="-120" x2="0" y2="-80">
+        <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="20s" repeatCount="indefinite"/>
+      </line>
+      <line x1="0" y1="80" x2="0" y2="120">
+        <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="20s" repeatCount="indefinite"/>
+      </line>
+      <line x1="-120" y1="0" x2="-80" y2="0">
+        <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="20s" repeatCount="indefinite"/>
+      </line>
+      <line x1="80" y1="0" x2="120" y2="0">
+        <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="20s" repeatCount="indefinite"/>
+      </line>
+    </g>
+  </g>
+
+  <!-- Priestess figure -->
+  <g transform="translate(145, 165)">
+    <!-- Flowing white robes -->
+    <path d="M -45,0 Q -55,-30 -40,-85 Q -20,-115 0,-125 Q 20,-115 40,-85 Q 55,-30 45,0 Q 35,20 0,25 Q -35,20 -45,0" fill="url(#whiteRobe)" stroke="#e8d5b7" stroke-width="1.5"/>
+    <!-- Inner robe detail -->
+    <path d="M -30,0 Q -35,-20 -20,-60 Q 0,-68 20,-60 Q 35,-20 30,0" fill="none" stroke="url(#goldTrim2)" stroke-width="1" opacity="0.6"/>
+
+    <!-- Hood/veil -->
+    <path d="M -30,-85 Q -35,-105 0,-115 Q 35,-105 30,-85 Q 25,-90 0,-100 Q -25,-90 -30,-85" fill="url(#whiteRobe)" stroke="#e8d5b7" stroke-width="1" opacity="0.9"/>
+    <!-- Face -->
+    <ellipse cx="0" cy="-98" rx="14" ry="16" fill="#ffeedd"/>
+    <ellipse cx="-4" cy="-100" rx="2" ry="3" fill="#3d2a1a"/>
+    <ellipse cx="4" cy="-100" rx="2" ry="3" fill="#3d2a1a"/>
+    <path d="M -4,-93 Q 0,-90 4,-93" stroke="#8b7355" stroke-width="1.5" fill="none"/>
+
+    <!-- Halo behind head -->
+    <circle cx="0" cy="-105" r="28" fill="none" stroke="url(#dawnLight)" stroke-width="3" filter="url(#divineGlow)">
+      <animate attributeName="r" values="28;32;28" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="stroke-width" values="3;2;3" dur="2s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Hands raised in prayer/blessing -->
+    <!-- Left hand -->
+    <g transform="translate(-35, -45)">
+      <path d="M 0,0 Q -5,10 0,25 Q 5,20 0,10" fill="#ffeedd" stroke="#e8d5b7" stroke-width="1"/>
+      <path d="M -3,25 L -8,35 M 0,25 L -5,35 M 3,25 L -2,35" stroke="#ffeedd" stroke-width="3" stroke-linecap="round"/>
+      <!-- Healing light from palm -->
+      <ellipse cx="0" cy="35" rx="15" ry="8" fill="url(#healingGlow)" filter="url(#divineGlow)" opacity="0.8">
+        <animate attributeName="rx" values="15;12;15" dur="1.5s" repeatCount="indefinite"/>
+        <animate attributeName="ry" values="8;6;8" dur="1.5s" repeatCount="indefinite"/>
+      </ellipse>
+    </g>
+
+    <!-- Right hand -->
+    <g transform="translate(35, -45)">
+      <path d="M 0,0 Q 5,10 0,25 Q -5,20 0,10" fill="#ffeedd" stroke="#e8d5b7" stroke-width="1"/>
+      <path d="M 3,25 L 8,35 M 0,25 L 5,35 M -3,25 L 2,35" stroke="#ffeedd" stroke-width="3" stroke-linecap="round"/>
+      <!-- Healing light from palm -->
+      <ellipse cx="0" cy="35" rx="15" ry="8" fill="url(#healingGlow)" filter="url(#divineGlow)" opacity="0.8">
+        <animate attributeName="rx" values="15;12;15" dur="1.5s" repeatCount="indefinite"/>
+        <animate attributeName="ry" values="8;6;8" dur="1.5s" repeatCount="indefinite"/>
+      </ellipse>
+    </g>
+
+    <!-- Prayer book at waist -->
+    <g transform="translate(0, 25)">
+      <path d="M -15,0 L -15,-20 Q -15,-25 -10,-25 Q 0,-25 10,-25 Q 15,-25 15,-20 L 15,0 Z" fill="url(#goldTrim2)" stroke="#daa520" stroke-width="1.5"/>
+      <path d="M -12,-20 L 12,-20" stroke="#fff" stroke-width="1" opacity="0.6"/>
+      <path d="M -8,-18 L 8,-18" stroke="#fff" stroke-width="1" opacity="0.4"/>
+      <path d="M -5,-16 L 5,-16" stroke="#fff" stroke-width="1" opacity="0.3"/>
+      <!-- Cross on book -->
+      <path d="M 0,-22 L 0,-10 M -6,-16 L 6,-16" stroke="#fff" stroke-width="2" opacity="0.8"/>
+    </g>
+
+    <!-- Holy symbols floating around -->
+    <g font-family="Georgia, serif" font-size="16" fill="url(#dawnLight)" text-anchor="middle" filter="url(#divineGlow)">
+      <text x="-55" y="-50" opacity="0.8">✝</text>
+      <text x="55" y="-50" opacity="0.8">✝</text>
+      <text x="-60" y="5" style="font-size:12" opacity="0.6">✝</text>
+      <text x="60" y="5" style="font-size:12" opacity="0.6">✝</text>
+      <text x="0" y="-70" style="font-size:20" opacity="0.9">✝</text>
+    </g>
+  </g>
+
+  <!-- Healing light on ground -->
+  <ellipse cx="145" cy="205" rx="80" ry="12" fill="url(#healingGlow)" opacity="0.4">
+    <animate attributeName="rx" values="80;75;80" dur="2s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <!-- Floating healing motes -->
+  <g fill="url(#dawnLight)">
+    <circle cx="40" cy="60" r="2.5">
+      <animate attributeName="cy" values="60;40;60" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="250" cy="70" r="2">
+      <animate attributeName="cy" values="70;50;70" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;0.9;0.5" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="60" cy="190" r="2">
+      <animate attributeName="cy" values="190;170;190" dur="3.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="230" cy="180" r="1.5">
+      <animate attributeName="cy" values="180;160;180" dur="2.8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;0.9;0.5" dur="2.8s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <rect x="2" y="2" width="286" height="216" fill="none" stroke="url(#goldTrim2)" stroke-width="2" opacity="0.6" rx="4"/>
+</svg>

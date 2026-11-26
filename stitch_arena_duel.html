@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"inverse-primary":"#be0039","secondary-container":"#bd8718","on-surface":"#e8dfee","primary-fixed-dim":"#ffb2b7","tertiary":"#ffb3b6","outline-variant":"#5c3f41","surface-tint":"#ffb2b7","surface-dim":"#16121c","surface-container-highest":"#38333e","on-error":"#690005","secondary-fixed-dim":"#fabc4d","surface-container-high":"#2d2833","tertiary-container":"#d43d53","inverse-on-surface":"#332e3a","on-surface-variant":"#e5bdbe","background":"#16121c","primary":"#ffb2b7","surface-container":"#221e28","surface-variant":"#38333e","on-tertiary-fixed-variant":"#920128","error-container":"#93000a","on-primary":"#67001b","primary-fixed":"#ffdadb","on-tertiary-container":"#fffeff","on-secondary-fixed":"#281900","primary-container":"#e6194b","on-tertiary":"#68001a","on-secondary-fixed-variant":"#604100","on-primary-fixed-variant":"#92002a","surface":"#16121c","inverse-surface":"#e8dfee","on-primary-fixed":"#40000d","on-background":"#e8dfee","tertiary-fixed-dim":"#ffb3b6","secondary-fixed":"#ffdead","surface-container-lowest":"#100c16","outline":"#ac8889","surface-bright":"#3c3743","secondary":"#fabc4d","on-primary-container":"#fffeff","on-secondary-container":"#3a2600","on-tertiary-fixed":"#40000d","tertiary-fixed":"#ffdada","on-error-container":"#ffdad6","on-secondary":"#432c00","error":"#ffb4ab","surface-container-low":"#1e1a24"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"margin":"1rem","gutter-desktop":"1.5rem","gutter":"1rem","space-lg":"1.5rem","space-xs":"0.25rem","space-md":"1rem","space-sm":"0.5rem","margin-tablet":"1.5rem","space-xl":"2.5rem","margin-desktop":"2.5rem"},"fontFamily":{"label-sm":["Geist"],"headline-lg-mobile":["Newsreader"],"title-md":["Geist"],"headline-md":["Newsreader"],"body-sm":["Geist"],"label-md":["Geist"],"label-lg":["Geist"],"display-lg":["Newsreader"],"title-lg":["Newsreader"],"body-lg":["Geist"],"display-lg-mobile":["Newsreader"],"body-md":["Geist"],"headline-lg":["Newsreader"]},"fontSize":{"label-sm":["10px",{"lineHeight":"14px","letterSpacing":"0.1em","fontWeight":"700"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","letterSpacing":"0.01em","fontWeight":"500"}],"title-md":["16px",{"lineHeight":"24px","letterSpacing":"0.04em","fontWeight":"600"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"500"}],"body-sm":["12px",{"lineHeight":"18px","fontWeight":"400"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.08em","fontWeight":"600"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.06em","fontWeight":"600"}],"display-lg":["48px",{"lineHeight":"56px","letterSpacing":"0.02em","fontWeight":"600"}],"title-lg":["20px",{"lineHeight":"28px","letterSpacing":"0.03em","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"display-lg-mobile":["32px",{"lineHeight":"40px","letterSpacing":"0.02em","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"0.01em","fontWeight":"500"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest/95 backdrop-blur-2xl z-50 flex flex-col justify-between shadow-[0_4px_30px_rgba(0,0,0,0.8)]"><div class="flex flex-col"><div class="h-20 flex items-center px-space-lg gap-space-sm"><div class="w-9 h-9 rounded bg-primary-container flex items-center justify-center shadow-[0_0_15px_rgba(230,25,75,0.45)]"><span class="material-symbols-outlined text-on-primary-container text-[22px]">shield_with_heart</span></div><div class="flex flex-col"><span class="font-headline-md text-headline-md tracking-wider text-on-surface uppercase">Vamort</span><span class="font-label-sm text-label-sm uppercase text-secondary tracking-[0.25em]">Dark Relic TCG</span></div></div><div class="mx-space-lg h-[1px] bg-gradient-to-r from-transparent via-secondary/30 to-transparent my-space-xs"></div><div class="px-space-md py-space-sm"><span class="px-space-sm font-label-sm text-label-sm uppercase tracking-[0.18em] text-outline">Sanctuário &amp; Guerra</span></div><nav class="flex flex-col px-space-sm gap-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-bold shadow-[0_0_20px_rgba(230,25,75,0.35)]"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200 group" data-path="duelo-arena" href="#"><span class="material-symbols-outlined text-[20px] text-tertiary-container group-hover:scale-110 transition-transform">swords</span><span class="font-label-lg text-label-lg tracking-wide">Duelo / Arena</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200 group" data-path="grimorios-deck-builder" href="#"><span class="material-symbols-outlined text-[20px] text-secondary group-hover:scale-110 transition-transform">auto_stories</span><span class="font-label-lg text-label-lg tracking-wide">Grimórios (Deck Builder)</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200 group" data-path="coven-clas" href="#"><span class="material-symbols-outlined text-[20px] text-primary group-hover:scale-110 transition-transform">diversity_3</span><span class="font-label-lg text-label-lg tracking-wide">Coven &amp; Clãs</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200 group" data-path="mercado-loja" href="#"><span class="material-symbols-outlined text-[20px] text-secondary-fixed group-hover:scale-110 transition-transform">storefront</span><span class="font-label-lg text-label-lg tracking-wide">Mercado &amp; Loja</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200 group" data-path="cronicas-campanha" href="#"><span class="material-symbols-outlined text-[20px] text-on-surface-variant group-hover:scale-110 transition-transform">explore</span><span class="font-label-lg text-label-lg tracking-wide">Crônicas &amp; Campanha</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200 group" data-path="ranks-mural" href="#"><span class="material-symbols-outlined text-[20px] text-secondary group-hover:scale-110 transition-transform">military_tech</span><span class="font-label-lg text-label-lg tracking-wide">Ranks &amp; Mural</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all duration-200 group" data-path="perfil-de-lorde" href="#"><span class="material-symbols-outlined text-[20px] text-tertiary group-hover:scale-110 transition-transform">skull</span><span class="font-label-lg text-label-lg tracking-wide">Perfil de Lorde</span></a></nav></div><div class="p-space-md flex flex-col gap-space-sm"><div class="mx-auto w-full h-[1px] bg-gradient-to-r from-transparent via-secondary/20 to-transparent"></div><div class="bg-surface-container-low/80 p-space-sm rounded-lg flex items-center justify-between shadow-[inset_0_1px_3px_rgba(0,0,0,0.5)]"><div class="flex items-center gap-space-sm"><div class="w-2.5 h-2.5 rounded-full bg-primary-container shadow-[0_0_8px_#e6194b] animate-pulse"></div><span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Servidor Eclipse</span></div><span class="font-label-sm text-label-sm text-secondary">24ms</span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-20 bg-surface-container-lowest/80 backdrop-blur-xl z-40 flex items-center justify-between px-space-lg shadow-[0_4px_20px_rgba(0,0,0,0.6)]"><div class="flex items-center gap-space-md"><div class="relative flex items-center justify-center"><div class="w-11 h-11 rounded-full bg-surface-container-high ring-1 ring-secondary/40 flex items-center justify-center"><span class="material-symbols-outlined text-secondary text-[22px]">shield_moon</span></div><div class="absolute -bottom-1 -right-1 bg-primary-container text-on-primary-container px-1.5 py-0.2 rounded-full font-label-sm text-label-sm">48</div></div><div class="flex flex-col"><div class="flex items-center gap-space-xs"><span class="font-title-lg text-title-lg text-on-surface tracking-wide">Lord Malichor</span><span class="material-symbols-outlined text-secondary text-[16px]">verified</span></div><span class="font-label-sm text-label-sm uppercase tracking-widest text-primary">Archon Primus • Ordem Noturna</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-sm bg-surface-container-low/90 px-space-md py-1.5 rounded-full shadow-[inset_0_1px_3px_rgba(0,0,0,0.6)]"><div class="flex items-center gap-1.5 px-space-xs"><span class="material-symbols-outlined text-primary-container text-[18px]">bloodtype</span><div class="flex flex-col"><span class="font-label-sm text-label-sm uppercase text-outline">Essência</span><span class="font-title-md text-title-md text-on-surface font-semibold">14.2K</span></div></div><div class="w-[1px] h-6 bg-surface-variant"></div><div class="flex items-center gap-1.5 px-space-xs"><span class="material-symbols-outlined text-secondary text-[18px]">monetization_on</span><div class="flex flex-col"><span class="font-label-sm text-label-sm uppercase text-outline">Ouro Arcano</span><span class="font-title-md text-title-md text-secondary font-semibold">8.650</span></div></div><div class="w-[1px] h-6 bg-surface-variant"></div><div class="flex items-center gap-1.5 px-space-xs"><span class="material-symbols-outlined text-tertiary text-[18px]">key</span><div class="flex flex-col"><span class="font-label-sm text-label-sm uppercase text-outline">Chaves</span><span class="font-title-md text-title-md text-on-surface font-semibold">5</span></div></div></div><button class="relative w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center hover:bg-surface-variant transition-colors"><span class="material-symbols-outlined text-on-surface-variant text-[20px]">notifications</span><div class="absolute -top-0.5 -right-0.5 w-4 h-4 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shadow-[0_0_8px_#e6194b]"><span class="material-symbols-outlined text-[10px]">lock_open</span></div></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-20 w-full min-h-screen bg-surface px-space-lg pb-space-xl"><div class="flex flex-col w-full relative select-none overflow-hidden pb-12">
+<!-- Subtle Ambient Glow Orbs behind board -->
+<div class="absolute -top-32 left-1/3 w-96 h-96 rounded-full bg-primary-container/10 blur-[120px] pointer-events-none"></div>
+<div class="absolute top-1/2 -right-20 w-80 h-80 rounded-full bg-secondary/10 blur-[100px] pointer-events-none"></div>
+<div class="absolute -bottom-20 left-1/4 w-[32rem] h-[32rem] rounded-full bg-tertiary-container/10 blur-[140px] pointer-events-none"></div>
+<!-- BATTLEFIELD MAIN WRAPPER: 16:9 Aspect Feel -->
+<div class="w-full max-w-[1540px] mx-auto flex flex-col gap-space-md">
+<!-- ================= TOP OPPONENT BANNER & CARDS ================= -->
+<div class="w-full bg-surface-container-lowest/80 backdrop-blur-md rounded-xl p-space-md shadow-2xl relative flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<!-- Opponent Profile & Stats -->
+<div class="flex items-center gap-space-md">
+<div class="relative">
+<div class="w-14 h-14 rounded-full bg-surface-container-highest overflow-hidden shadow-[0_0_15px_rgba(230,25,75,0.4)]">
+<img class="w-full h-full object-cover" data-alt="Dark gothic portrait of Vladislav III, ancient pale vampire archon with slicked silver hair, regal high-collared blood velvet mantle, piercing crimson irises, moonlit cathedral background, dark renaissance oil painting style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5XnQki2_YSWbLaCD-80Jcd1FT0JeIpr1zOQ6YkFN-xxYXeWRg59WkBjpEwKNp78ZRIuq1j-cpKKnEheLSbw0abbJMu4872wqg_SmobGk1YESrnxaO3n-d3lfeewQGbati13yOr2cTv-CusxTmV7JrhPLAseoFCAWSaL6VIg9o1in9ea1_Bl17PUYqtYuXZLLxFNY0InlSwRRmtNc5li63NSFAbkqmSAueym-642-H"/>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-surface-container-highest text-secondary px-1.5 py-0.5 rounded-full font-label-sm text-label-sm shadow-md">
+              LV.52
+            </div>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-md text-headline-md text-on-surface">Vladislav III</span>
+<span class="font-label-sm text-label-sm uppercase bg-surface-container-high text-primary px-2 py-0.5 rounded tracking-widest">Archon of Night</span>
+</div>
+<span class="font-body-sm text-body-sm text-outline">Coven dos Mil Suspiros • Conjurador Mestre</span>
+</div>
+</div>
+<!-- Opponent Hand (Face-down Gothic Cards) -->
+<div class="flex items-center -space-x-4 py-1">
+<div class="w-14 h-20 rounded bg-gradient-to-br from-surface-container-highest to-surface-container-lowest shadow-lg shadow-black/80 rotate-[-12deg] flex items-center justify-center transform hover:-translate-y-2 transition-transform cursor-pointer">
+<span class="material-symbols-outlined text-primary text-[22px] opacity-70">brightness_7</span>
+</div>
+<div class="w-14 h-20 rounded bg-gradient-to-br from-surface-container-highest to-surface-container-lowest shadow-lg shadow-black/80 rotate-[-6deg] flex items-center justify-center transform hover:-translate-y-2 transition-transform cursor-pointer">
+<span class="material-symbols-outlined text-primary text-[22px] opacity-70">brightness_7</span>
+</div>
+<div class="w-14 h-20 rounded bg-gradient-to-br from-surface-container-highest to-surface-container-lowest shadow-lg shadow-black/80 rotate-[0deg] flex items-center justify-center transform hover:-translate-y-2 transition-transform cursor-pointer">
+<span class="material-symbols-outlined text-primary text-[22px] opacity-70">brightness_7</span>
+</div>
+<div class="w-14 h-20 rounded bg-gradient-to-br from-surface-container-highest to-surface-container-lowest shadow-lg shadow-black/80 rotate-[6deg] flex items-center justify-center transform hover:-translate-y-2 transition-transform cursor-pointer">
+<span class="material-symbols-outlined text-primary text-[22px] opacity-70">brightness_7</span>
+</div>
+<div class="w-14 h-20 rounded bg-gradient-to-br from-surface-container-highest to-surface-container-lowest shadow-lg shadow-black/80 rotate-[12deg] flex items-center justify-center transform hover:-translate-y-2 transition-transform cursor-pointer">
+<span class="material-symbols-outlined text-primary text-[22px] opacity-70">brightness_7</span>
+</div>
+</div>
+<!-- Opponent Mana / Vitals -->
+<div class="flex items-center gap-space-lg">
+<!-- Blood Mana Spheres -->
+<div class="flex flex-col items-end gap-1">
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm uppercase text-outline">Mana de Sangue</span>
+<span class="font-title-md text-title-md text-primary font-bold">7 / 10</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="w-3 h-3 rounded-full bg-primary-container shadow-[0_0_8px_#e6194b]"></span>
+<span class="w-3 h-3 rounded-full bg-primary-container shadow-[0_0_8px_#e6194b]"></span>
+<span class="w-3 h-3 rounded-full bg-primary-container shadow-[0_0_8px_#e6194b]"></span>
+<span class="w-3 h-3 rounded-full bg-primary-container shadow-[0_0_8px_#e6194b]"></span>
+<span class="w-3 h-3 rounded-full bg-primary-container shadow-[0_0_8px_#e6194b]"></span>
+<span class="w-3 h-3 rounded-full bg-primary-container shadow-[0_0_8px_#e6194b]"></span>
+<span class="w-3 h-3 rounded-full bg-primary-container shadow-[0_0_8px_#e6194b]"></span>
+<span class="w-3 h-3 rounded-full bg-surface-container-highest opacity-40"></span>
+<span class="w-3 h-3 rounded-full bg-surface-container-highest opacity-40"></span>
+<span class="w-3 h-3 rounded-full bg-surface-container-highest opacity-40"></span>
+</div>
+</div>
+<!-- Opponent Life Crystal -->
+<div class="flex items-center gap-space-sm bg-surface-container-high/90 px-space-md py-2 rounded-xl shadow-inner">
+<div class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center shadow-[0_0_12px_#e6194b]">
+<span class="material-symbols-outlined text-on-primary-container text-[18px]">favorite</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-outline">Vida</span>
+<span class="font-headline-md text-headline-md text-on-surface font-semibold leading-none">30</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Opponent Board Active Line: 1 Artifact Slot + 4 Minion Slots -->
+<div class="w-full grid grid-cols-12 gap-space-md pt-space-xs">
+<!-- Opponent Artifact -->
+<div class="col-span-2 flex flex-col items-center">
+<span class="font-label-sm text-label-sm uppercase text-outline mb-1 tracking-wider">Relíquia Ativa</span>
+<div class="w-full h-36 rounded-lg bg-surface-container-low/60 p-2 flex flex-col justify-between shadow-lg relative group">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container-highest px-1.5 py-0.2 rounded">Cálice</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">2 Cargas</span>
+</div>
+<div class="w-full h-16 rounded overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Antique gothic chalice crafted from black obsidian and gilded gold, glowing crimson dark blood swirling inside, dark moody lighting, macabre card illustration style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCne8eKwV4vnm4CFKwbc72XEKYXqoN23oRvgolHUuPynUhrzzxnFB2Aaa51aanQsR6O9A1vxTMh56df0UTyjE39r8Ibs8GQV9K9CxuqD3oT8KtfSs7g6D0Yt3xcobhQUw0CxWyJgrGg6JH4i6L7_nkWOME3qPuhJSW2ilGG_gddVZAFa1lEu2aWwxmYSVNxWH1ybnEKNAwHu0N3Dh2bBcCi_YrI4XLkrSA0TYrk5nI6"/>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface line-clamp-1">Cálice de Sangue Negro</span>
+</div>
+</div>
+<!-- Opponent 4 Minion Slots -->
+<div class="col-span-10 grid grid-cols-4 gap-space-md">
+<!-- Minion 1: Active Gargoyle -->
+<div class="h-36 rounded-lg bg-surface-container-low/90 p-2.5 flex flex-col justify-between shadow-md relative overflow-hidden group hover:scale-[1.02] transition-transform">
+<div class="flex items-center justify-between z-10">
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container-highest px-1.5 py-0.2 rounded">Guardião</span>
+<span class="w-2 h-2 rounded-full bg-secondary shadow-[0_0_6px_#fabc4d]"></span>
+</div>
+<div class="absolute inset-0 opacity-40">
+<img class="w-full h-full object-cover" data-alt="Gargoyle gothic stone fiend perched on ancient gothic cathedral parapet, red glowing eyes, rainy moonlit storm, moody fantasy card game art" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB52_xHS5h3MP5bOQbheWVFuUVkfuulRAnKmzZFI-xooKI2rmtzwSZjJ2S-8Ssgr0LtMpidAngnKbZhiCpsQV4t6KPyjd14ca0C8h-5GnzTQ_fsaP5HFik_tyIIjUTXgNyl4b193TJ3qCgmhaBBvNYTqKGLsv27_37r5UYi2qyjX_mtLLgckvf1A4NmZEhG0YGBjinGW8H6AEh8BFhchQT_8-x3hitY48llQsZPcb2c"/>
+</div>
+<div class="z-10 mt-auto flex flex-col">
+<span class="font-title-md text-title-md text-on-surface leading-tight font-serif">Gárgula de Obsidiana</span>
+<div class="flex items-center justify-between mt-1">
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-md text-label-md font-bold">4 ATQ</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-secondary font-label-md text-label-md font-bold">5 DEF</span>
+</div>
+</div>
+</div>
+<!-- Minion 2: Sanguine Priest -->
+<div class="h-36 rounded-lg bg-surface-container-low/90 p-2.5 flex flex-col justify-between shadow-md relative overflow-hidden group hover:scale-[1.02] transition-transform">
+<div class="flex items-center justify-between z-10">
+<span class="font-label-sm text-label-sm text-primary bg-surface-container-highest px-1.5 py-0.2 rounded">Vampiro</span>
+<span class="font-label-sm text-label-sm text-tertiary">Sangrar 2</span>
+</div>
+<div class="absolute inset-0 opacity-40">
+<img class="w-full h-full object-cover" data-alt="Sanguine vampire priest with ornate silver tiara holding a ceremonial dagger dripping with crimson light, gothic occult aesthetic, hyper-detailed digital painting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkcVvQiK2s-2yOG8-_NcLwFMRVmP510bUd64jy2-XQxosMFvNYHTlG1hmlEtfvPpfnWnPq9zZCn9UBl6JTkllLgm-t4CWIUpp1CcxGhalhZMhwjRWulANZXGSH4yWDtyooO7YFpSEIMsEcANiOIPIo6dzyDJVrYdPoUJJ1FEuH9IGxVG3W1LIpZ8LSL_qcmnz68QIDy9zIqULlNEFx8rOxP4r9O5XWlm9BHTRKvAL6"/>
+</div>
+<div class="z-10 mt-auto flex flex-col">
+<span class="font-title-md text-title-md text-on-surface leading-tight font-serif">Sacerdote Escarlate</span>
+<div class="flex items-center justify-between mt-1">
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-md text-label-md font-bold">3 ATQ</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-secondary font-label-md text-label-md font-bold">3 DEF</span>
+</div>
+</div>
+</div>
+<!-- Minion 3: Empty Slot -->
+<div class="h-36 rounded-lg bg-surface-container-lowest/50 flex flex-col items-center justify-center shadow-inner relative group">
+<span class="material-symbols-outlined text-outline-variant text-[32px] opacity-40 group-hover:scale-110 transition-transform">radio_button_unchecked</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline-variant mt-2">Vazio</span>
+</div>
+<!-- Minion 4: Empty Slot -->
+<div class="h-36 rounded-lg bg-surface-container-lowest/50 flex flex-col items-center justify-center shadow-inner relative group">
+<span class="material-symbols-outlined text-outline-variant text-[32px] opacity-40 group-hover:scale-110 transition-transform">radio_button_unchecked</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline-variant mt-2">Vazio</span>
+</div>
+</div>
+</div>
+</div>
+<!-- ================= CENTER ARENA: BATTLEFIELD SLAB & PERIPHERY ================= -->
+<div class="w-full grid grid-cols-12 gap-space-md items-center relative py-space-xs">
+<!-- LEFT: Graveyard Crypt Pile & Banished Zone -->
+<div class="col-span-2 flex flex-col gap-space-sm">
+<div class="bg-surface-container-lowest/80 backdrop-blur-md rounded-xl p-space-md shadow-xl flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-tertiary-container text-[18px]">autoplay</span>
+<span class="font-label-md text-label-md uppercase tracking-wider text-on-surface">Cripta (Cemitério)</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container-high px-1.5 py-0.2 rounded font-bold">14</span>
+</div>
+<!-- Stacked cards appearance -->
+<div class="relative h-28 w-full rounded-lg bg-surface-container-low shadow-inner flex items-center justify-center overflow-hidden cursor-pointer group">
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent z-10"></div>
+<img class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform" data-alt="Fallen gothic knight in rusted filigree armor buried under wilted red roses and gothic skulls, dark romantic macabre painting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADNGLcACIvIEFx2VnCKP23ItRkR3zbARgv-mBr4VSP0TK_71b8eKzlX_jR6hPuqx-cBGzYFStzdtr2mAEpRBSpWUkS8CZP6NpUeCDhTbsrEBsRX1DSmcXO6xqIsxW3x5yNE0JSj8g9OH-b199JL6WvNeCMZ8AJT_rb8vJSFZq3ro16d1LXiy5RywWme-Jdb9BiVlIS5eHZ3TTlZ6Rr3B9o3nvA2fONFeVBqYGxkwgV"/>
+<div class="absolute bottom-2 left-2 z-20 flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">Último Descarte:</span>
+<span class="font-title-md text-title-md text-on-surface leading-tight font-serif">Vontade Quebrada</span>
+</div>
+</div>
+</div>
+<!-- Eclipse Ward Indicator -->
+<div class="bg-surface-container-low/80 rounded-xl p-space-sm flex items-center justify-between shadow-md">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">dark_mode</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase">Maré de Sangue</span>
+<span class="font-title-md text-title-md text-secondary">Eclipse Total</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm bg-primary-container text-on-primary-container px-2 py-0.5 rounded-full font-bold">+2 Dano Noturno</span>
+</div>
+</div>
+<!-- CENTER: Runic Sepulchral Stone Slab Battlefield -->
+<div class="col-span-7 bg-surface-container-lowest/90 rounded-2xl p-space-lg shadow-2xl relative overflow-hidden flex flex-col justify-between min-h-[300px]">
+<!-- Stone runic overlay texture -->
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(230,25,75,0.08)_0,transparent_75%)] pointer-events-none"></div>
+<!-- Top Combat Rune Indicators -->
+<div class="flex items-center justify-between z-10">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">Alinhamento Astral:</span>
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span>
+              Ascensão das Sombras
+            </span>
+</div>
+<!-- Turn Counter & Clocks -->
+<div class="flex items-center gap-space-sm bg-surface-container-high/70 px-space-md py-1 rounded-full">
+<span class="material-symbols-outlined text-secondary text-[16px]">hourglass_top</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface">Turno 6 • 00:42s</span>
+</div>
+</div>
+<!-- Center Clash Zone / Runic Ring -->
+<div class="my-auto flex items-center justify-around py-space-sm relative z-10">
+<!-- Lane 1 Slash Mark -->
+<div class="flex flex-col items-center gap-1">
+<div class="w-1 h-14 bg-gradient-to-b from-primary-container/40 via-secondary/20 to-transparent rounded-full"></div>
+<span class="material-symbols-outlined text-outline-variant text-[14px]">arrow_downward</span>
+</div>
+<!-- Lane 2 Active Clash -->
+<div class="flex flex-col items-center gap-1">
+<div class="w-1.5 h-20 bg-gradient-to-b from-primary-container via-primary-container to-secondary rounded-full shadow-[0_0_12px_#e6194b]"></div>
+<div class="px-2 py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold shadow-lg">
+              CONFLITO
+            </div>
+</div>
+<!-- Lane 3 Open Flank -->
+<div class="flex flex-col items-center gap-1">
+<div class="w-1 h-14 bg-surface-container-high/60 rounded-full"></div>
+<span class="material-symbols-outlined text-outline-variant text-[14px]">remove</span>
+</div>
+<!-- Lane 4 Guarded Lane -->
+<div class="flex flex-col items-center gap-1">
+<div class="w-1 h-14 bg-secondary/30 rounded-full"></div>
+<span class="material-symbols-outlined text-secondary text-[14px]">shield</span>
+</div>
+</div>
+<!-- Bottom Slab Phase Banner -->
+<div class="flex items-center justify-between z-10">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">swords</span>
+<span class="font-headline-md text-headline-md text-on-surface uppercase tracking-wider font-serif">Fase de Ataque Noturno</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-widest">Sua Vez de Desencadear o Terror</span>
+</div>
+</div>
+<!-- RIGHT: Combat Action Log & Combat Feed -->
+<div class="col-span-3 flex flex-col gap-space-sm">
+<div class="bg-surface-container-lowest/80 backdrop-blur-md rounded-xl p-space-md shadow-xl flex flex-col gap-space-sm h-72">
+<div class="flex items-center justify-between pb-1">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[18px]">history_edu</span>
+<span class="font-label-md text-label-md uppercase tracking-wider text-on-surface">Crônicas do Combate</span>
+</div>
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+</div>
+<!-- Log Entries -->
+<div class="flex flex-col gap-2 overflow-y-auto pr-1">
+<div class="p-2 rounded bg-surface-container-low/70 flex flex-col gap-0.5">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-primary font-bold">Carmilla • Dano</span>
+<span class="font-label-sm text-label-sm text-outline">14:02:11</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Desferiu 6 de dano e recuperou 3 de essência vital.</span>
+</div>
+<div class="p-2 rounded bg-surface-container-low/70 flex flex-col gap-0.5">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary font-bold">Vladislav • Magia</span>
+<span class="font-label-sm text-label-sm text-outline">14:01:48</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Invocou Gárgula de Obsidiana com Escudo Pétreo.</span>
+</div>
+<div class="p-2 rounded bg-surface-container-low/70 flex flex-col gap-0.5">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-tertiary font-bold">Adaga Voraz • Buff</span>
+<span class="font-label-sm text-label-sm text-outline">14:01:20</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant leading-tight">Equipado ao Servo de Sangue (+1 Sangramento).</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ================= BOTTOM PLAYER AREA & FIELD CARDS ================= -->
+<div class="w-full bg-surface-container-lowest/80 backdrop-blur-md rounded-xl p-space-md shadow-2xl flex flex-col gap-space-sm relative">
+<!-- Player Battlefield Minion Line -->
+<div class="w-full grid grid-cols-12 gap-space-md pb-space-xs">
+<!-- Player Artifact Slot: Adaga Voraz -->
+<div class="col-span-2 flex flex-col items-center">
+<span class="font-label-sm text-label-sm uppercase text-outline mb-1 tracking-wider">Arma Equipada</span>
+<div class="w-full h-40 rounded-lg bg-surface-container-low/90 p-2 flex flex-col justify-between shadow-lg relative group hover:scale-[1.02] transition-transform">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container-highest px-1.5 py-0.2 rounded">Ancestral</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">3 Usos</span>
+</div>
+<div class="w-full h-20 rounded overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Voracious Gothic ceremonial dagger with jagged bone handle and glowing crimson blade radiating ethereal red mists, gothic card design, dramatic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtx4cs0C7zhSTy8jcoFREkrvHoCn_WdtV2IDQfhofQ4AfpP3O4QQcQE8Hc8mfxHPRdfZyzjANkKiWK4F89b2V6KpF2R9UXqE8gR-K1yMLVD80g7diOvS8gHX_qxy_xoHdIWuRdFe09SVWgnXyjBq4dvgzRHupxcGbbMR4ZrQaVFPALj_0XP67vwcMIG5OACze9ywOFgN7Tnub2BCUhYZS046Xfla5W7NLL_Oiy402x"/>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface line-clamp-1 font-serif">Adaga Voraz</span>
+<span class="font-body-sm text-body-sm text-outline line-clamp-1">+2 Dano e Sangria I</span>
+</div>
+</div>
+</div>
+<!-- Player Minions (Carmilla, Blood Thrall, 2 slots open) -->
+<div class="col-span-7 grid grid-cols-4 gap-space-md">
+<!-- Carmilla, Lady of the Crypt (Legendary Minion) -->
+<div class="h-40 rounded-lg bg-surface-container-low/95 p-2.5 flex flex-col justify-between shadow-[0_0_15px_rgba(230,25,75,0.25)] relative overflow-hidden group hover:scale-[1.02] transition-transform">
+<div class="flex items-center justify-between z-10">
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container-highest px-2 py-0.5 rounded font-bold uppercase tracking-wider">Lendária</span>
+<span class="font-label-sm text-label-sm text-primary-fixed-dim bg-primary-container/40 px-1.5 py-0.2 rounded font-bold">Lifelink 3</span>
+</div>
+<div class="absolute inset-0 opacity-50">
+<img class="w-full h-full object-cover" data-alt="Carmilla Lady of the Crypt, gothic vampire queen with intricate black lace veil, blood ruby crown, pale skin, cold majestic smirk holding an obsidian goblet, atmospheric castle cloister, dark baroque fantasy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRmwOo1UqLjOBhsuqt_pXsYeflKOQGm0WW3_s0MovHVNz60TMoT95U5Jmtlp1S-2fkh98O2ps249uy6UhMZDnBJkcrAFB3p9U_cgtaEp_42ua4TF83x_31kt3PhKjI5V-Yz1uq0_vfSsYErGpTaNwC7bLG-19lm-2xQU3ROwcoLKF7rAqRTw5ls7gKAQk9gHACWBIzQV1Bi0rIFiIcUoEw488XOd3mWa6u3ZbjAitj"/>
+</div>
+<div class="z-10 mt-auto flex flex-col">
+<span class="font-title-md text-title-md text-on-surface leading-tight font-serif">Carmilla, Dama da Cripta</span>
+<div class="flex items-center justify-between mt-1.5">
+<span class="px-2.5 py-0.5 rounded bg-primary-container text-on-primary-container font-label-md text-label-md font-bold shadow-sm">6 ATQ</span>
+<span class="px-2.5 py-0.5 rounded bg-surface-container-highest text-secondary font-label-md text-label-md font-bold shadow-sm">7 DEF</span>
+</div>
+</div>
+</div>
+<!-- Blood Thrall (2/1) -->
+<div class="h-40 rounded-lg bg-surface-container-low/90 p-2.5 flex flex-col justify-between shadow-md relative overflow-hidden group hover:scale-[1.02] transition-transform">
+<div class="flex items-center justify-between z-10">
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container-highest px-1.5 py-0.2 rounded">Servo</span>
+<span class="font-label-sm text-label-sm text-secondary">Ímpeto</span>
+</div>
+<div class="absolute inset-0 opacity-45">
+<img class="w-full h-full object-cover" data-alt="Chained gothic blood thrall ghoul with branded sigils on pale scarred flesh, feral glowing eyes, midnight crypt catacombs background, dark grimdark fantasy illustration" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_tHiLgYvWmVDeyF7xeDl5BsEI6iPUG1OvtNfwLSmESQ1t9n-FYOj0PdTujZpu4UqC4AKtYU5MWlUx88j6B9X4e4n5WB8VXrrB_KgCVLnR-cWa9EhptsfrGtnTQo8sDDNHvB1n3Y8xmyFmpMJGCanK-No072Z23g7wU0ytt0QDQgny8PWqqM4d_doApV7aYdzZt4Yw75OShT3RSiKfXeRCOWd_f5JsT56-rohhE8qM"/>
+</div>
+<div class="z-10 mt-auto flex flex-col">
+<span class="font-title-md text-title-md text-on-surface leading-tight font-serif">Servo de Sangue</span>
+<div class="flex items-center justify-between mt-1.5">
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary-container font-label-md text-label-md font-bold">2 ATQ</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-secondary font-label-md text-label-md font-bold">1 DEF</span>
+</div>
+</div>
+</div>
+<!-- Open Slot with Summon Sigil -->
+<div class="h-40 rounded-lg bg-surface-container-lowest/60 flex flex-col items-center justify-center shadow-inner relative group cursor-pointer hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-primary text-[28px] opacity-40 group-hover:opacity-80 group-hover:scale-125 transition-all">add_circle</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline-variant mt-2 group-hover:text-primary">Invocar</span>
+</div>
+<!-- Open Slot with Summon Sigil -->
+<div class="h-40 rounded-lg bg-surface-container-lowest/60 flex flex-col items-center justify-center shadow-inner relative group cursor-pointer hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-primary text-[28px] opacity-40 group-hover:opacity-80 group-hover:scale-125 transition-all">add_circle</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-outline-variant mt-2 group-hover:text-primary">Invocar</span>
+</div>
+</div>
+<!-- RIGHT: Large Action Controls (End Turn / Pass Phase) -->
+<div class="col-span-3 flex flex-col justify-between gap-space-sm pl-space-md">
+<!-- Octagonal Primordial End Turn Button -->
+<button class="w-full py-4 px-space-md bg-gradient-to-r from-primary-container to-inverse-primary rounded-xl text-on-primary-container shadow-[0_0_25px_rgba(230,25,75,0.5)] hover:shadow-[0_0_35px_rgba(230,25,75,0.75)] hover:scale-[1.02] active:scale-[0.98] transition-all flex flex-col items-center justify-center gap-1 group">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[24px] group-hover:rotate-45 transition-transform">bolt</span>
+<span class="font-headline-md text-headline-md font-serif uppercase tracking-widest text-white">Consagrar Sangue</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary-fixed uppercase tracking-wider">Passar Turno ao Inimigo</span>
+</button>
+<!-- Tactical Sub-Buttons -->
+<div class="flex items-center gap-space-sm">
+<button class="flex-1 py-2 bg-surface-container-high hover:bg-surface-variant text-on-surface rounded-lg font-label-md text-label-md uppercase tracking-wider transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+              Examinar
+            </button>
+<button class="py-2 px-space-md bg-error-container hover:bg-on-error text-on-error-container rounded-lg font-label-md text-label-md uppercase tracking-wider transition-colors flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[16px]">flag</span>
+              Render-se
+            </button>
+</div>
+</div>
+</div>
+<!-- Player HUD: Malichor Status & Mana -->
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-space-md">
+<div class="relative">
+<div class="w-14 h-14 rounded-full bg-surface-container-highest overflow-hidden shadow-[0_0_15px_rgba(250,188,77,0.3)]">
+<img class="w-full h-full object-cover" data-alt="Lord Malichor gothic vampire warlord in high-collared ornate golden-inlaid cuirass, intense amber eyes, dark brooding aristocratic expression, moonlit cathedral gothic background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmR155Y49l-e1Ng8vZWfhGs7SWC_Y_-eb-qIMbUOnQ2AYNRWK44qJHG8Se7_ficZjZcqc-YwzgVpV7sQTa4rtVb11e-txafipD7CL9NnmWREA4OrtHZ3m2WjrjvaszLonRUR71E4OMS2g0F6u-ZNfAEYHCCogAuFDtL8_pRtrxIcW_q7UrRb2icGEtgDRzJRplCvJxDXq5dRbk5n-K6sVNfvSYbKzyJ_aOgxd4Le2j"/>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-secondary text-on-secondary px-1.5 py-0.5 rounded-full font-label-sm text-label-sm font-bold shadow-md">
+              LV.48
+            </div>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-md text-headline-md text-on-surface">Lord Malichor</span>
+<span class="font-label-sm text-label-sm uppercase bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded tracking-widest font-bold">Archon Primus</span>
+</div>
+<div class="flex items-center gap-space-sm text-body-sm">
+<span class="text-secondary flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">shield_moon</span>
+                2 Cargas Eclipse
+              </span>
+<span class="text-outline">• Ordem Noturna</span>
+</div>
+</div>
+</div>
+<!-- Player Health & Mana Deck Pools -->
+<div class="flex items-center gap-space-xl">
+<!-- Blood Mana Spheres -->
+<div class="flex flex-col items-start gap-1">
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm uppercase text-outline">Mana de Sangue Disponível</span>
+<span class="font-title-md text-title-md text-primary font-bold">8 / 10</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="w-3.5 h-3.5 rounded-full bg-primary-container shadow-[0_0_10px_#e6194b]"></span>
+<span class="w-3.5 h-3.5 rounded-full bg-primary-container shadow-[0_0_10px_#e6194b]"></span>
+<span class="w-3.5 h-3.5 rounded-full bg-primary-container shadow-[0_0_10px_#e6194b]"></span>
+<span class="w-3.5 h-3.5 rounded-full bg-primary-container shadow-[0_0_10px_#e6194b]"></span>
+<span class="w-3.5 h-3.5 rounded-full bg-primary-container shadow-[0_0_10px_#e6194b]"></span>
+<span class="w-3.5 h-3.5 rounded-full bg-primary-container shadow-[0_0_10px_#e6194b]"></span>
+<span class="w-3.5 h-3.5 rounded-full bg-primary-container shadow-[0_0_10px_#e6194b]"></span>
+<span class="w-3.5 h-3.5 rounded-full bg-primary-container shadow-[0_0_10px_#e6194b]"></span>
+<span class="w-3.5 h-3.5 rounded-full bg-surface-container-highest opacity-40"></span>
+<span class="w-3.5 h-3.5 rounded-full bg-surface-container-highest opacity-40"></span>
+</div>
+</div>
+<!-- Player Health Heart -->
+<div class="flex items-center gap-space-sm bg-surface-container-high/90 px-space-md py-2 rounded-xl shadow-inner">
+<div class="w-9 h-9 rounded-full bg-primary-container flex items-center justify-center shadow-[0_0_15px_#e6194b]">
+<span class="material-symbols-outlined text-on-primary-container text-[20px]">favorite</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-outline">Pontos Vitais</span>
+<span class="font-headline-md text-headline-md text-on-surface font-semibold leading-none">30 / 30</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- ================= DYNAMIC FANNED PLAYER HAND (6 CARDS) ================= -->
+<div class="w-full flex flex-col items-center justify-center relative pt-4">
+<div class="flex items-center justify-center -space-x-8 px-space-lg w-full max-w-5xl">
+<!-- Card 1: Ritual Noturno (Mana 2) -->
+<div class="w-48 h-64 rounded-xl bg-surface-container-low/95 p-2 flex flex-col justify-between shadow-2xl rotate-[-10deg] hover:rotate-0 hover:-translate-y-8 hover:z-30 hover:scale-105 transition-all duration-300 cursor-pointer group">
+<div class="flex items-center justify-between">
+<div class="w-7 h-7 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-headline-md text-headline-md font-bold shadow-md">
+              2
+            </div>
+<span class="font-label-sm text-label-sm text-secondary uppercase bg-surface-container-highest px-1.5 py-0.2 rounded">Magia</span>
+</div>
+<div class="w-full h-28 rounded-lg overflow-hidden my-1">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform" data-alt="Dark gothic occult ritual circle glowing with red moonlight and floating obsidian talismans in a moonlit cemetery, fantasy dark card artwork" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnclqaTOssI76xzKmbEizkZ6KlrxALFl5PcsJJq2_QbgzCt-FcFP6Y-K-cCyVXM7NH9bcyjz8M_CcjLkE7A0ytyOlDz_Dk3tH3QfW5THM-rGLz7ko_LM0kIr2r3x3sRyJZTAEfCfu8NpuHfLAukiRVQ1mUq5KhauQFrLsSIALc1BSOxewQOSApVSp9WDVcEwY2Gh8RYhvWh1pBCHztl2C--6IhuMkIdoRx7d7XmUUe"/>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface font-serif leading-tight">Ritual Noturno</span>
+<span class="font-body-sm text-body-sm text-outline mt-0.5 line-clamp-2">Compre 2 cartas. Cause 2 de dano a si mesmo.</span>
+</div>
+</div>
+<!-- Card 2: Lâmina Espectral (Mana 3) -->
+<div class="w-48 h-64 rounded-xl bg-surface-container-low/95 p-2 flex flex-col justify-between shadow-2xl rotate-[-5deg] hover:rotate-0 hover:-translate-y-8 hover:z-30 hover:scale-105 transition-all duration-300 cursor-pointer group">
+<div class="flex items-center justify-between">
+<div class="w-7 h-7 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-headline-md text-headline-md font-bold shadow-md">
+              3
+            </div>
+<span class="font-label-sm text-label-sm text-tertiary uppercase bg-surface-container-highest px-1.5 py-0.2 rounded">Feitiço</span>
+</div>
+<div class="w-full h-28 rounded-lg overflow-hidden my-1">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform" data-alt="Glowing ghostly ethereal rapier cutting through velvet shadow fabric, dripping pale luminescence, dark fantasy card illustration" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFDWvFK28WfvKW4iCyvoVe0bbMZB-2mFRLkLlMIJr_RgdYyD-6b2sTKj6oEk-iogvV1OYRgKPXB_88DhxT4ZQRchhW5VvGHtCYPa4U24bCf6bdeD7A873rHus1Vb_FpXh5y5zqbh1s8aemG4ZhHvuRGibvS-9v3IBK-9jPL1NtpPJY6kQ6upxIKivnVpa3dcqoYnBnlAmtg_Vun-hNN4XBZZFHISKQFb3NFu8jSN5Z"/>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface font-serif leading-tight">Lâmina Espectral</span>
+<span class="font-body-sm text-body-sm text-outline mt-0.5 line-clamp-2">Causa 4 de dano perfurante ignorando armadura.</span>
+</div>
+</div>
+<!-- Card 3: Pacto Carmesim (Mana 4) -->
+<div class="w-48 h-64 rounded-xl bg-surface-container-low/95 p-2 flex flex-col justify-between shadow-2xl rotate-[-1deg] hover:rotate-0 hover:-translate-y-8 hover:z-30 hover:scale-105 transition-all duration-300 cursor-pointer group">
+<div class="flex items-center justify-between">
+<div class="w-7 h-7 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-headline-md text-headline-md font-bold shadow-md">
+              4
+            </div>
+<span class="font-label-sm text-label-sm text-primary uppercase bg-surface-container-highest px-1.5 py-0.2 rounded">Tributo</span>
+</div>
+<div class="w-full h-28 rounded-lg overflow-hidden my-1">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform" data-alt="Blood pact parchment signed with dripping crimson blood seal, glowing mystical runes, dark castle stone floor background, highly detailed fantasy card" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCn7Hp9BGACI_5ACsUz-zHjW12NzMcXAPB9cTtMouqa4VsnOdQY9dCVj6Sa3FCZb4or3WCW7JOtnGX9Hv3n7zkyo9OcVsnhgqQxsPc1TvUN-sGF_DUzvY1FGx1WodCqu4Y0xCMBywratYNp1EIgWsLvKx7NianZLQeWvRHVAvW3sW6mw1buaIDnxdVdwN8X0LdmVygCS7JKy7pyQ-GpvLWlp7r8SeDRV7vBZKwbdZ_i"/>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface font-serif leading-tight">Pacto Carmesim</span>
+<span class="font-body-sm text-body-sm text-outline mt-0.5 line-clamp-2">Sacrifique um lacaio para invocar um Nobre da Cripta.</span>
+</div>
+</div>
+<!-- Card 4: Donzela de Ferro (Mana 5) -->
+<div class="w-48 h-64 rounded-xl bg-surface-container-low/95 p-2 flex flex-col justify-between shadow-2xl rotate-[3deg] hover:rotate-0 hover:-translate-y-8 hover:z-30 hover:scale-105 transition-all duration-300 cursor-pointer group">
+<div class="flex items-center justify-between">
+<div class="w-7 h-7 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-headline-md text-headline-md font-bold shadow-md">
+              5
+            </div>
+<span class="font-label-sm text-label-sm text-secondary uppercase bg-surface-container-highest px-1.5 py-0.2 rounded">Relíquia</span>
+</div>
+<div class="w-full h-28 rounded-lg overflow-hidden my-1">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform" data-alt="Ancient iron maiden torture device carved with weeping gothic angel faces, interior spikes glowing ruby red, dark dungeon setting, atmospheric horror painting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyAS4qY1SV4xevtVcp2zlnRu5IQB5FCwWS8WSoQB2kZ93xwHlMywQoIakVu8DdyqquhAGgi13XyiOgr1jMSYHrsc0IDirhDRIMrtR2Eiv-G2GMN026Yb846DXye55MTUljlmdhw1IQiXKNhGAB8yusuqn_O0X19YxEfM8i5mAzXb_afVEGbtIHuWniqiJpNKrBJMwZwtiFz_2emSRaoNiTtYMFxzgaKLCX-_6nAb5m"/>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface font-serif leading-tight">Donzela de Ferro</span>
+<span class="font-body-sm text-body-sm text-outline mt-0.5 line-clamp-2">Prenda um lacaio inimigo por 2 turnos completos.</span>
+</div>
+</div>
+<!-- Card 5: Voo dos Morcegos (Mana 2) -->
+<div class="w-48 h-64 rounded-xl bg-surface-container-low/95 p-2 flex flex-col justify-between shadow-2xl rotate-[7deg] hover:rotate-0 hover:-translate-y-8 hover:z-30 hover:scale-105 transition-all duration-300 cursor-pointer group">
+<div class="flex items-center justify-between">
+<div class="w-7 h-7 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-headline-md text-headline-md font-bold shadow-md">
+              2
+            </div>
+<span class="font-label-sm text-label-sm text-tertiary uppercase bg-surface-container-highest px-1.5 py-0.2 rounded">Evasão</span>
+</div>
+<div class="w-full h-28 rounded-lg overflow-hidden my-1">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform" data-alt="Swarm of supernatural vampire bats erupting into the night sky under an eclipse, glowing red eyes, gothic church spires background, card illustration" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8rPfdE4YAanmj1yd2iXSibhkMZMvMpqUYEO0uCdK5hGWhIuVjaBKM4AS2PNERZxQ3Ty9t44SbuPnyeLyiDPo6Payg5alzpTL35t5gu915AtmtoMZ2zNnOLcC9DLLDxwIMObQgOtz29Ybq9rnsMcCqnsAEDO38jQOjXNMkpSY91W9G9vxAvw_xqdlxHeX72pB_7OpWHm40KOVV61H9dhhc2raVr4075pnoqjXYFXwZ"/>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface font-serif leading-tight">Enxame Noturno</span>
+<span class="font-body-sm text-body-sm text-outline mt-0.5 line-clamp-2">Concede Furtividade a todos os lacaios por 1 turno.</span>
+</div>
+</div>
+<!-- Card 6: Maldição do Eclipse (Mana 6) -->
+<div class="w-48 h-64 rounded-xl bg-surface-container-low/95 p-2 flex flex-col justify-between shadow-2xl rotate-[12deg] hover:rotate-0 hover:-translate-y-8 hover:z-30 hover:scale-105 transition-all duration-300 cursor-pointer group">
+<div class="flex items-center justify-between">
+<div class="w-7 h-7 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-headline-md text-headline-md font-bold shadow-md">
+              6
+            </div>
+<span class="font-label-sm text-label-sm text-primary uppercase bg-surface-container-highest px-1.5 py-0.2 rounded">Suprema</span>
+</div>
+<div class="w-full h-28 rounded-lg overflow-hidden my-1">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform" data-alt="Blood moon total eclipse dripping red cosmic tendrils upon gothic kingdom towers, ominous and grand apocalyptic dark fantasy scene, high fantasy oil style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzkVr2kOyYgdaivwTpjEE3qGoMYcfdfANJwBz_VWWBV8yTOpwvpbEawYYa0EEUHJbsRo9Odo-bpgwMsVIQ9DXDvL2XwUVVmKIBrKbj_N38qejwpH6hEyYhd6Ayrg3F8vhY29h9sXHyhgxcupOq2jVYUDvYg32wi2vKIiGHbZ2vtAFoxFNT_7ycbX-JHUxE7sTwmhzN9MNwIwgRKndoyun9xA8bfP6uijD1u-dLbKT1"/>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface font-serif leading-tight">Maldição do Eclipse</span>
+<span class="font-body-sm text-body-sm text-outline mt-0.5 line-clamp-2">Destrua todos os lacaios sem vínculo de sangue.</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></main></div></body></html>

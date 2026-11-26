@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1620"/>
+      <stop offset="100%" style="stop-color:#0d0a12"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fabc4d"/>
+      <stop offset="50%" style="stop-color:#e5a93c"/>
+      <stop offset="100%" style="stop-color:#bd8718"/>
+    </linearGradient>
+    <linearGradient id="blood" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b1a1a"/>
+      <stop offset="100%" style="stop-color:#4a0a0a"/>
+    </linearGradient>
+  </defs>
+  <!-- Background circle -->
+  <circle cx="256" cy="256" r="240" fill="url(#bg)" stroke="url(#gold)" stroke-width="8"/>
+  <!-- Inner accent ring -->
+  <circle cx="256" cy="256" r="200" fill="none" stroke="url(#blood)" stroke-width="4" opacity="0.6"/>
+  <!-- VAMORT "V" glyph -->
+  <path d="M160 160 L220 400 L256 360 L292 400 L352 160 Z" fill="url(#gold)" stroke="#1a1620" stroke-width="4"/>
+  <path d="M180 160 L220 360 L256 330 L292 360 L332 160 Z" fill="url(#blood)" opacity="0.8"/>
+  <!-- Cross accent -->
+  <path d="M256 200 L256 320 M200 260 L312 260" stroke="url(#gold)" stroke-width="12" stroke-linecap="round" opacity="0.9"/>
+  <!-- Small decorative dots -->
+  <circle cx="180" cy="180" r="8" fill="url(#gold)" opacity="0.7"/>
+  <circle cx="332" cy="180" r="8" fill="url(#gold)" opacity="0.7"/>
+  <circle cx="256" cy="380" r="6" fill="url(#blood)" opacity="0.8"/>
+</svg>

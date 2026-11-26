@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: 'class', theme: { extend: { colors: { 'primary': '#ffb2b7', 'outline-variant': '#5c3f41', 'on-tertiary-fixed-variant': '#920128', 'tertiary-fixed': '#ffdada', 'surface-variant': '#38333e', 'on-primary': '#67001b', 'surface-dim': '#16121c', 'on-tertiary': '#68001a', 'on-primary-fixed-variant': '#92002a', 'inverse-on-surface': '#332e3a', 'primary-fixed-dim': '#ffb2b7', 'surface-container-high': '#2d2833', 'secondary': '#fabc4d', 'surface': '#16121c', 'inverse-primary': '#be0039', 'on-tertiary-fixed': '#40000d', 'on-error': '#690005', 'surface-container-highest': '#38333e', 'on-tertiary-container': '#fffeff', 'surface-container': '#221e28', 'on-secondary-container': '#3a2600', 'on-primary-container': '#fffeff', 'surface-container-low': '#1e1a24', 'tertiary': '#ffb3b6', 'surface-container-lowest': '#100c16', 'on-secondary-fixed': '#281900', 'secondary-fixed': '#ffdead', 'inverse-surface': '#e8dfee', 'error-container': '#93000a', 'on-background': '#e8dfee', 'outline': '#ac8889', 'error': '#ffb4ab', 'primary-container': '#e6194b', 'tertiary-fixed-dim': '#ffb3b6', 'on-surface': '#e8dfee', 'secondary-container': '#bd8718', 'surface-tint': '#ffb2b7', 'on-surface-variant': '#e5bdbe', 'surface-bright': '#3c3743', 'background': '#16121c', 'tertiary-container': '#d43d53', 'secondary-fixed-dim': '#fabc4d', 'primary-fixed': '#ffdadb', 'on-error-container': '#ffdad6', 'on-secondary': '#432c00', 'on-primary-fixed': '#40000d', 'on-secondary-fixed-variant': '#604100' }, borderRadius: { 'DEFAULT': '0.125rem', 'lg': '0.25rem', 'xl': '0.5rem', 'full': '0.75rem' }, spacing: { 'space-xs': '0.25rem', 'margin-tablet': '1.5rem', 'gutter-desktop': '1.5rem', 'space-xl': '2.5rem', 'margin-desktop': '2.5rem', 'space-sm': '0.5rem', 'space-md': '1rem', 'margin': '1rem', 'space-lg': '1.5rem', 'gutter': '1rem' }, fontFamily: { 'title-md': ['Geist'], 'body-md': ['Geist'], 'body-sm': ['Geist'], 'headline-md': ['Newsreader'], 'body-lg': ['Geist'], 'label-lg': ['Geist'], 'headline-lg': ['Newsreader'], 'label-md': ['Geist'], 'label-sm': ['Geist'], 'title-lg': ['Newsreader'], 'display-lg': ['Newsreader'], 'display-lg-mobile': ['Newsreader'], 'headline-lg-mobile': ['Newsreader'] }, fontSize: { 'title-md': ['16px', { lineHeight: '24px', letterSpacing: '0.04em', fontWeight: '600' }], 'body-md': ['14px', { lineHeight: '20px', fontWeight: '400' }], 'body-sm': ['12px', { lineHeight: '18px', fontWeight: '400' }], 'headline-md': ['24px', { lineHeight: '32px', fontWeight: '500' }], 'body-lg': ['16px', { lineHeight: '24px', fontWeight: '400' }], 'label-lg': ['14px', { lineHeight: '20px', letterSpacing: '0.06em', fontWeight: '600' }], 'headline-lg': ['32px', { lineHeight: '40px', letterSpacing: '0.01em', fontWeight: '500' }], 'label-md': ['12px', { lineHeight: '16px', letterSpacing: '0.08em', fontWeight: '600' }], 'label-sm': ['10px', { lineHeight: '14px', letterSpacing: '0.1em', fontWeight: '700' }], 'title-lg': ['20px', { lineHeight: '28px', letterSpacing: '0.03em', fontWeight: '600' }], 'display-lg': ['48px', { lineHeight: '56px', letterSpacing: '0.02em', fontWeight: '600' }], 'display-lg-mobile': ['32px', { lineHeight: '40px', letterSpacing: '0.02em', fontWeight: '600' }], 'headline-lg-mobile': ['24px', { lineHeight: '32px', letterSpacing: '0.01em', fontWeight: '500' }] } } } }</script></head><body class="bg-background font-body-md text-body-md text-on-surface select-none"><header class="fixed top-0 left-0 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl z-50 flex items-center justify-between px-gutter-desktop shadow-[0_1px_8px_rgba(0,0,0,0.4)]"><div class="flex items-center gap-space-lg"><div class="flex flex-col"><span class="font-headline-md text-headline-md tracking-wider text-primary uppercase">VAMORT</span><span class="font-label-sm text-label-sm text-secondary tracking-widest uppercase">Tactical Reliquary v1.0.4</span></div><div class="hidden xl:flex items-center gap-space-md py-space-xs px-space-md bg-surface-container-low rounded-lg"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="font-label-sm text-label-sm text-on-surface">Reino Sobrenatural</span></div><span class="font-label-sm text-label-sm text-outline">•</span><span class="font-label-sm text-label-sm text-on-surface-variant">24ms</span><span class="font-label-sm text-label-sm text-outline">•</span><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-primary text-[14px]">dark_mode</span><span class="font-label-sm text-label-sm text-primary uppercase tracking-wider">Eclipse Ativo</span></div></div></div><div class="hidden lg:flex items-center gap-space-md bg-surface-container-lowest/80 px-space-lg py-space-xs rounded-lg shadow-inner"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[18px]">monetization_on</span><div class="flex flex-col"><span class="font-label-sm text-label-sm text-outline">Ouro</span><span class="font-title-md text-title-md text-secondary leading-none">14.850</span></div></div><div class="w-px h-6 bg-surface-variant"></div><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-primary text-[18px]">water_drop</span><div class="flex flex-col"><span class="font-label-sm text-label-sm text-outline">Sangue Puro</span><span class="font-title-md text-title-md text-primary leading-none">3.240 ml</span></div></div><div class="w-px h-6 bg-surface-variant"></div><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary-fixed text-[18px]">vpn_key</span><div class="flex flex-col"><span class="font-label-sm text-label-sm text-outline">Chaves Cripta</span><span class="font-title-md text-title-md text-secondary-fixed leading-none">9</span></div></div><div class="w-px h-6 bg-surface-variant"></div><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-tertiary text-[18px]">bolt</span><div class="flex flex-col"><span class="font-label-sm text-label-sm text-outline">Éter Noturno</span><span class="font-title-md text-title-md text-tertiary leading-none">650</span></div></div></div><div class="flex items-center gap-space-md"><div class="relative flex items-center justify-center w-9 h-9 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors cursor-pointer"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary-container font-label-sm text-label-sm text-on-primary-container leading-none">3</span></div><div class="flex items-center justify-center w-9 h-9 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors cursor-pointer"><span class="material-symbols-outlined text-[20px]">settings</span></div><div class="h-8 w-px bg-surface-variant hidden sm:block"></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="text-right hidden sm:flex flex-col"><span class="font-title-md text-title-md text-on-surface leading-snug">Lorde Vladislav III</span><div class="flex items-center justify-end gap-space-xs"><span class="material-symbols-outlined text-secondary text-[12px]">shield</span><span class="font-label-sm text-label-sm text-secondary uppercase">Arcano Nív. 48</span></div></div><div class="relative p-0.5 rounded-full bg-gradient-to-b from-secondary to-primary-container"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/ALJJyrD8YLlcgZpIMDz0Wz95eDf3lJAUq70VJ-5OATISZmJhE7TXgS9hdVQmuT8GlSX-OnZgCb3q2aSg_lQ-lneebHwqfjSl4QxQlqRBWhe7JbQkLJQptNIY1GjXm1Y9AX1U_tfhakMH7VymXwDyf89OB5YNpjzPro5F1gvZ_A_FFXH6abdlbWAUfyDlMpIlkClPFeZQZh3AxoRN70hBG_P1uWdgNa3hJV5qw4eOpQUtPfgaTQ"/></div></div></div></header><aside class="fixed left-0 top-16 bottom-7 w-72 bg-surface-container-lowest z-40 flex flex-col justify-between overflow-y-auto shadow-[1px_0_12px_rgba(0,0,0,0.5)]"><div class="p-space-md"><div class="px-space-md py-space-xs mb-space-sm"><span class="font-label-sm text-label-sm uppercase tracking-widest text-outline">Grimório Primordial</span></div><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-bold shadow-[0_0_12px_rgba(230,25,75,0.35)]"><a aria-current="page" class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg transition-all bg-primary-container text-on-primary-container font-bold shadow-[0_0_12px_rgba(230,25,75,0.35)]" data-path="hub-central" href="#"><span class="material-symbols-outlined text-[20px]">cottage</span><span>Início / Hub Central</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="duelo-e-arena" href="#"><span class="material-symbols-outlined text-[20px]">swords</span><span>Duelo &amp; Arena</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="grimorios-e-forjador" href="#"><span class="material-symbols-outlined text-[20px]">auto_stories</span><span>Grimórios &amp; Forjador</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="coven-e-clas" href="#"><span class="material-symbols-outlined text-[20px]">groups_2</span><span>Coven &amp; Clãs</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="necropole-e-forja-de-almas" href="#"><span class="material-symbols-outlined text-[20px]">fireplace</span><span>Necrópole &amp; Forja</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="reliquias-e-encantos" href="#"><span class="material-symbols-outlined text-[20px]">toll</span><span>Relíquias &amp; Mercado</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="laboratorio-alquimico" href="#"><span class="material-symbols-outlined text-[20px]">science</span><span>Laboratório Alquímico</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="cronicas-e-campanha" href="#"><span class="material-symbols-outlined text-[20px]">history_edu</span><span>Crônicas &amp; Campanha</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="observatorio-astral" href="#"><span class="material-symbols-outlined text-[20px]">explore</span><span>Observatório Astral</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="masmorras-e-provacoes" href="#"><span class="material-symbols-outlined text-[20px]">castle</span><span>Masmorras &amp; Raids</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="ranks-e-mural-de-honra" href="#"><span class="material-symbols-outlined text-[20px]">military_tech</span><span>Ranks &amp; Mural de Honra</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-lg font-body-md text-body-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="perfil-de-lorde" href="#"><span class="material-symbols-outlined text-[20px]">vital_signs</span><span>Perfil de Lorde</span></a></nav></div><div class="p-space-md m-space-md rounded-lg bg-surface-container-low shadow-sm"><div class="flex items-center justify-between mb-space-xs"><span class="font-label-sm text-label-sm text-secondary uppercase">Pacto de Sangue</span><span class="font-label-sm text-label-sm text-on-surface">Fase IV</span></div><div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden"><div class="bg-gradient-to-r from-primary-container to-secondary h-full w-3/4"></div></div><span class="font-label-sm text-label-sm text-outline mt-space-xs block">Reinicia em 3 dias</span></div></aside><div class="pl-72"><main class="relative pt-16 pb-7 min-h-screen bg-surface"><div class="flex flex-col w-full p-space-md lg:p-space-lg gap-space-lg max-w-[1600px] mx-auto text-on-surface">
+<!-- ==================== TOP HERO SECTION ==================== -->
+<section class="relative w-full rounded-xl overflow-hidden bg-surface-container-lowest shadow-[0_20px_50px_rgba(0,0,0,0.8)]">
+<!-- WebGL Ambient Shader Background -->
+<!-- STITCH_SHADER_START:ANIMATION_144 class="absolute inset-0 w-full h-full opacity-60 pointer-events-none" -->
+<div class="absolute inset-0 w-full h-full opacity-60 pointer-events-none" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_144" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_144');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+uniform float u_time;
+uniform vec2 u_resolution;
+uniform vec2 u_mouse;
+
+// Simplex-style pseudo noise
+float hash(vec2 p) {
+    p = fract(p * vec2(123.34, 456.21));
+    p += dot(p, p + 45.32);
+    return fract(p.x * p.y);
+}
+
+float noise(vec2 p) {
+    vec2 i = floor(p);
+    vec2 f = fract(p);
+    f = f * f * (3.0 - 2.0 * f);
+    float a = hash(i);
+    float b = hash(i + vec2(1.0, 0.0));
+    float c = hash(i + vec2(0.0, 1.0));
+    float d = hash(i + vec2(1.0, 1.0));
+    return mix(mix(a, b, f.x), mix(c, d, f.x), f.y);
+}
+
+float fbm(vec2 p) {
+    float v = 0.0;
+    float a = 0.5;
+    vec2 shift = vec2(100.0);
+    mat2 rot = mat2(cos(0.5), sin(0.5), -sin(0.5), cos(0.5));
+    for (int i = 0; i < 5; ++i) {
+        v += a * noise(p);
+        p = rot * p * 2.0 + shift;
+        a *= 0.5;
+    }
+    return v;
+}
+
+void main() {
+    vec2 uv = gl_FragCoord.xy / u_resolution.xy;
+    vec2 p = (gl_FragCoord.xy - 0.5 * u_resolution.xy) / min(u_resolution.x, u_resolution.y);
+    
+    float t = u_time * 0.15;
+    
+    // Swirling crimson fog / gothic dark mist
+    vec2 motion = vec2(fbm(p * 2.0 - vec2(t * 0.4, t * 0.2)), fbm(p * 2.5 + vec2(t * 0.3, -t * 0.3)));
+    float n = fbm(p * 3.0 + motion * 1.5 + vec2(0.0, t * 0.3));
+    
+    // Vignette
+    float vig = smoothstep(1.2, 0.2, length(p * vec2(0.8, 1.0)));
+    
+    // Blood red & obsidian gothic palette
+    vec3 deepVoid = vec3(0.06, 0.04, 0.08); // Dark obsidian violet
+    vec3 crimsonBlood = vec3(0.55, 0.05, 0.12); // Deep liturgical blood red
+    vec3 scarletFlame = vec3(0.85, 0.12, 0.22); // Vibrant glowing rune crimson
+    vec3 darkAmber = vec3(0.20, 0.08, 0.04);
+    
+    vec3 col = mix(deepVoid, crimsonBlood, n * 0.85);
+    col = mix(col, scarletFlame, pow(n, 2.2) * 0.9);
+    col = mix(col, darkAmber, pow(noise(p * 5.0 + t), 3.0) * 0.25);
+    
+    // Subtle pulsating occult blood circle glow in center-right
+    vec2 centerGlow = p - vec2(0.3, 0.0);
+    float d = length(centerGlow);
+    float glow = 0.035 / (d * d + 0.08) * (0.8 + 0.2 * sin(u_time * 1.2));
+    col += scarletFlame * glow * 0.45;
+    
+    // Apply vignette & subtle film darkness
+    col *= vig;
+    col *= 0.92;
+    
+    gl_FragColor = vec4(col, 1.0);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_144 -->
+<!-- Subtle Gothic Red & Gold Ambient Gradients -->
+<div class="absolute inset-0 bg-gradient-to-r from-surface-container-lowest via-surface-container-lowest/80 to-transparent pointer-events-none"></div>
+<div class="absolute -top-32 -left-32 w-96 h-96 bg-primary-container/20 rounded-full blur-[100px] pointer-events-none"></div>
+<div class="absolute -bottom-32 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-[120px] pointer-events-none"></div>
+<!-- Content Grid -->
+<div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-space-lg p-space-lg lg:p-space-xl items-center">
+<!-- Left Column: Lore & Quick Match Actions -->
+<div class="lg:col-span-7 flex flex-col gap-space-md">
+<!-- Tag / Season Marker -->
+<div class="flex items-center gap-space-sm w-fit px-space-md py-space-xs rounded-full bg-surface-container-high/80 backdrop-blur-md shadow-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container animate-pulse shadow-[0_0_8px_#e6194b]"></span>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest">TEMPORADA LITÚRGICA VII • NOITE DO ECLIPSE PRIMORDIAL</span>
+</div>
+<!-- Majestic Title -->
+<h1 class="font-display-lg text-display-lg-mobile lg:text-display-lg text-on-surface leading-tight font-headline-lg tracking-wide uppercase">
+          O Banquete de Sangue <span class="text-primary italic">Começou</span>
+</h1>
+<!-- Lore Subtitle -->
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+          As hordas inquisitoriais marcham sobre as muralhas ancestrais de Styria. Convoque seus vampiros arcanos, desafie Lordes rivais e reivindique as cinzas sagradas do Altar antes do amanhecer.
+        </p>
+<!-- Active Event Pill -->
+<div class="flex items-center gap-space-sm w-fit px-space-md py-space-xs rounded-lg bg-secondary/10 text-secondary">
+<span class="material-symbols-outlined text-[18px]">hourglass_top</span>
+<span class="font-label-md text-label-md tracking-wider uppercase font-semibold">
+            Bônus Vigente: +50% Glória Dinástica em Duelos Noturnos <span class="text-outline-variant font-normal">(Restam 05h 42m)</span>
+</span>
+</div>
+<!-- Action CTAs -->
+<div class="flex flex-wrap items-center gap-space-md pt-space-xs">
+<!-- Monumental Quick Play Button -->
+<button class="group relative px-space-lg py-space-md rounded-lg bg-gradient-to-r from-primary-container to-on-primary-fixed-variant text-on-primary font-title-md text-title-md uppercase tracking-wider shadow-[0_0_24px_rgba(230,25,75,0.45)] hover:shadow-[0_0_36px_rgba(243,199,102,0.6)] transition-all flex flex-col items-start gap-0.5" type="button">
+<span class="flex items-center gap-space-sm text-on-primary">
+<span class="material-symbols-outlined text-[20px] transition-transform group-hover:scale-110">swords</span>
+<span>Iniciar Partida Rápida (Ranqueada)</span>
+</span>
+<span class="font-label-sm text-label-sm text-primary tracking-normal opacity-90 pl-7">
+              Fila Competitiva • Oponente Nível Arcano similar (~12s)
+            </span>
+</button>
+<!-- Practice / Solo Play -->
+<button class="px-space-lg py-space-md rounded-lg bg-surface-container-high/90 hover:bg-surface-container-highest text-secondary font-title-md text-title-md uppercase tracking-wider transition-all flex items-center gap-space-sm shadow-md" type="button">
+<span class="material-symbols-outlined text-[20px]">shield</span>
+<span>Treinar no Sandpit (IA)</span>
+</button>
+<!-- Patch Notes Tertiary -->
+<button class="px-space-md py-space-sm rounded-lg bg-surface-container-low/60 hover:bg-surface-container text-outline hover:text-on-surface font-label-md text-label-md uppercase tracking-wider transition-all flex items-center gap-space-xs" type="button">
+<span class="material-symbols-outlined text-[16px]">menu_book</span>
+<span>Patch Notes v1.0.4</span>
+</button>
+</div>
+</div>
+<!-- Right Column: Card Spotlight & Equipped Deck Quick Module -->
+<div class="lg:col-span-5 flex flex-col items-center lg:items-end justify-center">
+<div class="relative w-full max-w-[340px] flex flex-col gap-space-sm">
+<!-- Ornate Card Showcase -->
+<div class="relative rounded-xl overflow-hidden bg-surface-container-lowest shadow-[0_16px_40px_rgba(0,0,0,0.95)] group">
+<!-- Card Frame Glow -->
+<div class="absolute -inset-0.5 bg-gradient-to-b from-secondary/40 via-primary-container/20 to-secondary/30 rounded-xl blur-xs opacity-75 group-hover:opacity-100 transition-opacity"></div>
+<div class="relative rounded-xl bg-surface-container-low overflow-hidden flex flex-col">
+<!-- Card Header -->
+<div class="flex items-center justify-between px-space-md py-space-xs bg-surface-container-highest/90 backdrop-blur-md">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span> Mítica Arcano
+                </span>
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-widest">Nív. 60</span>
+</div>
+<!-- Artwork Image with Placeholder ID -->
+<div class="relative aspect-square w-full overflow-hidden bg-surface-container-lowest">
+<img alt="Carmilla, Dama da Cripta" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/ALJJyrD8YLlcgZpIMDz0Wz95eDf3lJAUq70VJ-5OATISZmJhE7TXgS9hdVQmuT8GlSX-OnZgCb3q2aSg_lQ-lneebHwqfjSl4QxQlqRBWhe7JbQkLJQptNIY1GjXm1Y9AX1U_tfhakMH7VymXwDyf89OB5YNpjzPro5F1gvZ_A_FFXH6abdlbWAUfyDlMpIlkClPFeZQZh3AxoRN70hBG_P1uWdgNa3hJV5qw4eOpQUtPfgaTQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-80"></div>
+<!-- Stat Badges over Art -->
+<div class="absolute bottom-space-xs left-space-sm flex items-center gap-1 bg-surface-container-lowest/90 px-space-sm py-0.5 rounded shadow">
+<span class="material-symbols-outlined text-primary text-[14px]">local_fire_department</span>
+<span class="font-title-md text-title-md text-primary font-bold">8</span>
+</div>
+<div class="absolute bottom-space-xs right-space-sm flex items-center gap-1 bg-surface-container-lowest/90 px-space-sm py-0.5 rounded shadow">
+<span class="material-symbols-outlined text-secondary text-[14px]">favorite</span>
+<span class="font-title-md text-title-md text-secondary font-bold">12</span>
+</div>
+</div>
+<!-- Card Info Footer -->
+<div class="p-space-sm bg-surface-container-low flex flex-col gap-0.5 text-center">
+<span class="font-headline-md text-headline-md text-on-surface tracking-wide">Carmilla, Dama da Cripta</span>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Custo de Éter: 6 • Vínculo de Sangue IV</span>
+</div>
+</div>
+</div>
+<!-- Quick Deck Status Widget -->
+<div class="w-full p-space-sm rounded-lg bg-surface-container-low/95 backdrop-blur-md flex items-center justify-between shadow-lg">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[24px]">style</span>
+<div class="flex flex-col">
+<span class="font-title-md text-body-md text-on-surface font-semibold truncate max-w-[170px]">Banquete Carmesim v3.4</span>
+<span class="font-label-sm text-label-sm text-secondary">40/40 Cartas • Vitórias: 74.2%</span>
+</div>
+</div>
+<button class="px-space-sm py-1 rounded bg-surface-container-high hover:bg-surface-container-highest text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm uppercase tracking-wider transition-colors" type="button">
+              Trocar Deck
+            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ==================== MIDDLE THREE-COLUMN DASHBOARD GRID ==================== -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-space-md">
+<!-- COL 1: Daily Login / Sacrificial Tribute -->
+<div class="flex flex-col gap-space-md p-space-md rounded-xl bg-surface-container-low shadow-xl">
+<!-- Section Header -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">candle</span>
+<h2 class="font-title-lg text-title-lg text-on-surface tracking-wide">Rito Sacrificial Diário</h2>
+</div>
+<span class="font-label-sm text-label-sm text-secondary uppercase bg-surface-container-highest px-space-xs py-0.5 rounded">
+          Dia 5 de 7
+        </span>
+</div>
+<!-- 7-Day Matrix -->
+<div class="grid grid-cols-4 gap-space-xs">
+<!-- Day 1 (Claimed) -->
+<div class="flex flex-col items-center justify-center p-space-xs rounded bg-surface-container-lowest opacity-60 text-center">
+<span class="font-label-sm text-label-sm text-outline">Dia 1</span>
+<span class="material-symbols-outlined text-secondary text-[16px]">check_circle</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">250 Ouro</span>
+</div>
+<!-- Day 2 (Claimed) -->
+<div class="flex flex-col items-center justify-center p-space-xs rounded bg-surface-container-lowest opacity-60 text-center">
+<span class="font-label-sm text-label-sm text-outline">Dia 2</span>
+<span class="material-symbols-outlined text-tertiary text-[16px]">check_circle</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">100 Éter</span>
+</div>
+<!-- Day 3 (Claimed) -->
+<div class="flex flex-col items-center justify-center p-space-xs rounded bg-surface-container-lowest opacity-60 text-center">
+<span class="font-label-sm text-label-sm text-outline">Dia 3</span>
+<span class="material-symbols-outlined text-secondary-fixed text-[16px]">check_circle</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">1x Chave</span>
+</div>
+<!-- Day 4 (Claimed) -->
+<div class="flex flex-col items-center justify-center p-space-xs rounded bg-surface-container-lowest opacity-60 text-center">
+<span class="font-label-sm text-label-sm text-outline">Dia 4</span>
+<span class="material-symbols-outlined text-primary text-[16px]">check_circle</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">500 Sangue</span>
+</div>
+</div>
+<!-- Day 5 (TODAY - Active Claim Spotlight) -->
+<div class="relative p-space-md rounded-lg bg-surface-container-high overflow-hidden shadow-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span>
+<span class="font-label-sm text-label-sm text-secondary uppercase font-bold tracking-widest">Oferenda de Hoje (Dia 5)</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary uppercase font-semibold">Disponível</span>
+</div>
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-14 rounded bg-surface-container-lowest flex items-center justify-center text-secondary shadow-inner">
+<span class="material-symbols-outlined text-[28px]">token</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface font-semibold leading-tight">Guardião da Cripta</span>
+<span class="font-label-sm text-label-sm text-outline">Carta Rara + 350 Ouro Arcano</span>
+</div>
+</div>
+<button class="w-full py-space-sm rounded bg-primary-container hover:bg-on-primary-fixed-variant text-on-primary font-title-md text-title-md uppercase tracking-wider transition-colors shadow-[0_0_12px_rgba(230,25,75,0.4)] flex items-center justify-center gap-space-xs" type="button">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Consagrar &amp; Coletar</span>
+</button>
+</div>
+<!-- Days 6 & 7 Preview -->
+<div class="grid grid-cols-2 gap-space-xs">
+<div class="p-space-xs rounded bg-surface-container-lowest flex items-center gap-space-xs opacity-75">
+<span class="material-symbols-outlined text-outline text-[16px]">lock</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline">Dia 6: 400 Sangue</span>
+<span class="font-label-sm text-label-sm text-outline-variant">Amanhã</span>
+</div>
+</div>
+<div class="p-space-xs rounded bg-surface-container-lowest flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[16px]">lock</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary font-bold">Dia 7: Selo Místico</span>
+<span class="font-label-sm text-label-sm text-outline-variant">Prêmio Máximo</span>
+</div>
+</div>
+</div>
+<!-- Daily Communion Sub-gauge -->
+<div class="p-space-sm rounded-lg bg-surface-container-lowest flex flex-col gap-1 mt-auto">
+<div class="flex justify-between items-center text-body-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Comunhão Diária: 3/5 Duelos</span>
+<span class="font-label-sm text-label-sm text-secondary">+100 Pts Coven</span>
+</div>
+<div class="w-full bg-surface-container h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full w-3/5"></div>
+</div>
+</div>
+</div>
+<!-- COL 2: Battle Pass (Pacto Carmesim) -->
+<div class="flex flex-col gap-space-md p-space-md rounded-xl bg-surface-container-low shadow-xl">
+<!-- Section Header -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">military_tech</span>
+<h2 class="font-title-lg text-title-lg text-on-surface tracking-wide">Pacto Escarlate • Temporada VII</h2>
+</div>
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold">Passe Ativo</span>
+</div>
+<!-- Level & XP Counter -->
+<div class="flex flex-col gap-space-xs p-space-sm rounded-lg bg-surface-container-high">
+<div class="flex justify-between items-end">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Grau de Sacrifício</span>
+<span class="font-headline-md text-headline-md text-on-surface font-bold leading-none">Nível 42 <span class="font-body-sm text-body-sm text-outline font-normal">/ 100</span></span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-semibold">3.450 / 5.000 XP</span>
+</div>
+<div class="w-full bg-surface-container-lowest h-2 rounded-full overflow-hidden">
+<div class="bg-gradient-to-r from-primary-container via-primary to-secondary h-full rounded-full w-[69%]"></div>
+</div>
+</div>
+<!-- Dual-Track Milestone Preview -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Trilhas de Recompensas</span>
+<!-- Track Rows -->
+<div class="grid grid-cols-3 gap-space-xs">
+<!-- Level 42 (Current) -->
+<div class="p-space-xs rounded bg-surface-container-lowest flex flex-col items-center text-center gap-1">
+<span class="font-label-sm text-label-sm text-secondary font-bold">Nív 42 (Atual)</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">check_circle</span>
+<span class="font-label-sm text-label-sm text-outline">500 Ouro</span>
+<div class="w-full h-px bg-surface-variant my-0.5"></div>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Borda Garras</span>
+</div>
+<!-- Level 43 (Next) -->
+<div class="p-space-xs rounded bg-surface-container-high flex flex-col items-center text-center gap-1 shadow-sm">
+<span class="font-label-sm text-label-sm text-primary font-bold">Nív 43</span>
+<span class="material-symbols-outlined text-primary text-[20px]">hourglass_top</span>
+<span class="font-label-sm text-label-sm text-on-surface">200 Éter</span>
+<div class="w-full h-px bg-surface-variant my-0.5"></div>
+<span class="font-label-sm text-label-sm text-secondary font-bold">Skin Carmilla</span>
+</div>
+<!-- Level 44 (Upcoming) -->
+<div class="p-space-xs rounded bg-surface-container-lowest opacity-75 flex flex-col items-center text-center gap-1">
+<span class="font-label-sm text-label-sm text-outline">Nív 44</span>
+<span class="material-symbols-outlined text-outline text-[20px]">lock</span>
+<span class="font-label-sm text-label-sm text-outline">Baú Prata</span>
+<div class="w-full h-px bg-surface-variant my-0.5"></div>
+<span class="font-label-sm text-label-sm text-outline">Olho Abismo</span>
+</div>
+</div>
+</div>
+<!-- Action Footer for Battle Pass -->
+<div class="flex flex-col gap-space-xs mt-auto">
+<button class="w-full py-space-sm rounded bg-gradient-to-r from-secondary-container to-secondary hover:brightness-110 text-on-secondary-container font-title-md text-title-md uppercase tracking-wider transition-all shadow-md flex items-center justify-center gap-space-xs font-bold" type="button">
+<span class="material-symbols-outlined text-[18px]">workspace_premium</span>
+<span>Desbloquear Passe Supremo</span>
+</button>
+<button class="w-full py-1 text-center text-outline hover:text-on-surface font-label-sm text-label-sm uppercase tracking-wider transition-colors" type="button">
+          Ver todas as 100 recompensas →
+        </button>
+</div>
+</div>
+<!-- COL 3: Competitive Ladder & Lord Elo -->
+<div class="flex flex-col gap-space-md p-space-md rounded-xl bg-surface-container-low shadow-xl">
+<!-- Section Header -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">social_leaderboard</span>
+<h2 class="font-title-lg text-title-lg text-on-surface tracking-wide">Ranking Competitivo</h2>
+</div>
+<span class="font-label-sm text-label-sm text-outline uppercase">Global BR-01</span>
+</div>
+<!-- Rank Tier Hero Card -->
+<div class="p-space-sm rounded-lg bg-surface-container-high flex items-center gap-space-md shadow-md">
+<div class="w-14 h-14 rounded-full bg-gradient-to-br from-secondary via-primary-container to-surface-container-lowest flex items-center justify-center p-0.5 shadow-lg">
+<div class="w-full h-full rounded-full bg-surface-container-lowest flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-[28px]">shield_with_heart</span>
+</div>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest font-semibold">Divisão I</span>
+<span class="font-title-md text-title-md text-on-surface font-bold">Mestre do Crepúsculo</span>
+<span class="font-label-sm text-label-sm text-primary">2.480 MMR • Top 1.2% Global</span>
+</div>
+</div>
+<!-- Mini-Leaderboard Top 3 -->
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Vanguardas do Reino</span>
+<div class="flex flex-col gap-1">
+<!-- Rank 1 -->
+<div class="flex items-center justify-between p-space-xs rounded bg-surface-container-lowest/80 text-body-sm">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-md text-label-md text-secondary font-bold w-4">1.</span>
+<span class="font-title-md text-body-md text-on-surface">Lord Valerius III</span>
+<span class="font-label-sm text-label-sm text-outline truncate max-w-[90px]">(Sanguis Aeterna)</span>
+</div>
+<span class="font-title-md text-body-md text-secondary font-bold">3.890 Pts</span>
+</div>
+<!-- Rank 2 -->
+<div class="flex items-center justify-between p-space-xs rounded bg-surface-container-lowest/80 text-body-sm">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-md text-label-md text-outline font-bold w-4">2.</span>
+<span class="font-title-md text-body-md text-on-surface">Condessa Mircalla</span>
+<span class="font-label-sm text-label-sm text-outline truncate max-w-[90px]">(Ordem Báthory)</span>
+</div>
+<span class="font-title-md text-body-md text-on-surface-variant font-semibold">3.740 Pts</span>
+</div>
+<!-- Rank 3 / You -->
+<div class="flex items-center justify-between p-space-xs rounded bg-surface-container-highest text-body-sm shadow-sm">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-md text-label-md text-primary font-bold w-4">3.</span>
+<span class="font-title-md text-body-md text-primary font-bold">Lord Vladislav III (Você)</span>
+</div>
+<span class="font-title-md text-body-md text-primary font-bold">2.480 Pts</span>
+</div>
+</div>
+</div>
+<!-- Promotion Match Notice & Footer -->
+<div class="flex flex-col gap-space-xs mt-auto">
+<div class="flex items-center gap-space-xs text-body-sm text-secondary bg-surface-container-lowest p-space-xs rounded">
+<span class="material-symbols-outlined text-[16px]">trending_up</span>
+<span class="font-label-sm text-label-sm">Faltam 20 Pts para Grão-Mestre Sanguinário</span>
+</div>
+<button class="w-full py-space-sm rounded bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-title-md text-body-md uppercase tracking-wider transition-colors flex items-center justify-center gap-space-xs" type="button">
+<span class="material-symbols-outlined text-[16px]">emoji_events</span>
+<span>Ver Mural de Honra Completo</span>
+</button>
+</div>
+</div>
+</section>
+<!-- ==================== BOTTOM TWO-COLUMN UTILITY SECTION ==================== -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-space-md mb-space-lg">
+<!-- LEFT COLUMN: Quests & Coven Bounties -->
+<div class="flex flex-col gap-space-md p-space-md rounded-xl bg-surface-container-low shadow-xl">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">assignment</span>
+<h2 class="font-title-lg text-title-lg text-on-surface tracking-wide">Missões Diárias &amp; Desafios de Coven</h2>
+</div>
+<button class="flex items-center gap-1 font-label-sm text-label-sm text-secondary hover:underline" type="button">
+<span class="material-symbols-outlined text-[14px]">refresh</span>
+<span>Atualizar (1 Grátis)</span>
+</button>
+</div>
+<!-- Quest List -->
+<div class="flex flex-col gap-space-sm">
+<!-- Quest 1 -->
+<div class="p-space-sm rounded-lg bg-surface-container-high flex flex-col gap-space-xs hover:bg-surface-container-highest transition-colors">
+<div class="flex justify-between items-start gap-space-sm">
+<div class="flex flex-col">
+<span class="font-title-md text-body-md text-on-surface font-semibold">Derramar Sangue Inimigo</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Drene 50 PV de Líderes adversários usando a carta Carmilla</span>
+</div>
+<div class="flex items-center gap-1 text-secondary font-label-sm text-label-sm font-semibold shrink-0">
+<span>+150 Ouro</span> • <span>+50 XP</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm pt-1">
+<div class="w-full bg-surface-container-lowest h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full w-[76%]"></div>
+</div>
+<span class="font-label-sm text-label-sm text-outline shrink-0">38/50 PV</span>
+</div>
+</div>
+<!-- Quest 2 -->
+<div class="p-space-sm rounded-lg bg-surface-container-high flex flex-col gap-space-xs hover:bg-surface-container-highest transition-colors">
+<div class="flex justify-between items-start gap-space-sm">
+<div class="flex flex-col">
+<span class="font-title-md text-body-md text-on-surface font-semibold">Sentinela Noturna</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Vença 2 duelos ranqueados durante a Hora das Sombras</span>
+</div>
+<div class="flex items-center gap-1 text-secondary-fixed font-label-sm text-label-sm font-semibold shrink-0">
+<span class="material-symbols-outlined text-[14px]">vpn_key</span>
+<span>1x Chave da Cripta</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm pt-1">
+<div class="w-full bg-surface-container-lowest h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary-fixed h-full rounded-full w-1/2"></div>
+</div>
+<span class="font-label-sm text-label-sm text-outline shrink-0">1/2 Vitórias</span>
+</div>
+</div>
+<!-- Quest 3 -->
+<div class="p-space-sm rounded-lg bg-surface-container-high flex flex-col gap-space-xs hover:bg-surface-container-highest transition-colors">
+<div class="flex justify-between items-start gap-space-sm">
+<div class="flex flex-col">
+<span class="font-title-md text-body-md text-on-surface font-semibold">Tributo do Coven</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Mobilize tropas na Guerra Territorial do Bastião de Styria</span>
+</div>
+<div class="flex items-center gap-1 text-tertiary font-label-sm text-label-sm font-semibold shrink-0">
+<span>+300 Devoção</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm pt-1">
+<div class="w-full bg-surface-container-lowest h-1.5 rounded-full overflow-hidden">
+<div class="bg-surface-variant h-full rounded-full w-0"></div>
+</div>
+<span class="font-label-sm text-label-sm text-outline shrink-0">0/1 Completo</span>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Gazeta de Styria & News -->
+<div class="flex flex-col gap-space-md p-space-md rounded-xl bg-surface-container-low shadow-xl">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[20px]">newspaper</span>
+<h2 class="font-title-lg text-title-lg text-on-surface tracking-wide">Gazeta de Styria &amp; Últimas Notícias</h2>
+</div>
+<span class="font-label-sm text-label-sm text-outline">Crônicas Ativas</span>
+</div>
+<!-- News Articles -->
+<div class="flex flex-col gap-space-sm">
+<!-- News 1 -->
+<div class="p-space-sm rounded-lg bg-surface-container-high flex flex-col gap-0.5 hover:bg-surface-container-highest transition-colors cursor-pointer">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold tracking-wider">Patch v1.0.4</span>
+<span class="font-label-sm text-label-sm text-outline">Hoje, 14:30</span>
+</div>
+<span class="font-title-md text-body-md text-on-surface font-semibold">Balanceamento: Inquisição e Novas Cartas Carmesins</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">
+            Ajustes cruciais nos Clérigos de Ferro e revelação antecipada do arquétipo de Sangue Corrompido.
+          </p>
+</div>
+<!-- News 2 -->
+<div class="p-space-sm rounded-lg bg-surface-container-high flex flex-col gap-0.5 hover:bg-surface-container-highest transition-colors cursor-pointer">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-bold tracking-wider">Guerra de Covens</span>
+<span class="font-label-sm text-label-sm text-outline">Ontem</span>
+</div>
+<span class="font-title-md text-body-md text-on-surface font-semibold">Bastião Valerius sitiado por mais de 50 clãs rivais</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">
+            A batalha pelo controle do Altar Noturno gerou a maior redistribuição de Éter da temporada.
+          </p>
+</div>
+<!-- News 3 -->
+<div class="p-space-sm rounded-lg bg-surface-container-high flex flex-col gap-0.5 hover:bg-surface-container-highest transition-colors cursor-pointer">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-tertiary uppercase font-bold tracking-wider">Competição</span>
+<span class="font-label-sm text-label-sm text-outline">Há 2 dias</span>
+</div>
+<span class="font-title-md text-body-md text-on-surface font-semibold">Torneio do Cálice Sagrado: Inscrições Abertas</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1">
+            Dispute premiação de 100.000 Ouro e a relíquia lendária Coroa de Espinhos da Meia-Noite.
+          </p>
+</div>
+</div>
+<!-- Community Links Banner -->
+<div class="p-space-sm rounded-lg bg-surface-container-lowest flex items-center justify-between text-body-sm mt-auto">
+<div class="flex items-center gap-space-xs text-outline">
+<span class="material-symbols-outlined text-[16px] text-secondary">forum</span>
+<span class="font-label-sm text-label-sm">Concílio Oficial no Discord &amp; Transmissões Twitch</span>
+</div>
+<a class="font-label-sm text-label-sm text-primary hover:underline uppercase font-bold" href="#">Entrar na Comunidade →</a>
+</div>
+</div>
+</section>
+</div></main></div><footer class="fixed bottom-0 left-0 right-0 h-7 bg-surface-container-lowest z-50 flex items-center justify-between px-gutter-desktop shadow-[0_-1px_6px_rgba(0,0,0,0.4)]"><div class="flex items-center gap-space-md"><span class="font-label-sm text-label-sm text-outline">Servidor: <span class="text-secondary">Reino Sobrenatural [BR-01]</span></span><span class="font-label-sm text-label-sm text-outline">•</span><span class="font-label-sm text-label-sm text-outline">Estado da Forja: <span class="text-primary">Sincronizado</span></span></div><div class="flex items-center gap-space-lg"><button class="flex items-center gap-space-xs text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[14px]">volume_up</span><span class="font-label-sm text-label-sm uppercase">Sinfonia Gótica</span></button><span class="font-label-sm text-label-sm text-outline">VAMORT-PROD-2025</span></div></footer></body></html>

@@ -1,0 +1,242 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 220" width="290" height="220">
+  <defs>
+    <linearGradient id="aureliaBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fff8f0"/>
+      <stop offset="30%" style="stop-color:#ffeedd"/>
+      <stop offset="60%" style="stop-color:#ffe5e5"/>
+      <stop offset="100%" style="stop-color:#ffdede"/>
+    </linearGradient>
+    <linearGradient id="whiteGoldArmor2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fff"/>
+      <stop offset="30%" style="stop-color:#fafafa"/>
+      <stop offset="60%" style="stop-color:#f0f0f0"/>
+      <stop offset="100%" style="stop-color:#e8e8e8"/>
+    </linearGradient>
+    <linearGradient id="divineGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd700"/>
+      <stop offset="50%" style="stop-color:#ffec8b"/>
+      <stop offset="100%" style="stop-color:#daa520"/>
+    </linearGradient>
+    <linearGradient id="holyLight3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fff"/>
+      <stop offset="40%" style="stop-color:#fffacd"/>
+      <stop offset="80%" style="stop-color:#ffd700"/>
+      <stop offset="100%" style="stop-color:#ffe5e5"/>
+    </linearGradient>
+    <radialGradient id="divineAura2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#fff;stop-opacity:1"/>
+      <stop offset="40%" style="stop-color:#ffd700;stop-opacity:0.6"/>
+      <stop offset="80%" style="stop-color:#ffec8b;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#ffe5e5;stop-opacity:0"/>
+    </radialGradient>
+    <radialGradient id="heartLight" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#ff69b4;stop-opacity:1"/>
+      <stop offset="50%" style="stop-color:#dc143c;stop-opacity:0.7"/>
+      <stop offset="100%" style="stop-color:#fff;stop-opacity:0"/>
+    </radialGradient>
+    <filter id="divineGlow2">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feFlood flood-color="#ffd700" flood-opacity="0.7"/>
+      <feComposite in2="blur" operator="in"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="heartGlow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feFlood flood-color="#ff69b4" flood-opacity="0.8"/>
+      <feComposite in2="blur" operator="in"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="290" height="220" fill="url(#aureliaBg)"/>
+
+  <!-- Divine light pillars from heaven -->
+  <g transform="translate(145, 60)">
+    <circle cx="0" cy="0" r="150" fill="url(#divineAura2)" opacity="0.25">
+      <animate attributeName="r" values="150;180;150" dur="5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.25;0.4;0.25" dur="5s" repeatCount="indefinite"/>
+    </circle>
+    <!-- Light rays -->
+    <g stroke="url(#holyLight3)" stroke-width="2" opacity="0.3">
+      <line x1="0" y1="-180" x2="0" y2="-80">
+        <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="40s" repeatCount="indefinite"/>
+      </line>
+      <line x1="0" y1="80" x2="0" y2="180">
+        <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="40s" repeatCount="indefinite"/>
+      </line>
+      <line x1="-180" y1="0" x2="-80" y2="0">
+        <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="40s" repeatCount="indefinite"/>
+      </line>
+      <line x1="80" y1="0" x2="180" y2="0">
+        <animateTransform attributeName="transform" type="rotate" from="0 0 0" to="360 0 0" dur="40s" repeatCount="indefinite"/>
+      </line>
+    </g>
+  </g>
+
+  <!-- Saint Aurelia -->
+  <g transform="translate(145, 150)">
+    <!-- Radiant armor -->
+    <path d="M -40,0 Q -50,-30 -40,-90 Q -20,-125 0,-135 Q 20,-125 40,-90 Q 50,-30 40,0 Q 30,20 0,25 Q -30,20 -40,0" fill="url(#whiteGoldArmor2)" stroke="url(#divineGold)" stroke-width="2.5" filter="url(#divineGlow2)"/>
+
+    <!-- Majestic pauldrons -->
+    <ellipse cx="-45" cy="-15" rx="24" ry="20" fill="url(#whiteGoldArmor2)" stroke="url(#divineGold)" stroke-width="3" filter="url(#divineGlow2)"/>
+    <ellipse cx="45" cy="-15" rx="24" ry="20" fill="url(#whiteGoldArmor2)" stroke="url(#divineGold)" stroke-width="3" filter="url(#divineGlow2)"/>
+    <!-- Cross on pauldrons -->
+    <g transform="translate(-45, -15)" filter="url(#divineGlow2)">
+      <path d="M 0,-18 L 0,4 M -10,-7 L 10,-7" stroke="url(#divineGold)" stroke-width="4"/>
+    </g>
+    <g transform="translate(45, -15)" filter="url(#divineGlow2)">
+      <path d="M 0,-18 L 0,4 M -10,-7 L 10,-7" stroke="url(#divineGold)" stroke-width="4"/>
+    </g>
+
+    <!-- Breastplate with Sacred Heart -->
+    <path d="M -28,-15 Q -33,-50 -13,-75 Q 0,-80 13,-75 Q 33,-50 28,-15 Q 23,15 -3,25 Q -23,15 -28,-15" fill="url(#whiteGoldArmor2)" stroke="url(#divineGold)" stroke-width="2.5"/>
+    <!-- Sacred Heart at center -->
+    <g transform="translate(0, -40)" filter="url(#heartGlow)">
+      <path d="M 0,8 Q -8,0 -8,-8 Q -8,-16 0,-20 Q 8,-16 8,-8 Q 8,0 0,8 Z" fill="url(#heartLight)" stroke="#fff" stroke-width="1.5">
+        <animate attributeName="d" values="M 0,8 Q -8,0 -8,-8 Q -8,-16 0,-20 Q 8,-16 8,-8 Q 8,0 0,8 Z; M 0,10 Q -10,2 -10,-10 Q -10,-18 0,-22 Q 10,-18 10,-10 Q 10,2 0,10 Z; M 0,8 Q -8,0 -8,-8 Q -8,-16 0,-20 Q 8,-16 8,-8 Q 8,0 0,8 Z" dur="1.5s" repeatCount="indefinite"/>
+      </path>
+      <circle cx="0" cy="-10" r="6" fill="#fff" opacity="0.9">
+        <animate attributeName="r" values="6;4;6" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+    <!-- Divine Shield floating at chest (always active) -->
+    <g transform="translate(0, -30)" filter="url(#divineGlow2)">
+      <ellipse cx="0" cy="0" rx="25" ry="20" fill="url(#divineAura2)" stroke="url(#divineGold)" stroke-width="3" opacity="0.8">
+        <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="rx" values="25;23;25" dur="2s" repeatCount="indefinite"/>
+      </ellipse>
+      <path d="M 0,-15 L 0,5 M -12,-5 L 12,-5" stroke="url(#divineGold)" stroke-width="3.5" opacity="1"/>
+    </g>
+
+    <!-- Arms -->
+    <!-- Left hand raised in blessing -->
+    <g transform="translate(-50, 0)">
+      <rect x="-10" y="-15" width="20" height="50" rx="3" fill="url(#whiteGoldArmor2)" stroke="url(#divineGold)" stroke-width="2"/>
+      <rect x="-12" y="35" width="24" height="15" rx="3" fill="url(#whiteGoldArmor2)" stroke="url(#divineGold)" stroke-width="2"/>
+      <!-- Blessing gesture -->
+      <g transform="translate(0, -35)" filter="url(#divineGlow2)">
+        <path d="M 0,0 Q -5,10 0,20 Q 5,10 0,0" fill="url(#whiteGoldArmor2)" stroke="#e8e8e8" stroke-width="1"/>
+        <path d="M -3,20 L -8,28 M 0,20 L -5,28 M 3,20 L -2,28" stroke="url(#whiteGoldArmor2)" stroke-width="3" stroke-linecap="round"/>
+        <!-- Healing light from fingers -->
+        <g fill="url(#holyLight3)">
+          <ellipse cx="-4" cy="28" rx="8" ry="4" opacity="0.8">
+            <animate attributeName="rx" values="8;5;8" dur="1.5s" repeatCount="indefinite"/>
+          </ellipse>
+          <ellipse cx="0" cy="30" rx="6" ry="3" opacity="0.9">
+            <animate attributeName="rx" values="6;4;6" dur="1.2s" repeatCount="indefinite"/>
+          </ellipse>
+          <ellipse cx="4" cy="28" rx="8" ry="4" opacity="0.8">
+            <animate attributeName="rx" values="8;5;8" dur="1.5s" repeatCount="indefinite"/>
+          </ellipse>
+        </g>
+      </g>
+    </g>
+
+    <!-- Right hand holding staff -->
+    <g transform="translate(50, 0)">
+      <rect x="-10" y="-15" width="20" height="50" rx="3" fill="url(#whiteGoldArmor2)" stroke="url(#divineGold)" stroke-width="2"/>
+      <rect x="-12" y="35" width="24" height="15" rx="3" fill="url(#whiteGoldArmor2)" stroke="url(#divineGold)" stroke-width="2"/>
+      <!-- Staff of Light -->
+      <g transform="translate(0, 50) rotate(5)">
+        <rect x="-3" y="-110" width="6" height="130" fill="url(#divineGold)" stroke="#daa520" stroke-width="1" filter="url(#divineGlow2)"/>
+        <!-- Staff head - sun/cross -->
+        <g transform="translate(0, -110)" filter="url(#divineGlow2)">
+          <circle cx="0" cy="0" r="20" fill="url(#divineAura2)" stroke="url(#divineGold)" stroke-width="2" opacity="0.9">
+            <animate attributeName="r" values="20;18;20" dur="2s" repeatCount="indefinite"/>
+          </circle>
+          <path d="M 0,-15 L 0,5 M -10,-5 L 10,-5" stroke="url(#divineGold)" stroke-width="3.5" opacity="1"/>
+          <circle cx="0" cy="-20" r="3" fill="#fff">
+            <animate attributeName="r" values="3;5;3" dur="1s" repeatCount="indefinite"/>
+          </circle>
+        </g>
+      </g>
+    </g>
+
+    <!-- Helm / Crown -->
+    <path d="M -30,-55 Q -30,-90 0,-100 Q 30,-90 30,-55 Q 30,-50 24,-50 Q 15,-70 0,-70 Q -15,-70 -24,-50 Q -30,-50 -30,-55" fill="url(#whiteGoldArmor2)" stroke="url(#divineGold)" stroke-width="2.5" filter="url(#divineGlow2)"/>
+    <!-- Crown points -->
+    <g transform="translate(0, -95)" filter="url(#divineGlow2)">
+      <path d="M -20,0 L -15,-20 L -10,0 Z" fill="url(#divineGold)" stroke="#daa520" stroke-width="1"/>
+      <path d="M -10,0 L -5,-25 L 0,0 Z" fill="url(#divineGold)" stroke="#daa520" stroke-width="1.5"/>
+      <path d="M 0,0 L 5,-25 L 10,0 Z" fill="url(#divineGold)" stroke="#daa520" stroke-width="1.5"/>
+      <path d="M 10,0 L 15,-20 L 20,0 Z" fill="url(#divineGold)" stroke="#daa520" stroke-width="1"/>
+    </g>
+    <!-- Face visible - serene, radiant -->
+    <ellipse cx="0" cy="-70" rx="16" ry="14" fill="#ffeedd" opacity="0.4"/>
+    <ellipse cx="-4" cy="-72" rx="2" ry="3" fill="#3d2a1a"/>
+    <ellipse cx="4" cy="-72" rx="2" ry="3" fill="#3d2a1a"/>
+    <path d="M -5,-65 Q 0,-62 5,-65" stroke="#8b7355" stroke-width="1.5" fill="none"/>
+
+    <!-- Halo behind head -->
+    <circle cx="0" cy="-85" r="35" fill="none" stroke="url(#divineGold)" stroke-width="4" filter="url(#divineGlow2)">
+      <animate attributeName="r" values="35;38;35" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="stroke-width" values="4;3;4" dur="3s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Tassets -->
+    <path d="M -35,35 Q -40,55 -15,75 Q 0,80 15,75 Q 40,55 35,35 Q 30,50 -5,55 Q -30,50 -35,35" fill="url(#whiteGoldArmor2)" stroke="url(#divineGold)" stroke-width="2"/>
+
+    <!-- Floating holy symbols -->
+    <g font-family="Georgia, serif" font-size="20" fill="url(#holyLight3)" text-anchor="middle" filter="url(#divineGlow2)">
+      <text x="-60" y="-40" opacity="0.9">✝</text>
+      <text x="60" y="-40" opacity="0.9">✝</text>
+      <text x="-65" y="10" style="font-size:14" opacity="0.7">✝</text>
+      <text x="65" y="10" style="font-size:14" opacity="0.7">✝</text>
+      <text x="0" y="-60" style="font-size:24" opacity="1">✝</text>
+      <text x="0" y="45" style="font-size:16" opacity="0.8">☥</text>
+    </g>
+  </g>
+
+  <!-- Blessed ground -->
+  <ellipse cx="145" cy="200" rx="90" ry="15" fill="url(#divineAura2)" opacity="0.4">
+    <animate attributeName="opacity" values="0.4;0.6;0.4" dur="2.5s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <!-- Ascending souls / healed allies -->
+  <g filter="url(#divineGlow2)">
+    <g fill="url(#holyLight3)">
+      <circle cx="80" cy="190" r="5">
+        <animate attributeName="cy" values="190;120;190" dur="5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.7;1;0.7" dur="5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="210" cy="180" r="4">
+        <animate attributeName="cy" values="180;110;180" dur="4.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.6;0.9;0.6" dur="4.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="145" cy="160" r="6">
+        <animate attributeName="cy" values="160;90;160" dur="4s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.8;1;0.8" dur="4s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+
+  <!-- Floating divine motes -->
+  <g fill="url(#divineGold)">
+    <circle cx="30" cy="50" r="2.5">
+      <animate attributeName="cy" values="50;25;50" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="260" cy="60" r="2">
+      <animate attributeName="cy" values="60;35;60" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;0.9;0.5" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="50" cy="180" r="2.5">
+      <animate attributeName="cy" values="180;155;180" dur="3.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="3.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="240" cy="170" r="2">
+      <animate attributeName="cy" values="170;150;170" dur="2.8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;0.9;0.5" dur="2.8s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <rect x="2" y="2" width="286" height="216" fill="none" stroke="url(#divineGold)" stroke-width="2" opacity="0.7" rx="4"/>
+</svg>

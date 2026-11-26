@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 220" width="290" height="220">
+  <defs>
+    <linearGradient id="bloodletterBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a0000"/>
+      <stop offset="100%" style="stop-color:#050000"/>
+    </linearGradient>
+    <linearGradient id="bloodBlade" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#dc143c"/>
+      <stop offset="50%" style="stop-color:#ff4444"/>
+      <stop offset="100%" style="stop-color:#8b0000"/>
+    </linearGradient>
+    <linearGradient id="darkSkin" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2a1a1a"/>
+      <stop offset="100%" style="stop-color:#1a0a0a"/>
+    </linearGradient>
+    <radialGradient id="bloodDrip" cx="50%" cy="0%" r="50%">
+      <stop offset="0%" style="stop-color:#dc143c;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#8b0000;stop-opacity:0.3"/>
+    </radialGradient>
+    <filter id="bloodGlow2">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-color="#dc143c" flood-opacity="0.7"/>
+      <feComposite in2="blur" operator="in"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="290" height="220" fill="url(#bloodletterBg)"/>
+
+  <!-- Blood splatter background -->
+  <g opacity="0.15" fill="#dc143c">
+    <ellipse cx="145" cy="110" rx="120" ry="80"/>
+    <ellipse cx="80" cy="160" rx="40" ry="30"/>
+    <ellipse cx="210" cy="60" rx="35" ry="25"/>
+  </g>
+
+  <!-- Bloodletter figure -->
+  <g transform="translate(145, 150)">
+    <!-- Tattered cloak -->
+    <path d="M -60,10 Q -80,-20 -70,-60 Q -40,-90 0,-100 Q 40,-90 70,-60 Q 80,-20 60,10 Q 40,30 10,25 Q -10,20 -30,25 Q -50,30 -60,10" fill="#0a0000" stroke="#3d0000" stroke-width="1" opacity="0.7"/>
+
+    <!-- Torso -->
+    <path d="M -30,-10 Q -35,-40 -15,-60 Q 0,-65 15,-60 Q 35,-40 30,-10 Q 25,20 -5,30 Q -25,20 -30,-10" fill="url(#darkSkin)" stroke="#3d0000" stroke-width="1"/>
+
+    <!-- Blood veins on skin -->
+    <g stroke="#dc143c" stroke-width="1.2" fill="none" opacity="0.6">
+      <path d="M -20,-10 Q -15,-25 -10,-40 Q -5,-50 0,-55"/>
+      <path d="M 20,-10 Q 15,-25 10,-40 Q 5,-50 0,-55"/>
+      <path d="M 0,-15 Q 0,-35 0,-55"/>
+    </g>
+
+    <!-- Arms raised with blades -->
+    <!-- Left arm -->
+    <g transform="translate(-40, -30)">
+      <path d="M 0,0 Q -10,10 -5,30 Q 0,40 5,30 Q 10,10 0,0" fill="url(#darkSkin)" stroke="#3d0000" stroke-width="1"/>
+      <!-- Wrist blade -->
+      <path d="M 0,30 L 0,70" stroke="url(#bloodBlade)" stroke-width="5" stroke-linecap="round" filter="url(#bloodGlow2)"/>
+      <path d="M -3,35 L 3,35 M -2,45 L 2,45 M -1,55 L 1,55" stroke="#ff6666" stroke-width="1.5" opacity="0.8"/>
+    </g>
+
+    <!-- Right arm -->
+    <g transform="translate(40, -30)">
+      <path d="M 0,0 Q 10,10 5,30 Q 0,40 -5,30 Q -10,10 0,0" fill="url(#darkSkin)" stroke="#3d0000" stroke-width="1"/>
+      <!-- Wrist blade -->
+      <path d="M 0,30 L 0,70" stroke="url(#bloodBlade)" stroke-width="5" stroke-linecap="round" filter="url(#bloodGlow2)"/>
+      <path d="M -3,35 L 3,35 M -2,45 L 2,45 M -1,55 L 1,55" stroke="#ff6666" stroke-width="1.5" opacity="0.8"/>
+    </g>
+
+    <!-- Head -->
+    <ellipse cx="0" cy="-70" rx="18" ry="22" fill="url(#darkSkin)" stroke="#3d0000" stroke-width="1"/>
+    <!-- Bald, pale head with veins -->
+    <g stroke="#dc143c" stroke-width="0.8" fill="none" opacity="0.5">
+      <path d="M -8,-80 Q -5,-85 0,-85 Q 5,-85 8,-80"/>
+      <path d="M -10,-75 Q -5,-78 0,-78 Q 5,-78 10,-75"/>
+      <path d="M -12,-70 Q -5,-68 0,-68 Q 5,-68 12,-70"/>
+    </g>
+    <!-- Glowing red eyes -->
+    <ellipse cx="-6" cy="-73" rx="3" ry="4" fill="#dc143c" filter="url(#bloodGlow2)"/>
+    <ellipse cx="6" cy="-73" rx="3" ry="4" fill="#dc143c" filter="url(#bloodGlow2)"/>
+    <!-- Mouth -->
+    <path d="M -6,-60 Q 0,-55 6,-60" stroke="#dc143c" stroke-width="2" fill="none"/>
+
+    <!-- Blood dripping from blades -->
+    <g fill="url(#bloodDrip)">
+      <circle cx="-40" cy="75" r="3">
+        <animate attributeName="cy" values="75;120;75" dur="1.5s" repeatCount="indefinite"/>
+        <animate attributeName="r" values="3;1;3" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="40" cy="75" r="3">
+        <animate attributeName="cy" values="75;120;75" dur="1.5s" repeatCount="indefinite"/>
+        <animate attributeName="r" values="3;1;3" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="-35" cy="80" r="2">
+        <animate attributeName="cy" values="80;125;80" dur="1.8s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="35" cy="80" r="2">
+        <animate attributeName="cy" values="80;125;80" dur="1.8s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+
+  <!-- Blood pool at feet -->
+  <ellipse cx="145" cy="210" rx="70" ry="12" fill="#dc143c" opacity="0.4">
+    <animate attributeName="rx" values="70;65;70" dur="2s" repeatCount="indefinite"/>
+  </ellipse>
+
+  <rect x="2" y="2" width="286" height="216" fill="none" stroke="#ffd700" stroke-width="2" opacity="0.4" rx="4"/>
+</svg>

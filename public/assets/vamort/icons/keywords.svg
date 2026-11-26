@@ -1,0 +1,168 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="iconGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd700"/>
+      <stop offset="100%" style="stop-color:#b8860b"/>
+    </linearGradient>
+    <linearGradient id="iconBlood" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#dc143c"/>
+      <stop offset="100%" style="stop-color:#8b0000"/>
+    </linearGradient>
+    <linearGradient id="iconHoly" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fffacd"/>
+      <stop offset="100%" style="stop-color:#f0e68c"/>
+    </linearGradient>
+    <filter id="iconGlow">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Flying - bat wings -->
+  <g id="flying" transform="translate(32, 32)">
+    <path d="M 0,0 
+             Q -20,-10 -35,-5 
+             Q -25,0 -30,10 
+             Q -18,8 -10,15 
+             Q -5,12 0,0 Z" 
+          fill="url(#iconBlood)" stroke="#ffd700" stroke-width="1" filter="url(#iconGlow)"/>
+    <path d="M 0,0 
+             Q 20,-10 35,-5 
+             Q 25,0 30,10 
+             Q 18,8 10,15 
+             Q 5,12 0,0 Z" 
+          fill="url(#iconBlood)" stroke="#ffd700" stroke-width="1" filter="url(#iconGlow)"/>
+    <circle cx="0" cy="3" r="5" fill="#ff0000" opacity="0.8"/>
+  </g>
+  
+  <!-- Stealth - shadow silhouette -->
+  <g id="stealth" transform="translate(32, 32)" style="display:none">
+    <ellipse cx="0" cy="4" rx="16" ry="18" fill="#0a0a0a" opacity="0.9"/>
+    <ellipse cx="0" cy="2" rx="12" ry="14" fill="#151515" opacity="0.8"/>
+    <path d="M -8,-2 Q 0,-10 8,-2 Q 0,2 -8,-2" fill="#1a1a1a" opacity="0.7"/>
+    <circle cx="-5" cy="-2" r="2" fill="#333" opacity="0.5"/>
+    <circle cx="5" cy="-2" r="2" fill="#333" opacity="0.5"/>
+  </g>
+  
+  <!-- LifeSteal - blood droplet with heart -->
+  <g id="lifesteal" transform="translate(32, 32)" style="display:none">
+    <path d="M 0,-18 
+             Q 10,-18 10,-8 
+             Q 10,6 0,18 
+             Q -10,6 -10,-8 
+             Q -10,-18 0,-18 Z" 
+          fill="url(#iconBlood)" stroke="#ffd700" stroke-width="1.5" filter="url(#iconGlow)"/>
+    <path d="M -5,-6 Q -5,-10 -1,-10 Q 2,-10 2,-6 Q 2,-2 -1,-2 Q -5,-2 -5,-6 Z" fill="#ff0000" opacity="0.9"/>
+    <path d="M 1,-6 Q 1,-10 5,-10 Q 8,-10 8,-6 Q 8,-2 5,-2 Q 1,-2 1,-6 Z" fill="#ff0000" opacity="0.9"/>
+  </g>
+  
+  <!-- Taunt - shield with exclamation -->
+  <g id="taunt" transform="translate(32, 32)" style="display:none">
+    <path d="M 0,-20 L 18,-10 L 18,14 Q 18,22 0,28 Q -18,22 -18,14 L -18,-10 Z" 
+          fill="url(#iconHoly)" stroke="url(#iconGold)" stroke-width="2" filter="url(#iconGlow)"/>
+    <path d="M 0,-20 L 18,-10 L 18,14 Q 18,22 0,28 Q -18,22 -18,14 L -18,-10 Z" 
+          fill="none" stroke="#fff" stroke-width="1" opacity="0.5"/>
+    <text x="0" y="4" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#b8860b" text-anchor="middle">!</text>
+  </g>
+  
+  <!-- Divine Shield - glowing shield -->
+  <g id="divineshield" transform="translate(32, 32)" style="display:none">
+    <path d="M 0,-20 L 18,-10 L 18,14 Q 18,22 0,28 Q -18,22 -18,14 L -18,-10 Z" 
+          fill="url(#iconHoly)" stroke="#fff" stroke-width="2" opacity="0.9" filter="url(#iconGlow)"/>
+    <path d="M 0,-15 L 12,-6 L 12,9 Q 12,15 0,19 Q -12,15 -12,9 L -12,-6 Z" 
+          fill="#fff" opacity="0.3"/>
+    <circle cx="0" cy="0" r="6" fill="none" stroke="#ffd700" stroke-width="2" opacity="0.8"/>
+  </g>
+  
+  <!-- Rush - lightning bolt -->
+  <g id="rush" transform="translate(32, 32)" style="display:none">
+    <path d="M -6,-20 L 6,-4 L 0,-4 L 8,16 L -8,4 L -2,4 L -12,-16 Z" 
+          fill="url(#iconGold)" stroke="#fff" stroke-width="1.5" filter="url(#iconGlow)"/>
+  </g>
+  
+  <!-- Deathrattle - skull -->
+  <g id="deathrattle" transform="translate(32, 32)" style="display:none">
+    <circle cx="0" cy="-2" r="14" fill="#1a1a1a" stroke="#444" stroke-width="1.5"/>
+    <ellipse cx="-5" cy="-4" rx="3" ry="4" fill="#0a0a0a"/>
+    <ellipse cx="5" cy="-4" rx="3" ry="4" fill="#0a0a0a"/>
+    <path d="M -6,2 Q 0,6 6,2" stroke="#444" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <line x1="-3" y1="6" x2="-3" y2="10" stroke="#444" stroke-width="1.5"/>
+    <line x1="3" y1="6" x2="3" y2="10" stroke="#444" stroke-width="1.5"/>
+  </g>
+  
+  <!-- Battlecry - megaphone/sound waves -->
+  <g id="battlecry" transform="translate(32, 32)" style="display:none">
+    <path d="M -15,-10 L -5,-10 L 10,-18 L 10,18 L -5,10 L -15,10 Z" 
+          fill="url(#iconGold)" stroke="#b8860b" stroke-width="1.5" filter="url(#iconGlow)"/>
+    <path d="M 12,-14 Q 20,-10 12,-6" fill="none" stroke="#ffd700" stroke-width="2" opacity="0.7"/>
+    <path d="M 14,-12 Q 22,-8 14,-4" fill="none" stroke="#ffd700" stroke-width="2" opacity="0.5"/>
+  </g>
+  
+  <!-- Ignore Shield - cracked shield -->
+  <g id="ignoreshield" transform="translate(32, 32)" style="display:none">
+    <path d="M 0,-20 L 18,-10 L 18,14 Q 18,22 0,28 Q -18,22 -18,14 L -18,-10 Z" 
+          fill="url(#iconHoly)" stroke="#8b0000" stroke-width="2"/>
+    <path d="M -8,-5 Q 0,0 8,5 M 8,-5 Q 0,0 -8,5" stroke="#dc143c" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M -5,0 L 5,0" stroke="#dc143c" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Summon - portal -->
+  <g id="summon" transform="translate(32, 32)" style="display:none">
+    <circle cx="0" cy="0" r="18" fill="none" stroke="url(#iconBlood)" stroke-width="2" opacity="0.6"/>
+    <circle cx="0" cy="0" r="12" fill="url(#iconBlood)" opacity="0.3"/>
+    <circle cx="0" cy="0" r="8" fill="none" stroke="#ffd700" stroke-width="1.5" opacity="0.8" stroke-dasharray="4,4"/>
+    <path d="M -6,0 L 6,0 M 0,-6 L 0,6" stroke="#ffd700" stroke-width="2"/>
+    <circle cx="-8" cy="-8" r="3" fill="#ffd700" opacity="0.8"/>
+    <circle cx="8" cy="8" r="3" fill="#ffd700" opacity="0.8"/>
+  </g>
+  
+  <!-- Poisonous - skull with drops -->
+  <g id="poisonous" transform="translate(32, 32)" style="display:none">
+    <circle cx="0" cy="-2" r="12" fill="#0d3d0d" stroke="#2e8b57" stroke-width="1.5"/>
+    <ellipse cx="-4" cy="-4" rx="2.5" ry="3" fill="#0a1f0a"/>
+    <ellipse cx="4" cy="-4" rx="2.5" ry="3" fill="#0a1f0a"/>
+    <path d="M -5,2 Q 0,5 5,2" stroke="#2e8b57" stroke-width="2" fill="none" stroke-linecap="round"/>
+    <circle cx="-6" cy="8" r="2" fill="#2e8b57" opacity="0.8"/>
+    <circle cx="6" cy="8" r="2" fill="#2e8b57" opacity="0.8"/>
+    <circle cx="0" cy="10" r="2" fill="#2e8b57" opacity="0.8"/>
+  </g>
+  
+  <!-- Reborn - phoenix feather -->
+  <g id="reborn" transform="translate(32, 32)" style="display:none">
+    <path d="M 0,-22 Q -8,-18 -12,-8 Q -6,-4 -2,0 Q -6,4 -12,8 Q -8,18 0,22 Q 8,18 12,8 Q 6,4 2,0 Q 6,-4 12,-8 Q 8,-18 0,-22 Z" 
+          fill="url(#iconGold)" stroke="#b8860b" stroke-width="1" filter="url(#iconGlow)"/>
+    <path d="M 0,-16 Q -4,-12 -6,-6 Q -2,-3 0,0 Q -2,3 -6,6 Q -4,12 0,16" fill="none" stroke="#fff" stroke-width="1" opacity="0.5"/>
+  </g>
+  
+  <!-- Frenzy - berserker axes -->
+  <g id="frenzy" transform="translate(32, 32)" style="display:none">
+    <path d="M -16,-16 L -4,-4 M -4,-4 L -16,4" stroke="#dc143c" stroke-width="3" stroke-linecap="round" filter="url(#iconGlow)"/>
+    <path d="M 16,-16 L 4,-4 M 4,-4 L 16,4" stroke="#dc143c" stroke-width="3" stroke-linecap="round" filter="url(#iconGlow)"/>
+    <circle cx="-4" cy="-4" r="4" fill="#dc143c" opacity="0.8"/>
+    <circle cx="4" cy="-4" r="4" fill="#dc143c" opacity="0.8"/>
+  </g>
+  
+  <!-- Corrupt - dark corruption -->
+  <g id="corrupt" transform="translate(32, 32)" style="display:none">
+    <circle cx="0" cy="0" r="16" fill="none" stroke="#4b0082" stroke-width="2" stroke-dasharray="6,3" opacity="0.7"/>
+    <path d="M -10,-10 L 10,10 M -10,10 L 10,-10" stroke="#da70d6" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="0" cy="0" r="6" fill="url(#iconBlood)" opacity="0.4"/>
+  </g>
+  
+  <!-- Infuse - soul gem -->
+  <g id="infuse" transform="translate(32, 32)" style="display:none">
+    <path d="M 0,-18 L 12,0 L 0,18 L -12,0 Z" fill="url(#cosmicGrad)" stroke="#fff" stroke-width="1.5" filter="url(#iconGlow)"/>
+    <path d="M 0,-12 L 8,0 L 0,12 L -8,0 Z" fill="#1a0a2e" stroke="#da70d6" stroke-width="1"/>
+    <circle cx="0" cy="0" r="4" fill="#fff" opacity="0.8" filter="url(#iconGlow)"/>
+    <circle cx="0" cy="0" r="2" fill="#da70d6"/>
+  </g>
+  
+  <!-- Spell Damage - magic spark -->
+  <g id="spelldamage" transform="translate(32, 32)" style="display:none">
+    <polygon points="0,-16 4,-6 14,-6 6,0 10,10 0,4 -10,10 -6,0 -14,-6 -4,-6" fill="url(#iconGold)" stroke="#b8860b" stroke-width="1" filter="url(#iconGlow)"/>
+    <polygon points="0,-12 3,-5 10,-5 4,0 7,7 0,3 -7,7 -4,0 -10,-5 -3,-5" fill="#fff" opacity="0.3"/>
+  </g>
+</svg>

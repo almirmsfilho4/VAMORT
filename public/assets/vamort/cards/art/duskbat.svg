@@ -1,0 +1,172 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 220" width="290" height="220">
+  <defs>
+    <linearGradient id="duskbatBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2a1a3a"/>
+      <stop offset="50%" style="stop-color:#1a0d2a"/>
+      <stop offset="100%" style="stop-color:#0d0515"/>
+    </linearGradient>
+    <linearGradient id="duskFur" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3a2a4a"/>
+      <stop offset="50%" style="stop-color:#2a1a3a"/>
+      <stop offset="100%" style="stop-color:#1a0a2a"/>
+    </linearGradient>
+    <linearGradient id="duskWingMembrane" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4a2a6a"/>
+      <stop offset="50%" style="stop-color:#2a1a4a"/>
+      <stop offset="100%" style="stop-color:#1a052a"/>
+    </linearGradient>
+    <linearGradient id="lifestealGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#dc143c"/>
+      <stop offset="50%" style="stop-color:#ff4444"/>
+      <stop offset="100%" style="stop-color:#ffd700"/>
+    </linearGradient>
+    <radialGradient id="stealthGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#4a2a6a;stop-opacity:0.4"/>
+      <stop offset="100%" style="stop-color:#0d0515;stop-opacity:0"/>
+    </radialGradient>
+    <filter id="stealthBlur">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="lifestealFilter">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feFlood flood-color="#dc143c" flood-opacity="0.7"/>
+      <feComposite in2="blur" operator="in"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="290" height="220" fill="url(#duskbatBg)"/>
+
+  <!-- Moon phases in background -->
+  <g fill="none" stroke="#4a2a6a" stroke-width="1.5" opacity="0.3">
+    <circle cx="60" cy="40" r="20"/>
+    <circle cx="60" cy="40" r="12"/>
+    <circle cx="230" cy="35" r="15"/>
+    <circle cx="230" cy="35" r="8"/>
+  </g>
+
+  <!-- Duskbat - large bat creature -->
+  <g transform="translate(145, 120)" filter="url(#stealthBlur)">
+    <!-- Body -->
+    <ellipse cx="0" cy="10" rx="25" ry="20" fill="url(#duskFur)" stroke="#3a2a4a" stroke-width="1.5"/>
+    <!-- Fur texture -->
+    <g stroke="#3a2a4a" stroke-width="1" fill="none" opacity="0.5">
+      <path d="M -15,5 Q -10,0 -5,-5"/>
+      <path d="M -5,10 Q 0,5 5,0"/>
+      <path d="M 5,5 Q 10,0 15,-5"/>
+      <path d="M -10,20 Q -5,15 0,10"/>
+      <path d="M 0,20 Q 5,15 10,10"/>
+    </g>
+
+    <!-- Head -->
+    <ellipse cx="0" cy="-15" rx="18" ry="16" fill="url(#duskFur)" stroke="#3a2a4a" stroke-width="1.5"/>
+    <!-- Ears -->
+    <path d="M -15,-28 Q -20,-40 -10,-38 Q -5,-30 -8,-25" fill="url(#duskWingMembrane)" stroke="#3a2a4a" stroke-width="1" filter="url(#lifestealFilter)"/>
+    <path d="M 15,-28 Q 20,-40 10,-38 Q 5,-30 8,-25" fill="url(#duskWingMembrane)" stroke="#3a2a4a" stroke-width="1" filter="url(#lifestealFilter)"/>
+    <!-- Glowing red eyes (lifesteal) -->
+    <ellipse cx="-6" cy="-18" rx="4" ry="5" fill="url(#lifestealGlow)" filter="url(#lifestealFilter)">
+      <animate attributeName="rx" values="4;2;4" dur="1.5s" repeatCount="indefinite"/>
+    </ellipse>
+    <ellipse cx="6" cy="-18" rx="4" ry="5" fill="url(#lifestealGlow)" filter="url(#lifestealFilter)">
+      <animate attributeName="rx" values="4;2;4" dur="1.5s" repeatCount="indefinite"/>
+    </ellipse>
+    <!-- Nose -->
+    <ellipse cx="0" cy="-10" rx="3" ry="2" fill="#1a0a2a"/>
+    <!-- Fangs -->
+    <path d="M -4,-2 L -5,3 M 4,-2 L 5,3" stroke="url(#lifestealGlow)" stroke-width="2" filter="url(#lifestealFilter)"/>
+
+    <!-- Wings - large, membrane -->
+    <!-- Left wing -->
+    <path d="M -25,-5 Q -80,-40 -70,-100 Q -40,-80 -15,-20 Q -20,-10 -25,-5" fill="url(#duskWingMembrane)" stroke="#3a2a4a" stroke-width="1.5" opacity="0.85">
+      <animate attributeName="d" values="M -25,-5 Q -80,-40 -70,-100 Q -40,-80 -15,-20 Q -20,-10 -25,-5; M -25,-5 Q -85,-35 -75,-95 Q -45,-75 -15,-20 Q -20,-10 -25,-5; M -25,-5 Q -80,-40 -70,-100 Q -40,-80 -15,-20 Q -20,-10 -25,-5" dur="1.2s" repeatCount="indefinite"/>
+    </path>
+    <!-- Wing fingers -->
+    <g stroke="#3a2a4a" stroke-width="1.5" fill="none">
+      <path d="M -25,-5 Q -50,-30 -40,-70"/>
+      <path d="M -25,-5 Q -60,-25 -50,-60"/>
+      <path d="M -25,-5 Q -70,-20 -60,-50"/>
+      <path d="M -25,-5 Q -75,-35 -65,-80"/>
+    </g>
+    <!-- Wing membrane veins -->
+    <g stroke="#4a2a6a" stroke-width="0.5" fill="none" opacity="0.4">
+      <path d="M -35,-20 Q -30,-45 -20,-65"/>
+      <path d="M -40,-30 Q -35,-55 -25,-70"/>
+      <path d="M -45,-40 Q -40,-60 -30,-75"/>
+    </g>
+
+    <!-- Right wing -->
+    <path d="M 25,-5 Q 80,-40 70,-100 Q 40,-80 15,-20 Q 20,-10 25,-5" fill="url(#duskWingMembrane)" stroke="#3a2a4a" stroke-width="1.5" opacity="0.85">
+      <animate attributeName="d" values="M 25,-5 Q 80,-40 70,-100 Q 40,-80 15,-20 Q 20,-10 25,-5; M 25,-5 Q 85,-35 75,-95 Q 45,-75 15,-20 Q 20,-10 25,-5; M 25,-5 Q 80,-40 70,-100 Q 40,-80 15,-20 Q 20,-10 25,-5" dur="1.2s" repeatCount="indefinite"/>
+    </path>
+    <!-- Wing fingers -->
+    <g stroke="#3a2a4a" stroke-width="1.5" fill="none">
+      <path d="M 25,-5 Q 50,-30 40,-70"/>
+      <path d="M 25,-5 Q 60,-25 50,-60"/>
+      <path d="M 25,-5 Q 70,-20 60,-50"/>
+      <path d="M 25,-5 Q 75,-35 65,-80"/>
+    </g>
+    <!-- Wing membrane veins -->
+    <g stroke="#4a2a6a" stroke-width="0.5" fill="none" opacity="0.4">
+      <path d="M 35,-20 Q 30,-45 20,-65"/>
+      <path d="M 40,-30 Q 35,-55 25,-70"/>
+      <path d="M 45,-40 Q 40,-60 30,-75"/>
+    </g>
+
+    <!-- Legs with claws -->
+    <g fill="url(#duskFur)" stroke="#3a2a4a" stroke-width="1">
+      <path d="M -10,25 L -12,45 Q -15,50 -10,52 L -8,52 Q -5,50 -8,45 L -8,25 Z"/>
+      <path d="M 10,25 L 12,45 Q 15,50 10,52 L 8,52 Q 5,50 8,45 L 8,25 Z"/>
+      <!-- Claws -->
+      <g stroke="url(#lifestealGlow)" stroke-width="1.5" filter="url(#lifestealFilter)">
+        <path d="M -12,52 L -15,58"/>
+        <path d="M -10,52 L -10,58"/>
+        <path d="M -8,52 L -5,58"/>
+        <path d="M 12,52 L 15,58"/>
+        <path d="M 10,52 L 10,58"/>
+        <path d="M 8,52 L 5,58"/>
+      </g>
+    </g>
+
+    <!-- Tail -->
+    <path d="M 0,30 Q 5,40 0,50 Q -5,40 0,30" fill="url(#duskFur)" stroke="#3a2a4a" stroke-width="1"/>
+
+    <!-- Stealth shimmer effect -->
+    <ellipse cx="0" cy="10" rx="35" ry="25" fill="url(#stealthGlow)" filter="url(#stealthBlur)">
+      <animate attributeName="opacity" values="0.3;0.1;0.3" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="rx" values="35;30;35" dur="2s" repeatCount="indefinite"/>
+    </ellipse>
+
+    <!-- Lifesteal particles around -->
+    <g fill="url(#lifestealGlow)" filter="url(#lifestealFilter)">
+      <circle cx="-40" cy="0" r="2">
+        <animate attributeName="cx" values="-40;-30;-40" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="0;-10;0" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.7;0.2;0.7" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="40" cy="5" r="2">
+        <animate attributeName="cx" values="40;30;40" dur="2.5s" repeatCount="indefinite"/>
+        <animate attributeName="cy" values="5;-5;5" dur="2.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.6;0.2;0.6" dur="2.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="0" cy="-35" r="1.5">
+        <animate attributeName="cy" values="-35;-45;-35" dur="1.8s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.7;0.3;0.7" dur="1.8s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+
+  <!-- Flying motion lines -->
+  <g stroke="#4a2a6a" stroke-width="1" opacity="0.2">
+    <path d="M 80,150 Q 100,120 145,100 Q 190,120 210,150"/>
+    <path d="M 70,180 Q 100,150 145,130 Q 190,150 220,180"/>
+  </g>
+
+  <rect x="2" y="2" width="286" height="216" fill="none" stroke="#ffd700" stroke-width="2" opacity="0.4" rx="4"/>
+</svg>

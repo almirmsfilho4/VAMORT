@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="iconBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a0a0a"/>
+      <stop offset="100%" style="stop-color:#0a0a0c"/>
+    </linearGradient>
+    <linearGradient id="iconGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#c9a227"/>
+      <stop offset="50%" style="stop-color:#f0d8b8"/>
+      <stop offset="100%" style="stop-color:#8b6914"/>
+    </linearGradient>
+    <filter id="iconGlow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="512" height="512" fill="url(#iconBg)"/>
+  <circle cx="256" cy="256" r="240" fill="none" stroke="url(#iconGold)" stroke-width="3" opacity="0.5"/>
+  
+  <!-- Letter V -->
+  <path d="M 180 150 L 256 340 L 332 150 L 310 150 L 256 290 L 202 150 Z" 
+        fill="url(#iconGold)" filter="url(#iconGlow)"/>
+  
+  <!-- Bat wings behind V -->
+  <path d="M 160 200 Q 80 150 60 180 Q 50 220 100 240 Q 140 250 170 220" 
+        fill="#8b0000" opacity="0.8"/>
+  <path d="M 352 200 Q 432 150 452 180 Q 462 220 412 240 Q 372 250 342 220" 
+        fill="#8b0000" opacity="0.8"/>
+  
+  <!-- Inner glow -->
+  <circle cx="256" cy="256" r="180" fill="none" stroke="rgba(201,162,39,0.2)" stroke-width="2"/>
+  
+  <!-- Decorative corners -->
+  <path d="M 40 40 L 80 40 L 80 60 L 60 60 L 60 80 L 40 80 Z" fill="url(#iconGold)" opacity="0.6"/>
+  <path d="M 472 40 L 432 40 L 432 60 L 452 60 L 452 80 L 472 80 Z" fill="url(#iconGold)" opacity="0.6"/>
+  <path d="M 40 472 L 80 472 L 80 452 L 60 452 L 60 432 L 40 432 Z" fill="url(#iconGold)" opacity="0.6"/>
+  <path d="M 472 472 L 432 472 L 432 452 L 452 452 L 452 432 L 472 432 Z" fill="url(#iconGold)" opacity="0.6"/>
+</svg>

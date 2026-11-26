@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 510" width="340" height="510">
+  <defs>
+    <linearGradient id="neutralFrameGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2d1b3d;stop-opacity:1" />
+      <stop offset="30%" style="stop-color:#1a0f2a;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#0f081a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#080412;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="twilightGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd700;stop-opacity:1" />
+      <stop offset="30%" style="stop-color:#da70d6;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#8a2be2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4b0082;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="cosmicGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#9370db;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#4b0082;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a0a2e;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="neutralCenterGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#1e1030;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0a0515;stop-opacity:1" />
+    </radialGradient>
+    <filter id="cosmicGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feFlood flood-color="#da70d6" flood-opacity="0.6"/>
+      <feComposite in2="blur" operator="in"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="cosmicInnerGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <pattern id="starfield" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="0.6" fill="#fff" opacity="0.8"/>
+      <circle cx="14" cy="16" r="0.4" fill="#da70d6" opacity="0.6"/>
+      <circle cx="18" cy="5" r="0.3" fill="#ffd700" opacity="0.7"/>
+      <circle cx="7" cy="18" r="0.5" fill="#9370db" opacity="0.5"/>
+    </pattern>
+    <pattern id="runePattern" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
+      <path d="M 8,0 L 8,16 M 0,8 L 16,8 M 4,4 L 12,12 M 12,4 L 4,12" stroke="#da70d6" stroke-width="0.2" opacity="0.1"/>
+    </pattern>
+  </defs>
+  
+  <!-- Outer cosmic glow -->
+  <rect x="5" y="5" width="330" height="500" rx="15" fill="none" stroke="#da70d6" stroke-width="2" opacity="0.5" filter="url(#cosmicGlow)"/>
+  
+  <!-- Main frame border - cosmic/twilight -->
+  <path d="M 15,15 
+           L 325,15 
+           Q 335,15 335,25 
+           L 335,485 
+           Q 335,495 325,495 
+           L 15,495 
+           Q 5,495 5,485 
+           L 5,25 
+           Q 5,15 15,15 Z" 
+        fill="url(#neutralFrameGrad)" 
+        stroke="url(#twilightGrad)" 
+        stroke-width="3"
+        filter="url(#cosmicInnerGlow)"/>
+  
+  <!-- Animated border shimmer -->
+  <path d="M 25,25 
+           L 315,25 
+           Q 320,25 320,30 
+           L 320,480 
+           Q 320,485 315,485 
+           L 25,485 
+           Q 20,485 20,480 
+           L 20,30 
+           Q 20,25 25,25 Z" 
+        fill="none" 
+        stroke="url(#twilightGrad)" 
+        stroke-width="2"
+        opacity="0.9"
+        stroke-dasharray="10,5"/>
+  
+  <!-- Top ornament - cosmic crown -->
+  <g transform="translate(170, 35)">
+    <!-- Star points -->
+    <g fill="url(#twilightGrad)" stroke="#fff" stroke-width="0.5" opacity="0.9">
+      <path d="M 0,-30 L -4,-18 L -18,-18 L -6,-10 L -10,-26 L 0,-14 L 10,-26 L 6,-10 L 18,-18 L 4,-18 Z"/>
+      <path d="M 0,-22 L -3,-14 L -14,-14 L -5,-8 L -8,-20 L 0,-10 L 8,-20 L 5,-8 L 14,-14 L 3,-14 Z" fill="#fff" opacity="0.3"/>
+    </g>
+    <!-- Central cosmic gem -->
+    <circle cx="0" cy="-2" r="10" fill="url(#cosmicGrad)" stroke="#fff" stroke-width="1.5" opacity="0.9"/>
+    <circle cx="0" cy="-2" r="6" fill="#fff" opacity="0.2"/>
+    <circle cx="0" cy="-2" r="3" fill="#da70d6" opacity="0.8"/>
+  </g>
+  
+  <!-- Name plate area -->
+  <rect x="40" y="55" width="260" height="42" rx="8" fill="url(#cosmicGrad)" stroke="url(#twilightGrad)" stroke-width="2" opacity="0.95"/>
+  
+  
+  <!-- Blood cost orb -->
+  <circle cx="300" cy="76" r="20" fill="url(#cosmicGrad)" stroke="url(#twilightGrad)" stroke-width="2" filter="url(#cosmicInnerGlow)"/>
+  <circle cx="300" cy="76" r="12" fill="#0a0515"/>
+  
+  
+  
+  <!-- Art area frame -->
+  <rect x="25" y="115" width="290" height="220" rx="4" fill="url(#neutralCenterGrad)" stroke="url(#twilightGrad)" stroke-width="1.5" opacity="0.9"/>
+  <rect x="25" y="115" width="290" height="220" rx="4" fill="url(#starfield)" opacity="0.6"/>
+  <rect x="25" y="115" width="290" height="220" rx="4" fill="url(#runePattern)" opacity="0.3"/>
+  <!-- Placeholder for art -->
+  
+  
+  <!-- Type line -->
+  <rect x="35" y="350" width="270" height="28" rx="4" fill="#0a0515" stroke="url(#twilightGrad)" stroke-width="1" opacity="0.9"/>
+  
+  
+  <!-- Text box -->
+  <rect x="25" y="390" width="290" height="85" rx="4" fill="url(#neutralCenterGrad)" stroke="#2d1b3d" stroke-width="1.5" opacity="0.95"/>
+  <rect x="25" y="390" width="290" height="85" rx="4" fill="url(#starfield)" opacity="0.3"/>
+  <rect x="25" y="390" width="290" height="85" rx="4" fill="url(#runePattern)" opacity="0.2"/>
+  
+  
+  
+  <!-- Bottom ornament - twin moons -->
+  <g transform="translate(170, 495)" fill="url(#twilightGrad)" stroke="#fff" stroke-width="0.5">
+    <circle cx="-25" cy="0" r="10"/>
+    <circle cx="-25" cy="0" r="6" fill="#0a0515"/>
+    <circle cx="25" cy="0" r="10"/>
+    <circle cx="25" cy="0" r="6" fill="#0a0515"/>
+    <ellipse cx="0" cy="0" rx="15" ry="4" fill="none" stroke="#da70d6" stroke-width="1.5" opacity="0.7"/>
+  </g>
+  
+  <!-- Attack/Health orbs -->
+  <!-- Attack (cosmic) -->
+  <circle cx="60" cy="495" r="22" fill="url(#cosmicGrad)" stroke="url(#twilightGrad)" stroke-width="2" filter="url(#cosmicInnerGlow)"/>
+  
+  
+  <!-- Health (cosmic) -->
+  <circle cx="280" cy="495" r="22" fill="url(#cosmicGrad)" stroke="url(#twilightGrad)" stroke-width="2" filter="url(#cosmicInnerGlow)"/>
+  <circle cx="280" cy="495" r="14" fill="#0a0515"/>
+  
+  
+  
+  <!-- Legendary badge -->
+  <g transform="translate(170, 25)">
+    <polygon points="0,-12 -10,2 10,2" fill="url(#twilightGrad)" stroke="#fff" stroke-width="1.5"/>
+    
+  </g>
+</svg>

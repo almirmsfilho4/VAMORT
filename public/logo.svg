@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <!-- Gold gradient -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F4D58D"/>
+      <stop offset="50%" style="stop-color:#E5A93C"/>
+      <stop offset="100%" style="stop-color:#8A6A1F"/>
+    </linearGradient>
+    <!-- Crimson gradient -->
+    <linearGradient id="crimsonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E6194B"/>
+      <stop offset="100%" style="stop-color:#9E1030"/>
+    </linearGradient>
+    <!-- Blood gradient -->
+    <linearGradient id="bloodGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#C21F35"/>
+      <stop offset="100%" style="stop-color:#7A0F1C"/>
+    </linearGradient>
+    <!-- Dark glow -->
+    <radialGradient id="darkGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#1A1206;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#050406;stop-opacity:1"/>
+    </radialGradient>
+    <!-- Metallic shine -->
+    <linearGradient id="metalShine" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFEDC0"/>
+      <stop offset="30%" style="stop-color:#E5A93C"/>
+      <stop offset="60%" style="stop-color:#8A6A1F"/>
+      <stop offset="100%" style="stop-color:#3D2F0F"/>
+    </linearGradient>
+    <!-- Filter for glow -->
+    <filter id="goldGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="crimsonGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="innerShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feOffset dx="0" dy="2"/>
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+  
+  <!-- Background circle with dark gradient -->
+  <circle cx="256" cy="256" r="248" fill="url(#darkGlow)" stroke="url(#goldGrad)" stroke-width="4" filter="url(#goldGlow)"/>
+  
+  <!-- Inner ornamental ring -->
+  <circle cx="256" cy="256" r="220" fill="none" stroke="url(#goldGrad)" stroke-width="2" opacity="0.6"/>
+  <circle cx="256" cy="256" r="190" fill="none" stroke="url(#crimsonGrad)" stroke-width="1.5" opacity="0.5"/>
+  
+  <!-- Vampire bat wings - symmetrical -->
+  <g filter="url(#crimsonGlow)">
+    <!-- Left wing -->
+    <path d="M256 180 
+             C200 160, 140 180, 100 220 
+             C70 250, 60 290, 80 320 
+             C100 340, 140 330, 170 310 
+             C180 330, 200 340, 220 320 
+             C240 300, 250 280, 256 260" 
+          fill="url(#bloodGrad)" stroke="url(#crimsonGrad)" stroke-width="1.5" opacity="0.9"/>
+    
+    <!-- Right wing -->
+    <path d="M256 180 
+             C312 160, 372 180, 412 220 
+             C442 250, 452 290, 432 320 
+             C412 340, 372 330, 342 310 
+             C332 330, 312 340, 292 320 
+             C272 300, 262 280, 256 260" 
+          fill="url(#bloodGrad)" stroke="url(#crimsonGrad)" stroke-width="1.5" opacity="0.9"/>
+  </g>
+  
+  <!-- Central crossed swords -->
+  <g transform="translate(256, 256)">
+    <!-- Sword 1 (left) -->
+    <g transform="rotate(-25)">
+      <!-- Blade -->
+      <path d="M0 -140 L-6 -20 L-4 -20 L-4 20 L4 20 L4 -20 L6 -20 Z" 
+            fill="url(#metalShine)" stroke="#5A4A2A" stroke-width="1"/>
+      <!-- Fullers -->
+      <path d="M0 -130 L0 -30" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" opacity="0.6"/>
+      <!-- Guard -->
+      <rect x="-22" y="-20" width="44" height="8" rx="2" fill="url(#goldGrad)" stroke="#5A4A2A" stroke-width="1"/>
+      <!-- Grip -->
+      <rect x="-5" y="20" width="10" height="40" fill="#2D1F12" stroke="#5A4A2A" stroke-width="0.5"/>
+      <!-- Pommel -->
+      <circle cx="0" cy="62" r="8" fill="url(#goldGrad)" stroke="#5A4A2A" stroke-width="1"/>
+      <circle cx="0" cy="62" r="4" fill="#1A1206"/>
+    </g>
+    
+    <!-- Sword 2 (right) -->
+    <g transform="rotate(25)">
+      <!-- Blade -->
+      <path d="M0 -140 L-6 -20 L-4 -20 L-4 20 L4 20 L4 -20 L6 -20 Z" 
+            fill="url(#metalShine)" stroke="#5A4A2A" stroke-width="1"/>
+      <!-- Fullers -->
+      <path d="M0 -130 L0 -30" stroke="rgba(255,255,255,0.3)" stroke-width="1.5" opacity="0.6"/>
+      <!-- Guard -->
+      <rect x="-22" y="-20" width="44" height="8" rx="2" fill="url(#goldGrad)" stroke="#5A4A2A" stroke-width="1"/>
+      <!-- Grip -->
+      <rect x="-5" y="20" width="10" height="40" fill="#2D1F12" stroke="#5A4A2A" stroke-width="0.5"/>
+      <!-- Pommel -->
+      <circle cx="0" cy="62" r="8" fill="url(#goldGrad)" stroke="#5A4A2A" stroke-width="1"/>
+      <circle cx="0" cy="62" r="4" fill="#1A1206"/>
+    </g>
+  </g>
+  
+  <!-- Central blood ruby -->
+  <circle cx="256" cy="256" r="18" fill="url(#bloodGrad)" filter="url(#crimsonGlow)">
+    <animate attributeName="r" values="18;20;18" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.9;1;0.9" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="256" cy="256" r="12" fill="none" stroke="url(#goldGrad)" stroke-width="2" opacity="0.8"/>
+  
+  <!-- Outer decorative elements - 4 corner ornaments -->
+  <g fill="url(#goldGrad)" opacity="0.9">
+    <g transform="translate(80, 80) rotate(45)">
+      <path d="M0 -15 L-5 -5 L-15 0 L-5 5 L0 15 L5 5 L15 0 L5 -5 Z" stroke="#5A4A2A" stroke-width="0.5"/>
+    </g>
+    <g transform="translate(432, 80) rotate(-45)">
+      <path d="M0 -15 L-5 -5 L-15 0 L-5 5 L0 15 L5 5 L15 0 L5 -5 Z" stroke="#5A4A2A" stroke-width="0.5"/>
+    </g>
+    <g transform="translate(80, 432) rotate(-45)">
+      <path d="M0 -15 L-5 -5 L-15 0 L-5 5 L0 15 L5 5 L15 0 L5 -5 Z" stroke="#5A4A2A" stroke-width="0.5"/>
+    </g>
+    <g transform="translate(432, 432) rotate(45)">
+      <path d="M0 -15 L-5 -5 L-15 0 L-5 5 L0 15 L5 5 L15 0 L5 -5 Z" stroke="#5A4A2A" stroke-width="0.5"/>
+    </g>
+  </g>
+  
+  <!-- Blood droplets falling -->
+  <g fill="url(#bloodGrad)" filter="url(#crimsonGlow)" opacity="0.8">
+    <circle cx="256" cy="140" r="4">
+      <animate attributeName="cy" values="140;180;140" dur="2s" repeatCount="indefinite" begin="0s"/>
+      <animate attributeName="opacity" values="0.8;0.2;0.8" dur="2s" repeatCount="indefinite" begin="0s"/>
+    </circle>
+    <circle cx="256" cy="370" r="3">
+      <animate attributeName="cy" values="370;330;370" dur="2.5s" repeatCount="indefinite" begin="0.5s"/>
+      <animate attributeName="opacity" values="0.6;0.1;0.6" dur="2.5s" repeatCount="indefinite" begin="0.5s"/>
+    </circle>
+  </g>
+  
+  <!-- VAMORT text at bottom -->
+  <text x="256" y="465" font-family="Cinzel Decorative, serif" font-size="28" font-weight="700" 
+        fill="url(#goldGrad)" text-anchor="middle" letter-spacing="8" 
+        filter="url(#goldGlow)">VAMORT</text>
+</svg>

@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 680" width="100%" height="100%">
+  <defs>
+    <radialGradient id="skyGrad" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#3d0a16" />
+      <stop offset="40%" stop-color="#1c070c" />
+      <stop offset="85%" stop-color="#09060b" />
+      <stop offset="100%" stop-color="#050307" />
+    </radialGradient>
+    <radialGradient id="bloodMoon" cx="45%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#ff7b89" />
+      <stop offset="35%" stop-color="#dc143c" />
+      <stop offset="70%" stop-color="#8b0000" />
+      <stop offset="100%" stop-color="#3b0000" />
+    </radialGradient>
+    <radialGradient id="moonGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="rgba(220,20,60,0.6)" />
+      <stop offset="50%" stop-color="rgba(139,0,0,0.25)" />
+      <stop offset="100%" stop-color="transparent" />
+    </radialGradient>
+    <linearGradient id="goldBeam" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(212,175,55,0.4)" />
+      <stop offset="50%" stop-color="rgba(245,215,127,0.15)" />
+      <stop offset="100%" stop-color="transparent" />
+    </linearGradient>
+    <linearGradient id="fog" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#08070b" stop-opacity="0.95" />
+      <stop offset="60%" stop-color="#08070b" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="transparent" />
+    </linearGradient>
+  </defs>
+
+  <!-- Deep Obsidian Red Sky -->
+  <rect width="1440" height="680" fill="url(#skyGrad)" />
+
+  <!-- Blood Moon Eclipse -->
+  <circle cx="720" cy="230" r="180" fill="url(#moonGlow)" />
+  <circle cx="720" cy="230" r="100" fill="url(#bloodMoon)" />
+  <circle cx="710" cy="225" r="95" fill="none" stroke="rgba(255,200,210,0.4)" stroke-width="2" opacity="0.6" />
+
+  <!-- Holy Light Rays / Opposing Faction Beams -->
+  <polygon points="720,230 0,680 320,680" fill="url(#goldBeam)" opacity="0.5" />
+  <polygon points="720,230 1120,680 1440,680" fill="url(#goldBeam)" opacity="0.4" />
+
+  <!-- Gothic Castle / Cathedral Silhouette in Mountains -->
+  <g fill="#0b080f" opacity="0.9">
+    <!-- Mountain ridge far -->
+    <path d="M 0,540 Q 220,410 440,490 Q 720,380 980,480 Q 1240,430 1440,520 L 1440,680 L 0,680 Z" />
+    <!-- Gothic Spire cluster left (Human Sanctuary) -->
+    <path d="M 180,520 L 180,340 L 195,300 L 210,340 L 210,520 Z" />
+    <path d="M 220,530 L 220,380 L 230,350 L 240,380 L 240,530 Z" />
+    <path d="M 150,540 L 150,420 L 160,390 L 170,420 L 170,540 Z" />
+    <!-- Gothic Spire cluster right (Vampire Bastion) -->
+    <path d="M 1240,520 L 1240,310 L 1255,260 L 1270,310 L 1270,520 Z" />
+    <path d="M 1200,530 L 1200,370 L 1215,330 L 1230,370 L 1230,530 Z" />
+    <path d="M 1280,540 L 1280,390 L 1290,360 L 1300,390 L 1300,540 Z" />
+  </g>
+
+  <!-- Closer dark crags and cliff edge -->
+  <path d="M 0,580 Q 360,540 680,600 Q 1060,550 1440,590 L 1440,680 L 0,680 Z" fill="#060508" />
+
+  <!-- Swarm of Bats in Sky -->
+  <g fill="#1a0408" opacity="0.8">
+    <path d="M 640,160 Q 650,150 660,160 Q 655,165 650,162 Q 645,165 640,160 Z" />
+    <path d="M 690,140 Q 705,128 720,140 Q 712,146 705,142 Q 698,146 690,140 Z" />
+    <path d="M 740,155 Q 752,145 765,155 Q 758,160 752,157 Q 746,160 740,155 Z" />
+    <path d="M 610,190 Q 620,182 630,190 Q 625,194 620,191 Q 615,194 610,190 Z" />
+    <path d="M 800,180 Q 812,170 825,180 Q 818,185 812,182 Q 806,185 800,180 Z" />
+  </g>
+
+  <!-- Ground Atmospheric Mist Fade -->
+  <rect x="0" y="380" width="1440" height="300" fill="url(#fog)" />
+</svg>

@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 510" width="340" height="510">
+  <defs>
+    <linearGradient id="vampireFrameGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b0000;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#4a0000;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a0000;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="vampireGoldGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd700;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#b8860b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b6914;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="vampireBloodGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#dc143c;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b0000;stop-opacity:1" />
+    </linearGradient>
+    <radialGradient id="vampireCenterGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#2d0000;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#1a0000;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0d0000;stop-opacity:1" />
+    </radialGradient>
+    <filter id="innerGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="outerGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feFlood flood-color="#8b0000" flood-opacity="0.6"/>
+      <feComposite in2="blur" operator="in"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <pattern id="bloodTexture" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#3d0000" opacity="0.3"/>
+    </pattern>
+  </defs>
+  
+  <!-- Outer shadow/glow -->
+  <rect x="5" y="5" width="330" height="500" rx="15" fill="none" stroke="#8b0000" stroke-width="2" opacity="0.3" filter="url(#outerGlow)"/>
+  
+  <!-- Main frame border -->
+  <path d="M 15,15 
+           L 325,15 
+           Q 335,15 335,25 
+           L 335,485 
+           Q 335,495 325,495 
+           L 15,495 
+           Q 5,495 5,485 
+           L 5,25 
+           Q 5,15 15,15 Z" 
+        fill="url(#vampireFrameGrad)" 
+        stroke="url(#vampireGoldGrad)" 
+        stroke-width="3"
+        filter="url(#innerGlow)"/>
+  
+  <!-- Inner frame accent -->
+  <path d="M 25,25 
+           L 315,25 
+           Q 320,25 320,30 
+           L 320,480 
+           Q 320,485 315,485 
+           L 25,485 
+           Q 20,485 20,480 
+           L 20,30 
+           Q 20,25 25,25 Z" 
+        fill="none" 
+        stroke="url(#vampireGoldGrad)" 
+        stroke-width="1.5"
+        opacity="0.8"/>
+  
+  <!-- Top ornament - bat wings -->
+  <g transform="translate(170, 35)">
+    <!-- Left wing -->
+    <path d="M 0,0 
+             Q -40,-20 -80,-10 
+             Q -60,0 -70,20 
+             Q -50,15 -30,25 
+             Q -10,20 0,0 Z" 
+          fill="url(#vampireBloodGrad)" 
+          stroke="#ffd700" stroke-width="1" opacity="0.9"/>
+    <!-- Right wing -->
+    <path d="M 0,0 
+             Q 40,-20 80,-10 
+             Q 60,0 70,20 
+             Q 50,15 30,25 
+             Q 10,20 0,0 Z" 
+          fill="url(#vampireBloodGrad)" 
+          stroke="#ffd700" stroke-width="1" opacity="0.9"/>
+    <!-- Center gem -->
+    <circle cx="0" cy="8" r="8" fill="url(#vampireBloodGrad)" stroke="#ffd700" stroke-width="1.5"/>
+    <circle cx="0" cy="8" r="4" fill="#ff0000" opacity="0.8"/>
+  </g>
+  
+  <!-- Name plate area -->
+  <rect x="40" y="55" width="260" height="42" rx="8" fill="url(#vampireBloodGrad)" stroke="#ffd700" stroke-width="2" opacity="0.95"/>
+  
+  
+  <!-- Blood cost orb -->
+  <circle cx="300" cy="76" r="20" fill="url(#vampireBloodGrad)" stroke="#ffd700" stroke-width="2" filter="url(#innerGlow)"/>
+  <circle cx="300" cy="76" r="12" fill="#1a0000"/>
+  
+  
+  
+  <!-- Art area frame -->
+  <rect x="25" y="115" width="290" height="220" rx="4" fill="url(#vampireCenterGrad)" stroke="#ffd700" stroke-width="1.5" opacity="0.9"/>
+  <rect x="25" y="115" width="290" height="220" rx="4" fill="url(#bloodTexture)" opacity="0.4"/>
+  <!-- Placeholder for art -->
+  
+  
+  <!-- Type line -->
+  <rect x="35" y="350" width="270" height="28" rx="4" fill="#1a0000" stroke="#ffd700" stroke-width="1" opacity="0.9"/>
+  
+  
+  <!-- Text box -->
+  <rect x="25" y="390" width="290" height="85" rx="4" fill="url(#vampireCenterGrad)" stroke="#3d0000" stroke-width="1.5" opacity="0.95"/>
+  <rect x="25" y="390" width="290" height="85" rx="4" fill="url(#bloodTexture)" opacity="0.3"/>
+  
+  
+  
+  <!-- Bottom ornament - fangs -->
+  <g transform="translate(170, 495)">
+    <path d="M -30,0 L -20,-15 L -10,0 Z" fill="#ffd700" stroke="#8b0000" stroke-width="1"/>
+    <path d="M -10,0 L 0,-15 L 10,0 Z" fill="#ffd700" stroke="#8b0000" stroke-width="1"/>
+    <path d="M 10,0 L 20,-15 L 30,0 Z" fill="#ffd700" stroke="#8b0000" stroke-width="1"/>
+  </g>
+  
+  <!-- Attack/Health orbs -->
+  <!-- Attack -->
+  <circle cx="60" cy="495" r="22" fill="url(#vampireBloodGrad)" stroke="#ffd700" stroke-width="2" filter="url(#innerGlow)"/>
+  
+  
+  <!-- Health -->
+  <circle cx="280" cy="495" r="22" fill="#0d3d0d" stroke="#2e8b57" stroke-width="2" filter="url(#innerGlow)"/>
+  <circle cx="280" cy="495" r="14" fill="#0a1f0a"/>
+  
+  
+</svg>

@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 220" width="290" height="220">
+  <defs>
+    <linearGradient id="minionVampireBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2d0000"/>
+      <stop offset="100%" style="stop-color:#0a0000"/>
+    </linearGradient>
+    <linearGradient id="vampireFlesh" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4a1a1a"/>
+      <stop offset="50%" style="stop-color:#2d0a0a"/>
+      <stop offset="100%" style="stop-color:#1a0000"/>
+    </linearGradient>
+    <linearGradient id="bloodGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#dc143c"/>
+      <stop offset="100%" style="stop-color:#8b0000"/>
+    </linearGradient>
+    <filter id="eyeGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="290" height="220" fill="url(#minionVampireBg)"/>
+  
+  <!-- Foggy cemetery background -->
+  <g opacity="0.3">
+    <path d="M 0,220 Q 50,180 80,190 Q 120,200 145,170 Q 170,200 210,190 Q 240,180 290,220 Z" fill="#0a0000"/>
+    <path d="M 0,220 Q 40,190 70,200 Q 100,210 145,180 Q 190,210 220,200 Q 250,190 290,220 Z" fill="#1a0000" opacity="0.5"/>
+  </g>
+  
+  <!-- Gravestones -->
+  <g fill="#1a0000" stroke="#2d0000" stroke-width="1" opacity="0.4">
+    <path d="M 20,200 L 20,150 Q 20,140 30,140 L 50,140 Q 60,140 60,150 L 60,200 Z"/>
+    <path d="M 240,200 L 240,145 Q 240,135 250,135 L 270,135 Q 280,135 280,145 L 280,200 Z"/>
+    <path d="M 130,200 L 130,130 Q 130,120 145,120 L 160,120 Q 170,120 170,130 L 170,200 Z"/>
+  </g>
+  
+  <!-- Vampire Spawn (ghoul-like) -->
+  <g transform="translate(145, 145)" filter="url(#eyeGlow)">
+    <!-- Tattered cloak -->
+    <path d="M -55,10 Q -70,-10 -60,-40 Q -40,-60 -10,-55 Q 10,-50 30,-55 Q 60,-60 80,-40 Q 90,-10 75,10 Q 50,20 30,15 Q 10,10 -10,15 Q -30,20 -55,10" 
+          fill="url(#vampireFlesh)" stroke="#2d0000" stroke-width="1" opacity="0.9"/>
+    <!-- Torn edges -->
+    <path d="M -55,10 Q -65,15 -50,25 M -40,15 Q -45,25 -30,30 M 35,15 Q 40,25 50,28 M 55,10 Q 60,20 70,25" 
+          fill="none" stroke="#2d0000" stroke-width="1.5" opacity="0.7"/>
+    
+    <!-- Hunched body -->
+    <ellipse cx="0" cy="25" rx="30" ry="35" fill="url(#vampireFlesh)" stroke="#2d0000" stroke-width="1"/>
+    <!-- Ribs showing -->
+    <g stroke="#1a0000" stroke-width="1.5" opacity="0.6">
+      <path d="M -15,10 Q -15,20 -10,25"/>
+      <path d="M -5,10 Q -5,20 0,25"/>
+      <path d="M 5,10 Q 5,20 10,25"/>
+      <path d="M 15,10 Q 15,20 20,25"/>
+    </g>
+    
+    <!-- Clawed hands -->
+    <g transform="translate(-45, 35)">
+      <path d="M 0,0 L -5,20 L -2,25 L 2,22 L 5,20 Z" fill="url(#vampireFlesh)" stroke="#2d0000" stroke-width="1"/>
+      <path d="M -5,25 L -8,35" stroke="#dc143c" stroke-width="2" stroke-linecap="round"/>
+      <path d="M -2,27 L -4,37" stroke="#dc143c" stroke-width="2" stroke-linecap="round"/>
+      <path d="M 2,27 L 1,37" stroke="#dc143c" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(45, 35)" scale="-1, 1">
+      <path d="M 0,0 L -5,20 L -2,25 L 2,22 L 5,20 Z" fill="url(#vampireFlesh)" stroke="#2d0000" stroke-width="1"/>
+      <path d="M -5,25 L -8,35" stroke="#dc143c" stroke-width="2" stroke-linecap="round"/>
+      <path d="M -2,27 L -4,37" stroke="#dc143c" stroke-width="2" stroke-linecap="round"/>
+      <path d="M 2,27 L 1,37" stroke="#dc143c" stroke-width="2" stroke-linecap="round"/>
+    </g>
+    
+    <!-- Head -->
+    <ellipse cx="0" cy="-20" rx="22" ry="25" fill="url(#vampireFlesh)" stroke="#2d0000" stroke-width="1"/>
+    <!-- Sunken cheeks -->
+    <ellipse cx="-12" cy="-15" rx="5" ry="8" fill="#1a0000" opacity="0.5"/>
+    <ellipse cx="12" cy="-15" rx="5" ry="8" fill="#1a0000" opacity="0.5"/>
+    <!-- Glowing eyes -->
+    <ellipse cx="-8" cy="-22" rx="4" ry="5" fill="url(#bloodGlow)" filter="url(#eyeGlow)"/>
+    <ellipse cx="8" cy="-22" rx="4" ry="5" fill="url(#bloodGlow)" filter="url(#eyeGlow)"/>
+    <!-- Nose holes -->
+    <ellipse cx="0" cy="-12" rx="2" ry="3" fill="#0a0000"/>
+    <!-- Mouth with fangs -->
+    <path d="M -8,0 Q 0,5 8,0" stroke="#8b0000" stroke-width="2" fill="none"/>
+    <path d="M -4,0 L -2,5 L 0,0" fill="#fff" opacity="0.9"/>
+    <path d="M 2,0 L 4,5 L 6,0" fill="#fff" opacity="0.9"/>
+    <!-- Pointed ears -->
+    <path d="M -22,-15 Q -30,-25 -22,-35 Q -18,-25 -22,-15" fill="url(#vampireFlesh)" stroke="#2d0000" stroke-width="1"/>
+    <path d="M 22,-15 Q 30,-25 22,-35 Q 18,-25 22,-15" fill="url(#vampireFlesh)" stroke="#2d0000" stroke-width="1"/>
+    <!-- Wild hair -->
+    <g stroke="#0a0000" stroke-width="2" stroke-linecap="round">
+      <line x1="-20" y1="-40" x2="-25" y2="-50"/>
+      <line x1="-15" y1="-42" x2="-18" y2="-52"/>
+      <line x1="-10" y1="-43" x2="-12" y2="-53"/>
+      <line x1="20" y1="-40" x2="25" y2="-50"/>
+      <line x1="15" y1="-42" x2="18" y2="-52"/>
+      <line x1="10" y1="-43" x2="12" y2="-53"/>
+    </g>
+  </g>
+  
+  <!-- Blood mist -->
+  <ellipse cx="145" cy="200" rx="100" ry="20" fill="url(#bloodGlow)" opacity="0.15"/>
+  
+  <rect x="2" y="2" width="286" height="216" fill="none" stroke="#ffd700" stroke-width="2" opacity="0.4" rx="4"/>
+</svg>

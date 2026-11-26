@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 290 220" width="290" height="220">
+  <defs>
+    <linearGradient id="oathBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2d0000"/>
+      <stop offset="50%" style="stop-color:#1a0000"/>
+      <stop offset="100%" style="stop-color:#0d0000"/>
+    </linearGradient>
+    <linearGradient id="bloodPact" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#dc143c"/>
+      <stop offset="50%" style="stop-color:#ff4444"/>
+      <stop offset="100%" style="stop-color:#8b0000"/>
+    </linearGradient>
+    <linearGradient id="parchment" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f5e6c8"/>
+      <stop offset="50%" style="stop-color:#e8d5b7"/>
+      <stop offset="100%" style="stop-color:#d4c4a8"/>
+    </linearGradient>
+    <linearGradient id="goldInk" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd700"/>
+      <stop offset="100%" style="stop-color:#daa520"/>
+    </linearGradient>
+    <radialGradient id="sealGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#dc143c;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#1a0000;stop-opacity:0"/>
+    </radialGradient>
+    <filter id="pactGlow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feFlood flood-color="#dc143c" flood-opacity="0.5"/>
+      <feComposite in2="blur" operator="in"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="290" height="220" fill="url(#oathBg)"/>
+
+  <!-- Ritual circle on floor -->
+  <g transform="translate(145, 160)" opacity="0.3" stroke="#dc143c" stroke-width="1.5" fill="none">
+    <circle cx="0" cy="0" r="80"/>
+    <circle cx="0" cy="0" r="60"/>
+    <circle cx="0" cy="0" r="40"/>
+    <!-- Pentagram-ish lines -->
+    <path d="M 0,-80 L 0,-40 M 0,40 L 0,80 M -80,0 L -40,0 M 40,0 L 80,0 M -56,-56 L -28,-28 M 28,28 L 56,56 M -56,56 L -28,28 M 28,-28 L 56,-56"/>
+  </g>
+
+  <!-- Floating parchment scroll -->
+  <g transform="translate(145, 95)" filter="url(#pactGlow)">
+    <!-- Scroll paper -->
+    <path d="M -90,-60 Q -100,-70 -95,-85 Q -85,-95 -75,-85 Q -60,-70 -50,-60 Q -90,-50 -90,-60" fill="url(#parchment)" stroke="#8b7355" stroke-width="2"/>
+    <path d="M 90,-60 Q 100,-70 95,-85 Q 85,-95 75,-85 Q 60,-70 50,-60 Q 90,-50 90,-60" fill="url(#parchment)" stroke="#8b7355" stroke-width="2"/>
+
+    <rect x="-85" y="-60" width="170" height="120" fill="url(#parchment)" stroke="#8b7355" stroke-width="2"/>
+    <path d="M -85,60 Q -90,70 -85,85 Q -75,95 -65,85 Q -50,70 -40,60" fill="url(#parchment)" stroke="#8b7355" stroke-width="2"/>
+    <path d="M 85,60 Q 90,70 85,85 Q 75,95 65,85 Q 50,70 40,60" fill="url(#parchment)" stroke="#8b7355" stroke-width="2"/>
+
+    <!-- Blood text lines -->
+    <g stroke="url(#bloodPact)" stroke-width="1.5" fill="none">
+      <line x1="-70" y1="-40" x2="70" y2="-40">
+        <animate attributeName="stroke-dashoffset" values="0;100;0" dur="3s" repeatCount="indefinite"/>
+      </line>
+      <line x1="-70" y1="-15" x2="70" y2="-15">
+        <animate attributeName="stroke-dashoffset" values="0;100;0" dur="3s" repeatCount="indefinite"/>
+      </line>
+      <line x1="-70" y1="10" x2="50" y2="10">
+        <animate attributeName="stroke-dashoffset" values="0;100;0" dur="3s" repeatCount="indefinite"/>
+      </line>
+      <line x1="-70" y1="35" x2="30" y2="35">
+        <animate attributeName="stroke-dashoffset" values="0;100;0" dur="3s" repeatCount="indefinite"/>
+      </line>
+    </g>
+
+    <!-- Blood signature at bottom -->
+    <path d="M -30,45 Q -20,55 -10,50 Q 0,45 10,50 Q 20,55 30,45" stroke="url(#bloodPact)" stroke-width="3" fill="none" filter="url(#pactGlow)">
+      <animate attributeName="stroke-dashoffset" values="0;150;0" dur="4s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Blood drops on parchment -->
+    <g fill="url(#bloodPact)">
+      <circle cx="-60" cy="-20" r="2" opacity="0.7">
+        <animate attributeName="opacity" values="0.7;0.3;0.7" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="20" cy="5" r="1.5" opacity="0.6">
+        <animate attributeName="opacity" values="0.6;0.2;0.6" dur="2.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="60" cy="25" r="2" opacity="0.7">
+        <animate attributeName="opacity" values="0.7;0.3;0.7" dur="1.8s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+
+  <!-- Blood wax seal -->
+  <g transform="translate(145, 185)">
+    <circle cx="0" cy="0" r="25" fill="url(#bloodPact)" filter="url(#pactGlow)">
+      <animate attributeName="r" values="25;23;25" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="0" cy="0" r="18" fill="#8b0000" opacity="0.8"/>
+    <!-- Seal symbol -->
+    <path d="M -10,-5 L 10,5 M -10,5 L 10,-5" stroke="url(#goldInk)" stroke-width="3" fill="none"/>
+    <circle cx="0" cy="0" r="8" fill="none" stroke="url(#goldInk)" stroke-width="1.5"/>
+  </g>
+
+  <!-- Two hands cutting palms above scroll -->
+  <g transform="translate(145, 50)" stroke="url(#bloodPact)" stroke-width="2" fill="none" filter="url(#pactGlow)">
+    <!-- Left hand -->
+    <path d="M -60,0 Q -55,15 -60,30 Q -65,40 -55,50 Q -50,40 -55,30 Q -60,20 -55,10 Q -50,5 -55,0">
+      <animate attributeName="stroke-dashoffset" values="0;50;0" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <!-- Right hand -->
+    <path d="M 60,0 Q 55,15 60,30 Q 65,40 55,50 Q 50,40 55,30 Q 60,20 55,10 Q 50,5 55,0">
+      <animate attributeName="stroke-dashoffset" values="0;50;0" dur="2s" repeatCount="indefinite"/>
+    </path>
+
+    <!-- Blood dripping from palms -->
+    <g fill="url(#bloodPact)">
+      <circle cx="-57" cy="55" r="3">
+        <animate attributeName="cy" values="55;100;55" dur="1.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.8;0.3;0.8" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="57" cy="55" r="3">
+        <animate attributeName="cy" values="55;100;55" dur="1.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.8;0.3;0.8" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="-60" cy="58" r="2">
+        <animate attributeName="cy" values="58;105;58" dur="1.8s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="60" cy="58" r="2">
+        <animate attributeName="cy" values="58;105;58" dur="1.8s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+
+  <!-- Candles at corners -->
+  <g fill="#1a0000" stroke="#3d0000" stroke-width="1">
+    <g transform="translate(30, 180)">
+      <rect x="-4" y="-60" width="8" height="60" fill="url(#parchment)"/>
+      <ellipse cx="0" cy="-65" rx="6" ry="3" fill="url(#bloodPact)" filter="url(#pactGlow)">
+        <animate attributeName="ry" values="3;2;3" dur="1.2s" repeatCount="indefinite"/>
+      </ellipse>
+    </g>
+    <g transform="translate(260, 180)">
+      <rect x="-4" y="-60" width="8" height="60" fill="url(#parchment)"/>
+      <ellipse cx="0" cy="-65" rx="6" ry="3" fill="url(#bloodPact)" filter="url(#pactGlow)">
+        <animate attributeName="ry" values="3;2;3" dur="1.2s" repeatCount="indefinite"/>
+      </ellipse>
+    </g>
+  </g>
+
+  <rect x="2" y="2" width="286" height="216" fill="none" stroke="#ffd700" stroke-width="2" opacity="0.4" rx="4"/>
+</svg>
