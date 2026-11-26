@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { calculateDailyReward, canClaimDailyReward, getVIPBenefits } from '../services/vipBenefits.js';
 import { Gift, Flame, Star, Coins, Package, Check, Lock } from 'lucide-react';
 
 const REWARD_TRACK = [
@@ -16,7 +17,7 @@ function todayKey() {
   return `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
 }
 
-export default function DailyRewards({ onClaim }) {
+export default function DailyRewards({ onClaim, vipTier = 'free' }) {
   const [state, setState] = useState(() => {
     try {
       const raw = localStorage.getItem('vamort_daily_rewards');
@@ -36,6 +37,16 @@ export default function DailyRewards({ onClaim }) {
     if (state.claimedToday) return;
     const newStreak = (state.lastClaim === yesterdayKey()) ? state.streak + 1 : 1;
     const reward = REWARD_TRACK[(newStreak - 1) % REWARD_TRACK.length];
+    
+    // VIP bonus rewards
+    const vipBenefits = getVIPBenefits(vipTier);
+    const vipReward = calculateDailyReward(vipTier);
+    if (vipReward) {
+      if (vipReward.gold) reward.gold = (reward.gold || 0) + vipReward.gold;
+      if (vipReward.dust) reward.dust = (reward.dust || 0) + vipReward.dust;
+      if (vipReward.pack) reward.pack = (reward.pack || 0) + 1;
+    }
+    
     const newState = {
       lastClaim: todayKey(),
       streak: newStreak,

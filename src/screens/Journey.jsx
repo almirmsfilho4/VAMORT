@@ -168,7 +168,7 @@ export default function Journey({ go, stats, setStats, playerClass }) {
                   icon="gift"
                 />
                 <StitchCard variant="filled">
-                  <DailyRewards onClaim={reward => applyReward(reward, `daily-${Date.now()}`)} />
+                  <DailyRewards vipTier={stats?.vipTier || 'free'} onClaim={reward => applyReward(reward, `daily-${Date.now()}`)} />
                 </StitchCard>
               </div>
             )}
