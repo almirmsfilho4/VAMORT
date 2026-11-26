@@ -66,13 +66,13 @@ function MobileNavItem({ item, selected, onClick, t }) {
       iconColor={selected ? 'var(--md-sys-color-primary)' : 'var(--md-sys-color-on-surface-variant)'}
       onClick={onClick}
       aria-current={selected ? 'page' : undefined}
-      className="min-w-14 min-h-12 px-1 flex-col gap-0.5"
+      className="min-w-12 min-h-10 px-1 flex-col gap-0"
       style={{
         color: selected ? 'var(--md-sys-color-on-primary-container)' : 'var(--md-sys-color-on-surface-variant)',
         backgroundColor: selected ? 'var(--md-sys-color-primary-container)' : 'transparent',
       }}
     >
-      <span className="text-[0.62rem] max-w-16 truncate">{t(item.labelKey)}</span>
+      <span className="text-[0.55rem] max-w-14 truncate">{t(item.labelKey)}</span>
     </StitchButton>
   );
 }
@@ -166,17 +166,17 @@ export default function StitchLayout({
           </aside>
 
           {/* Top Header - Desktop & Mobile */}
-          <header className="stitch-header fixed top-0 left-0 right-0 lg:left-[260px] z-40 flex items-center justify-between gap-2 px-4 h-16 bg-[var(--md-sys-color-surface-container-lowest)]/95 backdrop-blur-2xl border-b border-[var(--md-sys-color-outline)]/10">
+          <header className="stitch-header fixed top-0 left-0 right-0 lg:left-[260px] z-40 flex items-center justify-between gap-2 px-3 h-12 bg-[var(--md-sys-color-surface-container-lowest)]/95 backdrop-blur-2xl border-b border-[var(--md-sys-color-outline)]/10">
             <StitchButton
               variant="ghost"
               onClick={() => navigate(SCREENS.Profile)}
               fullWidth
               justify="start"
-              className="min-h-11 max-w-[320px] gap-2.5"
+              className="min-h-9 max-w-[280px] gap-1.5"
               aria-label="Ver perfil"
             >
-              <span className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: 'var(--md-sys-color-surface-container-low)', border: '1px solid var(--md-sys-color-secondary)/40' }}>
-                <span className="material-symbols-outlined text-[var(--md-sys-color-secondary)] text-[18px]" aria-hidden="true">shield_moon</span>
+              <span className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: 'var(--md-sys-color-surface-container-low)', border: '1px solid var(--md-sys-color-secondary)/40' }}>
+                <span className="material-symbols-outlined text-[var(--md-sys-color-secondary)] text-[14px]" aria-hidden="true">shield_moon</span>
               </span>
               <div className="min-w-0 hidden sm:block flex-col leading-tight">
                 <span className="font-serif text-sm font-semibold text-[var(--md-sys-color-on-surface)] truncate max-w-[160px]">{heroName}</span>
@@ -186,15 +186,15 @@ export default function StitchLayout({
 
             <div className="flex items-center gap-2 shrink-0">
               {/* Currency Display — responsive: hide labels on small screens */}
-              <StitchCard variant="outlined" className="flex items-center gap-2 px-3 py-1.5 hidden sm:flex" style={{ borderColor: 'var(--md-sys-color-outline)/20', background: 'var(--md-sys-color-surface-container-low)/80' }}>
-                <StitchStat value={stats?.dust || 0} label="Pó" variant="primary" icon="bloodtype" iconColor="var(--md-sys-color-primary)" className="text-[0.75rem]" />
-                <StitchDivider vertical className="h-5" opacity={0.2} />
-                <StitchStat value={stats?.gold || 0} label="Ouro" variant="secondary" icon="monetization_on" iconColor="var(--md-sys-color-secondary)" className="text-[0.75rem]" />
-                <StitchDivider vertical className="h-5" opacity={0.2} />
-                <StitchStat value={stats?.xp || 0} label="XP" variant="tertiary" icon="auto_awesome" iconColor="var(--md-sys-color-tertiary)" className="text-[0.75rem]" />
+              <StitchCard variant="outlined" className="flex items-center gap-1.5 px-2 py-1 hidden sm:flex" style={{ borderColor: 'var(--md-sys-color-outline)/20', background: 'var(--md-sys-color-surface-container-low)/80' }}>
+                <StitchStat value={stats?.dust || 0} label="Pó" variant="primary" icon="bloodtype" iconColor="var(--md-sys-color-primary)" className="text-[0.65rem]" />
+                <StitchDivider vertical className="h-4" opacity={0.2} />
+                <StitchStat value={stats?.gold || 0} label="Ouro" variant="secondary" icon="monetization_on" iconColor="var(--md-sys-color-secondary)" className="text-[0.65rem]" />
+                <StitchDivider vertical className="h-4" opacity={0.2} />
+                <StitchStat value={stats?.xp || 0} label="XP" variant="tertiary" icon="auto_awesome" iconColor="var(--md-sys-color-tertiary)" className="text-[0.65rem]" />
               </StitchCard>
               {/* Mobile compact currency */}
-              <StitchCard variant="outlined" className="flex items-center gap-1 px-2 py-1 sm:hidden" style={{ borderColor: 'var(--md-sys-color-outline)/20', background: 'var(--md-sys-color-surface-container-low)/80' }}>
+              <StitchCard variant="outlined" className="flex items-center gap-0.5 px-1.5 py-0.5 sm:hidden" style={{ borderColor: 'var(--md-sys-color-outline)/20', background: 'var(--md-sys-color-surface-container-low)/80' }}>
                 <span className="material-symbols-outlined text-[var(--md-sys-color-primary)] text-sm" aria-hidden="true">bloodtype</span>
                 <span className="font-mono text-[0.7rem] text-[var(--md-sys-color-on-surface)] tabular-nums">{stats?.dust || 0}</span>
                 <span className="material-symbols-outlined text-[var(--md-sys-color-secondary)] text-sm mx-1" aria-hidden="true">monetization_on</span>
@@ -238,13 +238,13 @@ export default function StitchLayout({
       )}
 
       {/* Main Content */}
-      <main className={`main-content flex-1 min-h-screen bg-[var(--md-sys-color-surface)] ${showNav ? 'lg:pl-[260px] pt-16 pb-16 lg:pb-0' : 'pt-16'}`} style={{ paddingBottom: showNav ? 'calc(72px + env(safe-area-inset-bottom))' : 0 }}>
+      <main className={`main-content flex-1 min-h-screen bg-[var(--md-sys-color-surface)] ${showNav ? 'lg:pl-[260px] pt-14 pb-14 lg:pb-0' : 'pt-14'}`} style={{ paddingBottom: showNav ? 'calc(56px + env(safe-area-inset-bottom))' : 0 }}>
         {children}
       </main>
 
       {/* Bottom Navigation - Mobile Only */}
       {showNav && (
-        <nav className="stitch-bottom-nav lg:hidden fixed bottom-0 left-0 right-0 z-50 flex items-center justify-around h-[72px] bg-[var(--md-sys-color-surface-container-lowest)]/95 backdrop-blur-2xl border-t border-[var(--md-sys-color-outline)]/10" aria-label="Navegação móvel" style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
+        <nav className="stitch-bottom-nav lg:hidden fixed bottom-0 left-0 right-0 z-50 flex items-center justify-around h-[56px] bg-[var(--md-sys-color-surface-container-lowest)]/95 backdrop-blur-2xl border-t border-[var(--md-sys-color-outline)]/10" aria-label="Navegação móvel" style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
           {mobileItems.map(item => (
             <MobileNavItem
               key={item.screen}
