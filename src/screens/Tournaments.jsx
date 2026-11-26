@@ -39,6 +39,7 @@ export default function Tournaments({ go, user, stats }) {
   const [tournaments, setTournaments] = useState([]);
   const [myRegistrations, setMyRegistrations] = useState([]);
   const [selectedTournament, setSelectedTournament] = useState(null);
+  const [tournamentMatches, setTournamentMatches] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [activeTab, setActiveTab] = useState('upcoming');
   const [showCreateModal, setShowCreateModal] = useState(false);
@@ -73,6 +74,104 @@ export default function Tournaments({ go, user, stats }) {
       console.error('Erro ao carregar torneios:', e);
     } finally {
       setIsLoading(false);
+    }
+  }
+
+  async function loadTournamentMatches(tournamentId) {
+    const sb = getSupabase();
+    if (!sb) return [];
+    try {
+      const { data } = await sb
+        .from('tournament_matches')
+        .select(`
+          *,
+          player1:player1_id(id, name),
+          player2:player2_id(id, name)
+        `)
+        .eq('tournament_id', tournamentId)
+        .order('round', { ascending: true })
+        .order('position', { ascending: true });
+      return data || [];
+    } catch (e) {
+      console.error('Erro ao carregar partidas:', e);
+      return [];
+    }
+  }
+
+  async function generateBracket(tournament) {
+    const sb = getSupabase();
+    if (!sb) return;
+    try {
+      // Get registrations
+      const { data: registrations } = await sb
+        .from('tournament_registrations')
+        .select('user_id, users(name)')
+        .eq('tournament_id', tournament.id);
+      
+      if (!registrations || registrations.length < 2) return;
+      
+      // Shuffle players for bracket
+      const players = registrations.map(r => ({ id: r.user_id, name: r.users?.name || 'Player' }));
+      for (let i = players.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [players[i], players[j]] = [players[j], players[i]];
+      }
+      
+      // Calculate number of rounds
+      const numPlayers = players.length;
+      const numRounds = Math.ceil(Math.log2(numPlayers));
+      
+      // Generate first round matches
+      const matches = [];
+      let position = 0;
+      for (let i = 0; i < players.length; i += 2) {
+        if (i + 1 < players.length) {
+          matches.push({
+            tournament_id: tournament.id,
+            round: 1,
+            position: position++,
+            player1_id: players[i].id,
+            player2_id: players[i + 1].id,
+            status: 'pending',
+          });
+        } else {
+          // Bye - player advances automatically
+          matches.push({
+            tournament_id: tournament.id,
+            round: 1,
+            position: position++,
+            player1_id: players[i].id,
+            player2_id: null,
+            status: 'completed',
+            winner_id: players[i].id,
+          });
+        }
+      }
+      
+      // Generate subsequent rounds (empty slots)
+      for (let round = 2; round <= numRounds; round++) {
+        const matchesInRound = Math.ceil(matches.filter(m => m.round === round - 1).length / 2);
+        for (let i = 0; i < matchesInRound; i++) {
+          matches.push({
+            tournament_id: tournament.id,
+            round: round,
+            position: i,
+            player1_id: null,
+            player2_id: null,
+            status: 'pending',
+          });
+        }
+      }
+      
+      // Insert matches
+      await sb.from('tournament_matches').insert(matches);
+      
+      // Update tournament status
+      await sb.from('tournaments').update({ status: 'active' }).eq('id', tournament.id);
+      
+      await loadTournaments();
+    } catch (e) {
+      console.error('Erro ao gerar bracket:', e);
     }
   }
 
@@ -228,9 +327,18 @@ export default function Tournaments({ go, user, stats }) {
                   <h3 className="font-semibold text-[var(--md-sys-color-on-surface)] mb-3">{t('tournaments.bracket')}</h3>
                   <TournamentBracket 
                     tournament={selectedTournament} 
-                    matches={selectedTournament.matches || []}
+                    matches={tournamentMatches}
                     onMatchClick={(match) => console.log('Match clicked:', match)}
                   />
+                </div>
+              )}
+
+              {/* Generate Bracket Button (for registration status) */}
+              {selectedTournament.status === 'registration' && user && selectedTournament.created_by === user.id && (
+                <div className="mb-6">
+                  <StitchButton variant="primary" icon="account_tree" onClick={() => generateBracket(selectedTournament)} fullWidth>
+                    Generate Bracket & Start Tournament
+                  </StitchButton>
                 </div>
               )}
 
@@ -334,7 +442,7 @@ export default function Tournaments({ go, user, stats }) {
                     key={tournament.id}
                     variant="elevated"
                     className="hover:shadow-lg transition-shadow cursor-pointer animate-card-enter"
-                    onClick={() => setSelectedTournament(tournament)}
+                    onClick={async () => { setSelectedTournament(tournament); const matches = await loadTournamentMatches(tournament.id); setTournamentMatches(matches); }}
                   >
                     <div className="flex items-start justify-between mb-3">
                       <StitchBadge variant={tournament.status === 'active' ? 'primary' : 'outline'} icon={statusInfo.icon}>
@@ -367,7 +475,7 @@ export default function Tournaments({ go, user, stats }) {
                     <StitchDivider className="mb-3" />
 
                     <div className="flex items-center justify-between">
-                      <StitchButton variant="ghost" size="sm" onClick={(e) => { e.stopPropagation(); setSelectedTournament(tournament); }} icon="visibility">
+                      <StitchButton variant="ghost" size="sm" onClick={async (e) => { e.stopPropagation(); setSelectedTournament(tournament); const matches = await loadTournamentMatches(tournament.id); setTournamentMatches(matches); }} icon="visibility">
                         {t('tournaments.viewDetails')}
                       </StitchButton>
                       {tournament.status === 'registration' && !registered && !full && user ? (
