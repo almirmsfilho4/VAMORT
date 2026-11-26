@@ -98,6 +98,46 @@ export default function Tournaments({ go, user, stats }) {
     }
   }
 
+  async function reportMatchResult(match, winner) {
+    const sb = getSupabase();
+    if (!sb) return;
+    try {
+      await sb.from('tournament_matches').update({
+        status: 'completed',
+        winner_id: winner.id,
+        score1: winner.id === match.player1_id ? 1 : 0,
+        score2: winner.id === match.player2_id ? 1 : 0,
+      }).eq('id', match.id);
+      
+      // Advance winner to next round
+      const currentRound = match.round;
+      const nextRound = currentRound + 1;
+      const nextPosition = Math.floor(match.position / 2);
+      
+      // Check if next round match exists
+      const { data: nextMatch } = await sb
+        .from('tournament_matches')
+        .select('*')
+        .eq('tournament_id', match.tournament_id)
+        .eq('round', nextRound)
+        .eq('position', nextPosition)
+        .single();
+      
+      if (nextMatch) {
+        const updateField = match.position % 2 === 0 ? 'player1_id' : 'player2_id';
+        await sb.from('tournament_matches').update({
+          [updateField]: winner.id,
+        }).eq('id', nextMatch.id);
+      }
+      
+      // Reload matches
+      const matches = await loadTournamentMatches(match.tournament_id);
+      setTournamentMatches(matches);
+    } catch (e) {
+      console.error('Erro ao reportar resultado:', e);
+    }
+  }
+
   async function generateBracket(tournament) {
     const sb = getSupabase();
     if (!sb) return;
@@ -329,6 +369,7 @@ export default function Tournaments({ go, user, stats }) {
                     tournament={selectedTournament} 
                     matches={tournamentMatches}
                     onMatchClick={(match) => console.log('Match clicked:', match)}
+                    onReportResult={reportMatchResult}
                   />
                 </div>
               )}

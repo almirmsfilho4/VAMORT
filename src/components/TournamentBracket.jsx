@@ -5,7 +5,7 @@ import { StitchCard, StitchBadge } from './StitchUI.jsx';
  * TournamentBracket - Visual tournament bracket component
  * Supports single elimination, double elimination, and Swiss formats
  */
-export default function TournamentBracket({ tournament, matches = [], onMatchClick }) {
+export default function TournamentBracket({ tournament, matches = [], onMatchClick, onReportResult }) {
   const rounds = React.useMemo(() => {
     if (!matches || matches.length === 0) return [];
     
@@ -107,6 +107,26 @@ export default function TournamentBracket({ tournament, matches = [], onMatchCli
                   {match.status === 'active' && (
                     <div className="absolute -top-2 -right-2">
                       <StitchBadge variant="tertiary" size="sm">LIVE</StitchBadge>
+                    </div>
+                  )}
+                  
+                  {/* Report Result button for active matches */}
+                  {match.status === 'active' && onReportResult && (
+                    <div className="px-3 py-2 border-t border-[var(--md-sys-color-outline-variant)]">
+                      <div className="flex gap-2">
+                        <button
+                          onClick={(e) => { e.stopPropagation(); onReportResult(match, match.player1); }}
+                          className="flex-1 text-xs py-1 px-2 rounded bg-[var(--md-sys-color-primary-container)] text-[var(--md-sys-color-on-primary-container)] hover:opacity-80"
+                        >
+                          {match.player1?.name || 'P1'} Wins
+                        </button>
+                        <button
+                          onClick={(e) => { e.stopPropagation(); onReportResult(match, match.player2); }}
+                          className="flex-1 text-xs py-1 px-2 rounded bg-[var(--md-sys-color-secondary-container)] text-[var(--md-sys-color-on-secondary-container)] hover:opacity-80"
+                        >
+                          {match.player2?.name || 'P2'} Wins
+                        </button>
+                      </div>
                     </div>
                   )}
                 </div>
