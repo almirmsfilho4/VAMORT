@@ -4,6 +4,7 @@ import { SCREENS } from '../data/constants.js';
 import { useLanguage } from '../i18n/LanguageContext.jsx';
 import { getSupabase } from '../supabase.js';
 import ClanWar from '../components/ClanWar.jsx';
+import ClanMatchmaking from '../components/ClanMatchmaking.jsx';
 import {
   StitchButton,
   StitchCard,
@@ -378,13 +379,15 @@ export default function Clans({ go, user, stats }) {
             )}
 
             {activeTab === 'war' && (
-              <ClanWar 
-                clan={myClan} 
-                opponentClan={null}
-                warStatus="none"
-                onStartWar={() => console.log('Starting war...')}
-                onJoinBattle={(war) => console.log('Joining battle:', war)}
-              />
+              <div className="space-y-4">
+                <ClanMatchmaking 
+                  clan={myClan} 
+                  onWarStarted={(war, opponent) => {
+                    console.log('War started:', war, opponent);
+                    // Reload clan data
+                  }}
+                />
+              </div>
             )}
 
             {activeTab === 'settings' && canManage && (
