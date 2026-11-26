@@ -3,7 +3,7 @@
  * Manages VIP tier benefits: daily rewards, XP/gold boosts, shop discounts, etc.
  */
 
-const VIP_TIERS = {
+export const VIP_TIERS = {
   free: { level: 0, dailyGold: 0, dailyDust: 0, dailyPack: false, xpBoost: 0, goldBoost: 0, shopDiscount: 0 },
   silver: { level: 1, dailyGold: 50, dailyDust: 10, dailyPack: false, xpBoost: 0.05, goldBoost: 0.05, shopDiscount: 0.05 },
   gold: { level: 2, dailyGold: 100, dailyDust: 25, dailyPack: true, xpBoost: 0.10, goldBoost: 0.10, shopDiscount: 0.10 },

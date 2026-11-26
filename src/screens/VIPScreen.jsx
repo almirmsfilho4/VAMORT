@@ -13,6 +13,9 @@ import {
   StitchTooltip,
 } from '../components/StitchUI.jsx';
 import { getStitchAsset } from '../data/stitchAssets.js';
+import StitchLayout from '../components/StitchLayout.jsx';
+import { SCREENS } from '../data/constants.js';
+import VIPSubscription from '../components/VIPSubscription.jsx';
 
 const VIP_TIERS = [
   { id: 'free', labelKey: 'vip.tier.free', price: 0, period: null, color: 'var(--md-sys-color-on-surface-variant)', bg: 'var(--md-sys-color-surface-container-low)', icon: 'diamond_outline' },
@@ -199,7 +202,9 @@ export default function VIPScreen({ go, stats, onClose }) {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-4 space-y-6">
+    <StitchLayout currentScreen={SCREENS.VIP} go={go} user={user} stats={stats} leftSidebarOpen={false}>
+      <div className="flex-1 overflow-y-auto p-4 md:p-6">
+        <div className="max-w-4xl mx-auto space-y-6">
       {/* Header */}
       <div className="flex items-center justify-between gap-4">
         <StitchSectionHeader 
@@ -325,6 +330,8 @@ export default function VIPScreen({ go, stats, onClose }) {
           </StitchCard>
         </div>
       )}
-    </div>
+      </div>
+      </div>
+    </StitchLayout>
   );
 }
