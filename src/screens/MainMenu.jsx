@@ -1,6 +1,7 @@
 import React from 'react';
 import StitchLayout from '../components/StitchLayout.jsx';
 import { SCREENS, GAME, RANKS } from '../data/constants.js';
+import FirstPurchaseOffer from '../components/FirstPurchaseOffer.jsx';
 import { useLanguage } from '../i18n/LanguageContext.jsx';
 import { getStitchAsset } from '../data/stitchAssets.js';
 import {
@@ -262,6 +263,7 @@ export default function MainMenu({ go, stats, playerClass, deckIds }) {
           </section>
         </div>
       </main>
+      <FirstPurchaseOffer onBuy={() => setStats(s => ({ ...s, gold: (s.gold || 0) + 500 }))} />
     </StitchLayout>
   );
 }
