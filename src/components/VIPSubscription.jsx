@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { StitchCard, StitchButton, StitchBadge, StitchModal, StitchSectionHeader } from './StitchUI.jsx';
 import { VIP_TIERS } from '../services/vipBenefits.js';
+import { getStripeService } from '../services/stripe.js';
 
 const TIER_INFO = {
   silver: { name: 'Silver', price: '4.99', color: '#c0c0c0', icon: 'star' },
@@ -15,13 +16,18 @@ export default function VIPSubscription({ currentTier = 'free', onSubscribe, onC
 
   const handleSubscribe = async (tierId) => {
     setIsProcessing(true);
+    setSelectedTier(tierId);
     try {
-      // In production, this would redirect to Stripe checkout
-      // For now, simulate subscription
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      if (onSubscribe) onSubscribe(tierId);
+      const stripe = getStripeService();
+      const result = await stripe.redirectToCheckout(tierId, 'user-id');
+      if (result?.simulated) {
+        // Fallback for demo without Stripe configured
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        if (onSubscribe) onSubscribe(tierId);
+      }
     } catch (e) {
       console.error('Subscription failed:', e);
+      alert('Subscription failed. Please try again.');
     } finally {
       setIsProcessing(false);
       setSelectedTier(null);

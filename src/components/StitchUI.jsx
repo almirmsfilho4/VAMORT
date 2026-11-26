@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 /**
  * StitchButton — Material Design 3 styled buttons
